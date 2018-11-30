@@ -5,19 +5,19 @@
 		<link>https://kybernetikgames.github.io/weaver</link>
 		<description />
 		<copyright>2018</copyright>
-		<pubDate>Fri, 30 Nov 2018 09:17:13 GMT</pubDate>
-		<lastBuildDate>Fri, 30 Nov 2018 09:17:13 GMT</lastBuildDate>
+		<pubDate>Fri, 30 Nov 2018 11:03:07 GMT</pubDate>
+		<lastBuildDate>Fri, 30 Nov 2018 11:03:07 GMT</lastBuildDate>
 		<item>
-			<title>Weaver v5.0 - My singletons bring all the boys to the yard</title>
+			<title>Weaver v5.0 - Get rid of your magic strings</title>
 			<link>https://kybernetikgames.github.io/weaver/blog/2018/11/weaver-v5-0</link>
 			<description>&lt;p&gt;Have you ever wanted to:&lt;/p&gt;</description>
 			<author>Kailas</author>
 			<guid>https://kybernetikgames.github.io/weaver/blog/2018/11/weaver-v5-0</guid>
-			<pubDate>Thu, 22 Nov 2018 00:00:00 GMT</pubDate>
+			<pubDate>Fri, 30 Nov 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;Have you ever wanted to:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="../docs/asset-injection"&gt;Use [SerializeField] on a static field or property (to make a singleton or similar global system)?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../docs/asset-lists"&gt;Automatically get a strongly typed list of assets in a particular folder?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../docs/asset-injection"&gt;Use [SerializeField] on a static field or property (to make a singleton or other global system)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../docs/asset-lists"&gt;Easily get a strongly typed list of assets in a particular folder?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../docs/project-constants"&gt;Stop using magic strings to access animations, layers, navigation areas, scenes, and shaders?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../docs/procedural-assets"&gt;Easily generate procedural assets in the Unity Editor which can then be used like regular assets?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

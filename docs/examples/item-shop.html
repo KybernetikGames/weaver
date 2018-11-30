@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
-        <title>Weaver - Utilities</title>
+        <title>Weaver - 06 Item Shop</title>
         <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
         <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
         <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -91,7 +91,7 @@
 
                 <li><a href="/weaver/docs/introduction">Introduction</a></li>
                 <li><a href="/weaver/docs/weaver-window">Weaver Window</a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/weaver/docs/examples">Examples</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
@@ -100,7 +100,7 @@
                 <li><a href="/weaver/docs/examples/building">03 Building</a></li>
                 <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
                 <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
-                <li><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
+                <li class="selected"><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
                 <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
 
                     </ul>
@@ -155,13 +155,13 @@
 
                     </ul>
                 </li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
                 <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
-                <li class="selected"><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
 
                     </ul>
                 </li>
@@ -194,18 +194,28 @@
 
 
 		<section class="content-header">
-			<h1>Utilities</h1>
+			<h1>06 Item Shop</h1>
 		</section>
 	<section class="content">
-		<html><head></head><body><p>Weaver contains various utility classes and methods which you can make use of in your own code. This section outlines some of the most useful ones.</p>
-<p><code>Kybernetik.Utils</code> contains many miscellaneous methods with a variety of purposes:</p>
+		<html><head></head><body><p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/06 Meta Asset List</em>. It demonstrates the use of a <a href="../asset-lists/lazy-asset-lists#meta-asset-lists">Meta Asset List</a> to create a user interface that can display the details of its items without actually loading all the items into memory until they are needed.</p>
 <ul>
-<li><code>DeepToString</code> can be used to print the contents of any collection (such as an array or list) as a string.</li>
-<li><code>LogTemp</code> simply calls <code>Debug.Log</code>, but it has an <code>[Obsolete]</code> attribute so that all calls to it will cause compile warnings. This is very useful if you want to log something for debugging purposes and want to make sure you don’t forget to remove the call once you’re done. It is an extension method for any type which returns its parameter directly so it can easily be inserted into existing lines of code. For example, <code>return target.GetComponent&lt;Collider&gt;().enabled;</code> could be changed to <code>return target.GetComponent&lt;Collider&gt;().LogTemp().enabled;</code> to log the value of the collider without changing what the rest of the code does.</li>
-<li><code>LogErrorIfModified</code> can be used for "locking" a collection which you don't want modified without allocating a new read-only collection. Note that this only logs an error, it doesn't actually prevent modifications.</li>
-<li><code>Utils.Timer.Start</code> starts and returns a simple timer which inherits from <code>System.IDisposable</code> so you can write <code>using (Utils.Timer.Start())</code> to time something and automatically log the result when the <code>using</code> block ends. The timer is based on <code>UnityEditor.EditorApplication.timeSinceStartup</code> in the Unity Editor or <code>Time.unscaledTime</code> at runtime.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a></code> contains the details of an item (name, cost, description, etc.).</li>
+<li><code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> just holds an <code><a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a></code> field. It could have any other functionality, but all this example actually uses is the meta data.</li>
+<li><em>Assets/Plugins/Weaver/Examples/06 Meta Asset List/All Items.asset</em> is an <a href="../asset-lists">Asset List</a>. Specifically, an <code><a href="/weaver/api/Weaver/ItemList">ItemList</a></code> which inherits from <code>MetaAssetList&lt;Item, <a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a>&gt;</code>. It automatically gathers all prefabs with an <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> component in the target folder when entering play mode or compiling a runtime build so they can be accessed efficiently as a simple list at runtime. When doing so it also retrieves the <code><a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a></code> of each <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> and serializes that data alongside their resource paths so the meta-data of an <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> can be accessed without loading the actual prefab.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/ItemDisplay">ItemDisplay</a></code> uses various UI components to show the details of an <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code>.
+<ul>
+<li>Note that everything will always show "Is Loaded" while in the Unity Editor, but they will only be loaded on demand in a runtime build. This ensures that the list always contains the correct references and data for the assets currently in the target directory while achieving the desired memory management at runtime.</li>
 </ul>
-<p>The <code><a href="/weaver/api/Weaver/Asset_1">Asset&lt;T&gt;</a></code> class is useful for lazy-loading resources and other assets.</p>
+</li>
+<li><code><a href="/weaver/api/Weaver.Examples/ItemShop">ItemShop</a></code> simply initialises an <code><a href="/weaver/api/Weaver.Examples/ItemDisplay">ItemDisplay</a></code> for each <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> in the <code><a href="/weaver/api/Weaver/ItemList">ItemList</a></code>.</li>
+<li>This example could be adapted to any scenario where you want to access certain details of objects without loading them upfront:
+<ul>
+<li>A shop could use the item meta-data to sort and categorise entries, and only load ones that are currently visible.</li>
+<li>A shop for custom character skins could show a preview image of each without loading the fully detailed character models.</li>
+<li>An enemy spawning or loot drop system could act based on chance values in the meta-data.</li>
+</ul>
+</li>
+</ul>
 </body></html>
 	</section>
                 

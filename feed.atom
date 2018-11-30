@@ -4,19 +4,19 @@
 	<id>https://kybernetikgames.github.io/weaver</id>
 	<title>Weaver</title>
 	<rights>2018</rights>
-	<updated>2018-11-30T09:17:13Z</updated>
+	<updated>2018-11-30T11:03:07Z</updated>
 	<entry>
 		<author>
 			<name>Kailas</name>
 		</author>
 		<link href="https://kybernetikgames.github.io/weaver/blog/2018/11/weaver-v5-0" />
 		<id>https://kybernetikgames.github.io/weaver/blog/2018/11/weaver-v5-0</id>
-		<title>Weaver v5.0 - My singletons bring all the boys to the yard</title>
-		<updated>2018-11-22T00:00:00Z</updated>
+		<title>Weaver v5.0 - Get rid of your magic strings</title>
+		<updated>2018-11-30T00:00:00Z</updated>
 		<content>&lt;p&gt;Have you ever wanted to:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="../docs/asset-injection"&gt;Use [SerializeField] on a static field or property (to make a singleton or similar global system)?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../docs/asset-lists"&gt;Automatically get a strongly typed list of assets in a particular folder?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../docs/asset-injection"&gt;Use [SerializeField] on a static field or property (to make a singleton or other global system)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../docs/asset-lists"&gt;Easily get a strongly typed list of assets in a particular folder?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../docs/project-constants"&gt;Stop using magic strings to access animations, layers, navigation areas, scenes, and shaders?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../docs/procedural-assets"&gt;Easily generate procedural assets in the Unity Editor which can then be used like regular assets?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

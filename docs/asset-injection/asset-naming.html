@@ -100,7 +100,7 @@
                 <li><a href="/weaver/docs/examples/building">03 Building</a></li>
                 <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
                 <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
-                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
                 <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
 
                     </ul>
@@ -138,7 +138,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
-                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
                 </li>
@@ -207,12 +207,12 @@
 <li>(lowest priority) Same as above, but without the <code>Namespace</code>.</li>
 <li>All the above options check without the file extension first, then with it if a match wasn't found.</li>
 </ol>
-<p>The search is case-insensitive and any separator characters (dot <code>.</code>, slash <code>/</code>, plus <code>+</code>, minus <code>-</code>, or space <code></code>) are considered interchangeable and skippable. For example:</p>
+<p>The search is case-insensitive and any separator characters (dot <code>.</code>, comma <code>,</code>, slash <code>/</code>, plus <code>+</code>, minus <code>-</code>, or space <code></code>) are considered interchangeable and skippable. For example:</p>
 <ul>
 <li><code>MyGame.Player.Prefab</code> could match against a file path ending with <em>.../My Game/Player.prefab</em>. Note how "<em>My Game</em>" has a space not present in the member name and is a folder while "<em>prefab</em>" is actually the file extension.</li>
 <li>Weaver itself makes use of this feature to identify the target assets for each of the <a href="../examples">Example Scripts</a> when it is first imported so that it doesn't need to include the Weaver Settings file (because doing so would overwrite your settings each time you import a new version of Weaver).
 <ul>
-<li><code>Weaver.Examples.FrameRate.Instance</code> is found at <em>Assets/Plugins/Weaver/Examples/01 Frame Rate/<strong>Weaver Examples Frame Rate</strong>.prefab</em>.</li>
+<li><code>Weaver.Examples.FrameRate.Instance</code> is found at <em>Assets/Plugins/Weaver/Examples/01 Frame Rate/<strong>Frame Rate</strong>.prefab</em>.</li>
 <li><code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> finds its prefabs in the <em>Assets/Plugins/Weaver/Examples/02 Floating Text/<strong>Text Manager</strong></em> folder.</li>
 <li><code>Building.ProceduralOfficeBuilding</code> is found at <em>Assets/Plugins/Weaver/Examples/03 Building/<strong>Procedural Office Building</strong>.prefab</em>.</li>
 <li><code>GameOverScreen.Prefab</code> is found at <em>Assets/Plugins/Weaver/Examples/05 Missile Command/Prefabs/Resources/<strong>Game Over Screen.prefab</strong></em>.</li>

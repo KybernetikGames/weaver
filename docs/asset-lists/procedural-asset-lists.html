@@ -100,7 +100,7 @@
                 <li><a href="/weaver/docs/examples/building">03 Building</a></li>
                 <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
                 <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
-                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
                 <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
 
                     </ul>
@@ -138,7 +138,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
-                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
                 </li>
@@ -199,7 +199,7 @@
 	<section class="content">
 		<p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out asset lists in the Unity Editor, but they will always be empty in a runtime build unless you purchase Weaver Pro.</em></p>
 <p>Sometimes it is useful to generate an unknown number of <a href="../procedural-assets">Procedural Assets</a>. For example, you might want to set up a spreadsheet containing the stats of every enemy in your game so you can easily analyse and work with them in a program such as Microsoft Excel before turning them into prefabs in Unity.</p>
-<p>Defining a procedural Asset List works like <a href="../procedural-assets/defining-a-procedural-asset">defining any other Procedural Asset</a>:</p>
+<p>Defining a procedural Asset List works much like <a href="../procedural-assets/defining-a-procedural-asset">defining any other Procedural Asset</a>, except that:</p>
 <ul>
 <li>The field can be any type derived from <code><a href="/weaver/api/Weaver/AssetListBase">AssetListBase</a></code>.</li>
 <li>The method can return any type that implements the <code>IEnumerable&lt;T&gt;</code> interface, where <code>T</code> inherits from <code>UnityEngine.Object</code> (including <code>T[]</code> or <code>List&lt;T&gt;</code>). Note that the chosen return type has no impact on the way the assets are accessed at runtime (see below).</li>

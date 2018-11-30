@@ -100,7 +100,7 @@
                 <li><a href="/weaver/docs/examples/building">03 Building</a></li>
                 <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
                 <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
-                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
                 <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
 
                     </ul>
@@ -138,7 +138,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
-                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
                 </li>
@@ -211,7 +211,7 @@
 <li>You can also manually create a class that inherits from <code><a href="/weaver/api/Weaver/AssetList_1">AssetList&lt;T&gt;</a></code> if you want to.</li>
 </ul>
 <ol start="4">
-<li>Then you can just reference the list you created like any other asset, such as with a serialized field, via <a href="asset-injection">Asset Injection</a>, or using <code>Resources.Load</code>.</li>
+<li>Then you can reference the list you created like any other asset, such as with a serialized field, via <a href="../asset-injection">Asset Injection</a>, or using <code>Resources.Load</code>. For example, the <code><a href="/weaver/api/Weaver.Examples/MissileRain">MissileRain</a></code> script simply has a <code>[SerializeField] private <a href="/weaver/api/Weaver/MissileList">MissileList</a> _MissilePrefabs</code>.</li>
 </ol>
 <h1 id="asset-lists-panel">Asset Lists Panel</h1>
 <p>The <strong>Asset Lists</strong> panel in the <a href="../weaver-window">Weaver Window</a> shows every Asset List in your project as well as every Asset List Type (every script that inherits from <code><a href="/weaver/api/Weaver/AssetListBase">AssetListBase</a></code>).</p>

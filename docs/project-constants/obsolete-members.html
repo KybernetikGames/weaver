@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
-        <title>Weaver - Utilities</title>
+        <title>Weaver - Obsolete Members</title>
         <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
         <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
         <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -129,7 +129,7 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/weaver/docs/project-constants">Project Constants</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
@@ -138,7 +138,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
-                <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
+                <li class="selected"><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
                 </li>
@@ -155,13 +155,13 @@
 
                     </ul>
                 </li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
                 <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
-                <li class="selected"><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
 
                     </ul>
                 </li>
@@ -194,19 +194,13 @@
 
 
 		<section class="content-header">
-			<h1>Utilities</h1>
+			<h1>Obsolete Members</h1>
 		</section>
 	<section class="content">
-		<html><head></head><body><p>Weaver contains various utility classes and methods which you can make use of in your own code. This section outlines some of the most useful ones.</p>
-<p><code>Kybernetik.Utils</code> contains many miscellaneous methods with a variety of purposes:</p>
-<ul>
-<li><code>DeepToString</code> can be used to print the contents of any collection (such as an array or list) as a string.</li>
-<li><code>LogTemp</code> simply calls <code>Debug.Log</code>, but it has an <code>[Obsolete]</code> attribute so that all calls to it will cause compile warnings. This is very useful if you want to log something for debugging purposes and want to make sure you don’t forget to remove the call once you’re done. It is an extension method for any type which returns its parameter directly so it can easily be inserted into existing lines of code. For example, <code>return target.GetComponent&lt;Collider&gt;().enabled;</code> could be changed to <code>return target.GetComponent&lt;Collider&gt;().LogTemp().enabled;</code> to log the value of the collider without changing what the rest of the code does.</li>
-<li><code>LogErrorIfModified</code> can be used for "locking" a collection which you don't want modified without allocating a new read-only collection. Note that this only logs an error, it doesn't actually prevent modifications.</li>
-<li><code>Utils.Timer.Start</code> starts and returns a simple timer which inherits from <code>System.IDisposable</code> so you can write <code>using (Utils.Timer.Start())</code> to time something and automatically log the result when the <code>using</code> block ends. The timer is based on <code>UnityEditor.EditorApplication.timeSinceStartup</code> in the Unity Editor or <code>Time.unscaledTime</code> at runtime.</li>
-</ul>
-<p>The <code><a href="/weaver/api/Weaver/Asset_1">Asset&lt;T&gt;</a></code> class is useful for lazy-loading resources and other assets.</p>
-</body></html>
+		<p>When generating a procedural script, the system checks whether any members are about to be removed. Any such members are still included in the new file and given the <code>[Obsolete]</code> attribute so that any code referring them will give you a warning letting you know that you need to update your code to match the change you just made (instead of creating compile errors that can cause other problems).</p>
+<p>Obsolete members will automatically be cleared next time you compile a runtime build. Or you can Right Click on the script in the <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Procedural Assets Panel</a> and use the <code>Clear Obsolete Members</code> function to clear them manually.</p>
+<p>You can disable obsolete members using the <code>Keep Obsolete Members</code> toggle in the <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Procedural Assets Panel</a>.</p>
+
 	</section>
                 
             </div>           

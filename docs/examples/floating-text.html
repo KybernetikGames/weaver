@@ -102,7 +102,7 @@
                 <li><a href="/weaver/docs/examples/building">03 Building</a></li>
                 <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
                 <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
-                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
                 <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
 
                     </ul>
@@ -140,7 +140,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
-                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
                 </li>
@@ -236,13 +236,13 @@
 <li><code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> provides a central location for accessing various the different kinds of used in this example.
 <ul>
 <li>It contains several private <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> fields which are injected by <code>[AssetPool]</code> attributes.</li>
-<li>This means each field targets its own prefab just like with the previous <a href="01-frame-rate">01 Frame Rate</a> example, but instead of getting that prefab directly assigned to it they each get constructed into an <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> that can create new instances of the prefab on demand and recycle them after they are used.</li>
+<li>This means each field targets its own prefab just like with the previous <a href="frame-rate">Frame Rate</a> example, but instead of getting that prefab directly assigned to it they each get constructed into an <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> that can create new instances of the prefab on demand and recycle them after they are used.</li>
 <li>The name of the <em>Text Manager</em> folder and the prefabs it contains follow one of the <a href="../asset-injection/using-asset-injection#asset-naming">Asset Naming</a> rules to automatically match up with the script and field names when you first import Weaver.</li>
 </ul>
 </li>
 </ul>
 <h1 id="floating-text-mesh-pro">Floating Text Mesh Pro</h1>
-<p>In order to prevent tieing the <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> system to a specific type of output, the class is <code>abstract</code> so that all the references to Unity's inbuilt <code>TextMesh</code> component are instead contained in the <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> child class. This is known as the <a href="https://en.wikipedia.org/wiki/Facade_pattern">Facade Pattern</a> which allows you to easily use another text system such as <a href="https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126">Text Mesh Pro</a> by writing a script like the one below. Any code that expects a <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> would be able to use a <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> or a <code>FloatingTextMeshPro</code> without needing to know or care which system was used.</p>
+<p>In order to avoid tieing the <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> system to a specific type of output, the base class is <code>abstract</code> with all the references to Unity's inbuilt <code>TextMesh</code> component are instead contained in the <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> child class. This is known as the <a href="https://en.wikipedia.org/wiki/Facade_pattern">Facade Pattern</a> which allows you to easily use another text system such as <a href="https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126">Text Mesh Pro</a> by writing a script like the one below. Any code that expects a <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> would be able to use a <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> or a <code>FloatingTextMeshPro</code> without needing to know or care which system was used.</p>
 <pre><code>using System;
 using System.Collections;
 using System.Collections.Generic;

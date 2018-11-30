@@ -102,7 +102,7 @@
                 <li><a href="/weaver/docs/examples/building">03 Building</a></li>
                 <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
                 <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
-                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
                 <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
 
                     </ul>
@@ -140,7 +140,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
-                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
                 </li>
@@ -205,7 +205,7 @@
 <ol>
 <li>Create a <code>static</code> field (or property) of any asset type such as <code>GameObject</code>, <code>AudioClip</code>, <code>Texture</code>, or any <code>Component</code> or <code>ScriptableObject</code> type.</li>
 <li>Add a <code>[Weaver.AssetReference]</code> attribute to the field to indicate that it expects to be given a value by Weaver. There are various different <a href="injection-attribute-types">Injection Attribute Types</a> which each have different behaviour.</li>
-<li>Weaver will automatically try to find a target asset using the <a href="asset-naming">Asset Naming</a> rules when the attribute is first added. Otherwise you will need to assign an asset manually and <img align="right" src="potential-target.png" width="42">Weaver will show a <code>[?]</code> icon on any assets of appropriate types in the Project Window to indicate that they could be injected into the field. Right Click on the icon and select <em>Open Weaver Window</em> then drag the asset into the highlighted field in the <a href="../weaver-window">Injectors</a> panel to assign it.</li>
+<li>Weaver will automatically try to find a target asset using the <a href="asset-naming">Asset Naming</a> rules when the attribute is first added. Otherwise you will need to assign an asset manually and <img align="right" src="potential-target.png" width="42">Weaver will show a <code>[?]</code> icon on any assets of appropriate types in the Project Window to indicate that they could be injected into the field. Right Click on the icon and select <em>Open Weaver Window</em> then drag the asset into the highlighted field in the <a href="#injectors-panel">Injectors Panel</a> to assign it.</li>
 </ol>
 <p>With that done, Weaver will automatically assign the chosen asset to the attributed field, both in the Unity Editor and in runtime builds. This is very similar to having a regular serialized instance field that shows up in the inspector.</p>
 <h1 id="usage-conditions">Usage Conditions</h1>

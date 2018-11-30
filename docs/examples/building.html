@@ -100,7 +100,7 @@
                 <li class="selected"><a href="/weaver/docs/examples/building">03 Building</a></li>
                 <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
                 <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
-                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/item-shop">06 Item Shop</a></li>
                 <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
 
                     </ul>
@@ -138,7 +138,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
-                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
                 </li>
@@ -215,9 +215,9 @@
 <li>Also note how the mesh uses two sub-meshes. The <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> constructor takes a <code>vertexCapacity</code> followed by two <code>indexCapacities</code> which causes it to allocate index lists for two sub-meshes - [0] for the base of the building and [1] for the windows. This allows the <code>MeshRenderer</code> to render each sub-mesh with its own <code>Material</code> to give them each a different color.</li>
 </ul>
 </li>
-<li>The name of the prefab follows one of the <a href="../asset-injection/using-asset-injection#asset-naming">Asset Naming</a> rules to automatically match up with the script name when you first import Weaver.
+<li>The name of the prefab follows one of the <a href="../asset-injection/asset-naming">Asset Naming</a> rules to automatically match up with the script name when you first import Weaver.
 <ul>
-<li>When first generated from scratch, the asset would saved in the <code>Output Directory</code> assigned in the <a href="weaver-window#procedural-assets">Procedural Assets Panel</a> and would be named according to its field name (<em>Assets/Procedural Assets/Building.ProceduralOfficeBuilding.prefab</em>). But after that it can be renamed or moved anywhere in the project and will overwrite the same asset every time it is regenerated.</li>
+<li>When first generated from scratch, the asset would saved in the <code>Output Directory</code> assigned in the <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Procedural Assets Panel</a> and would be named according to its field name (<em>Assets/Procedural Assets/Building.ProceduralOfficeBuilding.prefab</em>). But after that it can be renamed or moved anywhere in the project and will overwrite the same asset every time it is regenerated.</li>
 </ul>
 </li>
 </ul>
