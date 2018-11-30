@@ -1,0 +1,1533 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - API - Utils Class</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#fields">Fields</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/weaver/assets/js/lunr.min.js"></script>
+    <script src="/weaver/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/weaver/api/Kybernetik.Core.dll">Kybernetik<wbr>.Core<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/weaver/api/Kybernetik">Kybernetik</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/weaver/api/Kybernetik/CSharp">CSharp</a></li>
+				<li><a href="/weaver/api/Kybernetik/CustomInspector">CustomInspector</a></li>
+				<li><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></li>
+				<li><a href="/weaver/api/Kybernetik/MeshUtils">MeshUtils</a></li>
+				<li><a href="/weaver/api/Kybernetik/ObjectPool">ObjectPool</a></li>
+				<li><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/PooledList_1">PooledList<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/PooledList">PooledList</a></li>
+				<li><a href="/weaver/api/Kybernetik/Reflection">Reflection</a></li>
+				<li><a href="/weaver/api/Kybernetik/Substring">Substring</a></li>
+				<li><a href="/weaver/api/Kybernetik/Timer">Timer</a></li>
+				<li><a href="/weaver/api/Kybernetik/UnityScripts">UnityScripts</a></li>
+				<li class="selected"><a href="/weaver/api/Kybernetik/Utils">Utils</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/weaver/api/Kybernetik/IDependant_1">IDependant<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/IPoolable">IPoolable</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Utils <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">A variety of miscellaneous utility methods.</div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/weaver/api/Kybernetik.Core.dll">Kybernetik<wbr>.Core<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/weaver/api/Kybernetik">Kybernetik</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>Object</li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph TD
+	Base0["Object"]--&gt;Type
+	Type["Utils"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static class Utils</code></pre>
+
+
+
+
+
+
+
+
+
+			<h1 id="fields">Fields</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Constant Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/5423F482">NewLine</a></td>
+								<td></td>
+								<td>
+									<div>
+    Unity's profiler claims that each call to <code class="cs">System.Environment.NewLine</code> allocates 30 bytes of garbage
+    so we cache the value here for AppendLineConst to use.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A668CCE2">NoRename</a></td>
+								<td>-rename</td>
+								<td>
+									<div>Disables member renaming in an [<code class="cs">System.Reflection.ObfuscationAttribute</code>].</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/D8634AE0">Tab</a></td>
+								<td>    </td>
+								<td>
+									<div>
+    4 spaces.
+    <p></p>
+    Could be '\t', but this makes it easier to copy code into websites like Stack Overflow which use 4 spaces for tabs.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/329E5E44">AddIfNew<wbr>&lt;T&gt;<wbr><wbr>(ICollection<wbr>&lt;T&gt;<wbr>, <wbr>T)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    If 'collection' doesn't already contain 'value', this method adds it and returns true.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/E0ACCF1B">AppendColorTag<wbr>(StringBuilder, <wbr>Color32, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Appends the a rich text color tag around 'message'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/84AEA808">AppendColorToHex<wbr>(StringBuilder, <wbr>Color32)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Appends the hexadecimal representation of 'color'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/0ACCC00D">AppendDeepToString<wbr>(StringBuilder, <wbr>IEnumerator, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Each element returned by 'enumerator' is appended to 'text'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/3C8BBC10">AppendFlagsFull<wbr>&lt;T&gt;<wbr><wbr>(StringBuilder, <wbr>T, <wbr>bool)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Appends all the enum values contained in 'value'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/720F6505">Append<wbr>Friendly<wbr>Full<wbr>Name<wbr>&lt;T&gt;<wbr><wbr>(StringBuilder, <wbr>T)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Appends 'Type'.'obj.ToString()'. Useful for enums.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/9072AC42">AppendLineConst<wbr>(StringBuilder)<wbr></a></td>
+								<td>StringBuilder</td>
+								<td>
+									<div>
+    This method allocates no garbage unlike <code class="cs">System.Text.StringBuilder.AppendLine</code> which allocates 30 bytes
+    of garbage per call for accessing <code class="cs">System.Environment.NewLine</code> (according to Unity's profiler).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/BD25C248">AppendLineConst<wbr>(StringBuilder, <wbr>Object)<wbr></a></td>
+								<td>StringBuilder</td>
+								<td>
+									<div>
+    This method allocates no garbage unlike <code class="cs">System.Text.StringBuilder.AppendLine</code> which allocates 30 bytes
+    of garbage per call for accessing <code class="cs">System.Environment.NewLine</code> (according to Unity's profiler).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/BB83424E">AppendLineConst<wbr>(StringBuilder, <wbr>string)<wbr></a></td>
+								<td>StringBuilder</td>
+								<td>
+									<div>
+    This method allocates no garbage unlike <code class="cs">System.Text.StringBuilder.AppendLine</code> which allocates 30 bytes
+    of garbage per call for accessing <code class="cs">System.Environment.NewLine</code> (according to Unity's profiler).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/4D01A0D2">AppendXmlString<wbr>(StringBuilder, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Appends the specified string sanitized for XML.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/8BAEC54C">Apply<wbr>Bold<wbr>Tags<wbr>To<wbr>Last<wbr>Section<wbr>(StringBuilder, <wbr>int, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Inserts rich text bold tags around the last word in 'text'.
+    The following characters denote the start of a section: dot, slash, tab, new line.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/E75F2529">Cancel<wbr>Log<wbr>Error<wbr>If<wbr>Modified<wbr>(IEnumerable)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Cancels a previous call to <code class="cs">Kybernetik.Utils.LogErrorIfModified(System.Collections.IEnumerable,System.String)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/3EB05A5B">ColorToHex<wbr>(Color32)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns a string containing the hexadecimal representation of 'color'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/C622FAD7">CombineTextures<wbr>(Texture, <wbr>Texture, <wbr>float)<wbr></a></td>
+								<td>Texture</td>
+								<td>
+									<div>
+    Combines two textures into one. The 'top' texture is alpha-blended onto the 'bottom'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/CF67B14B">Compare<wbr>With<wbr>Files<wbr>Before<wbr>Folders<wbr>(string, <wbr>string)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Compares two strings to sort files before sub folders.
+    <p></p>Note: this method only interprets forward slashes.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/994B164A">ContainsNonMetaFiles<wbr>(string, <wbr>string[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>[Editor-Only]
+    Checks if the specified directory contains any files which don't end with ".meta".
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/3C9E6136">Convert<wbr>Camel<wbr>Case<wbr>To<wbr>Friendly<wbr>(string, <wbr>bool)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Adds spaces to 'camelCase' before each uppercase letter.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A2769844">Convert<wbr>Camel<wbr>Case<wbr>To<wbr>Friendly<wbr>(StringBuilder, <wbr>string, <wbr>int, <wbr>int, <wbr>bool)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Adds spaces to 'camelCase' before each uppercase letter.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/017DFD6B">Convert<wbr>Field<wbr>Name<wbr>To<wbr>Friendly<wbr>(string, <wbr>bool)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Adds spaces to 'camelCase' before each uppercase letter and removes any underscores from the start.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/7A692D7B">CreateNewEmail<wbr>(string, <wbr>string, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Creates a new email with the system's default email application.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/D8537426">DebugAssert<wbr>(bool, <wbr>Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Debug-Conditional] <pre><code class="cs">if (!condition) Debug.LogError(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/7469577A">DebugAssertLog<wbr>(bool, <wbr>Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Debug-Conditional] <pre><code class="cs">if (!condition) Debug.Log(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/0D3B2301">DebugAssertWarning<wbr>(bool, <wbr>Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Debug-Conditional] <pre><code class="cs">if (!condition) Debug.LogWarning(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/39485BDA">DebugLog<wbr>(Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Debug-Conditional] <pre><code class="cs">Debug.Log(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/531A2AB5">DebugLogError<wbr>(Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Debug-Conditional] <pre><code class="cs">Debug.LogError(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/1A934A16">Debug<wbr>Log<wbr>Error<wbr>If<wbr>Modified<wbr>(IEnumerable, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Debug-Conditional]
+    Logs an error if the 'collection' is modified after calling this method.
+    <p></p>
+    One collection will be checked every update (in the editor or at runtime), and all collections will be checked when this assembly
+    is unloaded.
+    <p></p>
+    Can be cancelled by <code class="cs">Kybernetik.Utils.CancelLogErrorIfModified(System.Collections.IEnumerable)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/3E7BBF6F">DebugLogWarning<wbr>(Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Debug-Conditional] <pre><code class="cs">Debug.LogWarning(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/8E73A376">DeepToString<wbr>(IEnumerable)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns a string containing the value of each element in 'collection' (each on a new line).</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/3D94DAD4">DeepToString<wbr>(IEnumerable, <wbr>string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns a string containing the value of each element in 'collection'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/02411404">DeepToString<wbr>(IEnumerator)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns a string containing the value of each element in 'enumerator' (each on a new line).</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/CFE941BC">DeepToString<wbr>(IEnumerator, <wbr>string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns a string containing the value of each element in 'enumerator'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A25D46D1">DeleteAsset<wbr>(string, <wbr>bool)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Only]
+    Deletes the specified asset. If the asset's directory is then empty, it is deleted as well (recursively).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/FA56A24B">Delete<wbr>Empty<wbr>Directories<wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Only]
+    Deletes the specified directory if it is empty (ignoring metadata files), then does the same recursively
+    for each parent directory. Refreshes the <code class="cs">UnityEditor.AssetDatabase</code> if anything was deleted.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/ED01DCDB">DestroySubAssets<wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Only] Destroys all sub-assets which are part of the specified asset.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/4106E77B">DrawDelegate<wbr>(Rect, <wbr>GUIContent, <wbr>Delegate)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Only]
+    Draw the target and name of the specified <code class="cs">System.Delegate</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/C8EA0813">EditorAssert<wbr>(bool, <wbr>Func<wbr>&lt;Object&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional]
+    <pre><code class="cs">if (!condition) Debug.LogError(getMessage())</code></pre>
+    This allows you to avoid building the message when the assertion passes.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/110FE3B2">EditorAssert<wbr>(bool, <wbr>Func<wbr>&lt;Object&gt;<wbr>, <wbr>Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional]
+    <pre><code class="cs">if (!condition) Debug.LogError(getMessage(), context)</code></pre>
+    This allows you to avoid building the message when the assertion passes.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/51BD7CD9">EditorAssert<wbr>(bool, <wbr>Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional] <pre><code class="cs">if (!condition) Debug.LogError(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/141F7F01">EditorAssert<wbr>(bool, <wbr>Object, <wbr>Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional] <pre><code class="cs">if (!condition) Debug.LogError(message, context)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/E87C89FA">EditorAssertSameSize<wbr>(ICollection, <wbr>ICollection)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional] Asserts that a pair of collections are not null and have the same count.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/7D290451">EditorAssertWarning<wbr>(bool, <wbr>Func<wbr>&lt;Object&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional]
+    <pre><code class="cs">if (!condition) Debug.LogWarning(getMessage())</code></pre>
+    This allows you to avoid building the message string when the assertion passes.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/EEA396DE">EditorAssertWarning<wbr>(bool, <wbr>Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional] <pre><code class="cs">if (!condition) Debug.LogWarning(message)</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A51DE8BC">EditorDelayCallOnce<wbr>(EditorApplication<wbr>.CallbackFunction)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Only]
+    Calls <code class="cs">UnityEditor.EditorApplication.delayCall</code> -= then += 'method'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/CF774CDE">Editor<wbr>Invoke<wbr>Repeating<wbr>(Action, <wbr>double)<wbr></a></td>
+								<td>EditorApplication<wbr>.CallbackFunction</td>
+								<td>
+									<div>[Editor-Only]
+    Registers the specified method to be called by the editor repeatedly at roughly the specified interval.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/8C6CB634">Editor<wbr>Set<wbr>Default<wbr>Parent<wbr>(Transform, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional]
+    Sets the <code class="cs">UnityEngine.Transform.parent</code> to a default object based on its name.
+    <p></p>
+    This keeps the hierarchy neat in the Unity Editor without wasting processing time on it at runtime.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/355F7304">EditorSetName<wbr>(Object, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Conditional] <pre><code class="cs">target.name = name</code></pre></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/B8CA4619">EditorStartCoroutine<wbr>(IEnumerator)<wbr></a></td>
+								<td>EditorApplication<wbr>.CallbackFunction</td>
+								<td>
+									<div>[Editor-Only]
+    Starts a coroutine to run in the editor update loop.
+    The coroutine can be cancelled by removing the returned delegate from
+    <code class="cs">UnityEditor.EditorApplication.update</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/888062AA">EnsureExists<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    If 'obj' is null this method assigns a new instance to it and calls <code class="cs">Kybernetik.Utils.IOnCreate.OnCreate</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/78A4B3B8">FindAsset<wbr>&lt;T&gt;<wbr><wbr>()<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Returns an asset of the specified type from anywhere in the project.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/19730506">FindAsset<wbr>&lt;T&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Returns an asset of the specified type from anywhere in the project.
+    Checks the 'assetPathHint' before searching the rest of the project.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/DA5DC9F2">FriendlyFullName<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns 'T'.'obj.ToString()'. Useful for enums.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/21E27D7B">Get<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>, <wbr>TKey, <wbr>TValue)<wbr></a></td>
+								<td>TValue</td>
+								<td>
+									<div>
+    If the dictionary contains a value for the given key, that value is returned.
+    Otherwise the default value is returned.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/CCC98255">GetDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>()<wbr></a></td>
+								<td>Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr></td>
+								<td>
+									<div>
+    Returns an available <code class="cs">System.Collections.Generic.Dictionary`2</code> from the pool or creates a new one if there are none.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/FBBB47D5">GetDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Assigns an available <code class="cs">System.Collections.Generic.Dictionary`2</code> from the pool or creates a new one if there are none.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/5C233895">GetExistingParent<wbr>(string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    If no file or directory exists at 'path', this method looks for the first parent directory which does exist.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/B6458B22">Get<wbr>File<wbr>Extension<wbr>Index<wbr>(string)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Gets the index of the '.' at the start of the file extension of 'path' (or -1 if it has no file extension).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/937A9BEA">GetFlags<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Get a list of all the individual flags in 'value'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/AC05BDFA">GetFlagsFull<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Get a list of all the enum values contained in 'value'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/C0F24E08">GetHashSet<wbr>&lt;T&gt;<wbr><wbr>()<wbr></a></td>
+								<td>HashSet<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Returns an available <code class="cs">System.Collections.Generic.HashSet`1</code> from the pool or creates a new one if there are none.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A4EDC093">GetHashSet<wbr>&lt;T&gt;<wbr><wbr>(HashSet<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Assigns an available <code class="cs">System.Collections.Generic.HashSet`1</code> from the pool or creates a new one if there are none.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/0B5FE2E5">GetList<wbr>&lt;T&gt;<wbr><wbr>()<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Returns an available <code class="cs">System.Collections.Generic.List`1</code> from the pool or creates a new one if there are none.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/34E0E523">GetList<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Assigns an available <code class="cs">System.Collections.Generic.List`1</code> from the pool or creates a new one if there are none.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/E562EC22">GetOrAddComponent<wbr>&lt;T&gt;<wbr><wbr>(GameObject)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Gets an instance of the specified component type on a game object or adds one if it doesn't have one.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/21EDE2E8">GetStringBuilder<wbr>()<wbr></a></td>
+								<td>StringBuilder</td>
+								<td>
+									<div>
+    Gets an available string builder from the pool.
+    Once you are done with it, give it back with <code class="cs">Kybernetik.Utils.Release(System.Text.StringBuilder)</code> or 
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/628A4BBB">GUIDsToAssetPaths<wbr>(string[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Replaces each GUID in an array with the corresponding asset path using
+    <code class="cs">UnityEditor.AssetDatabase.GUIDToAssetPath(System.String)</code>
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/01494498">Indent<wbr>(StringBuilder, <wbr>int)<wbr></a></td>
+								<td>StringBuilder</td>
+								<td>
+									<div>Appends <code class="cs">Kybernetik.Utils.Tab</code> the specified number of times.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/4E096C0E">IndexOfLastSlash<wbr>(string)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>Returns the index of the last forward slash or back slash.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/79095B43">InsertAt<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int, <wbr>T)<wbr></a></td>
+								<td>T[]</td>
+								<td>
+									<div>
+    Returns a copy of 'array' with 'element' inserted at 'index'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/B903A38C">InsertAt<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>T)<wbr></a></td>
+								<td>T[]</td>
+								<td>
+									<div>
+    Returns a copy of 'array' with 'element' inserted at the end.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/C63DF37C">InsertSorted<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>T, <wbr>IComparer<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Inserts a new value into a sorted list.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/E4AED253">IsDependantOn<wbr>&lt;T&gt;<wbr><wbr>(IDependant<wbr>&lt;T&gt;<wbr>, <wbr>T)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Returns true if [on] is a dependancy of [dependant].
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/92B6A876">LinearRescale<wbr>(float, <wbr>float, <wbr>float, <wbr>float, <wbr>float)<wbr></a></td>
+								<td>float</td>
+								<td>
+									<div>
+    Re-scales value from the old range (oldMin to oldMax) to the new range (newMin to newMax).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/F8E65361">LinearRescaleClamped<wbr>(float, <wbr>float, <wbr>float, <wbr>float, <wbr>float)<wbr></a></td>
+								<td>float</td>
+								<td>
+									<div>
+    Re-scales value from the old range (oldMin to oldMax) to the new range (newMin to newMax) and clamps it within that range.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/5E7FD2F4">LinearRescaleTo01<wbr>(float, <wbr>float, <wbr>float)<wbr></a></td>
+								<td>float</td>
+								<td>
+									<div>
+    Re-scales value from the old range (oldMin to oldMax) to the new range (0 to 1).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/FB232934">Log<wbr>Caller<wbr>If<wbr>Restricted<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    If RESTRICT_USAGE is defined, this method will log the name of the calling method. This is useful for
+    verifying that certain methods are only used in certain contexts. For example, you might want to ensure
+    that an inefficient method or class is not used in a release build of your application.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/2412A4EE">LogErrorIfModified<wbr>(IEnumerable, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Logs an error if the 'collection' is modified after calling this method.
+    <p></p>
+    One collection will be checked every update (in the editor or at runtime), and all collections will be checked when this assembly
+    is unloaded.
+    <p></p>
+    Can be cancelled by <code class="cs">Kybernetik.Utils.CancelLogErrorIfModified(System.Collections.IEnumerable)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A2433100">LogInvalidValue<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Logs an error message stating that 'value' is not a valid T. Useful for enums.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/8F5A6BC3">LogLimited<wbr>(Object, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Calls <pre><code class="cs">Debug.Log(message)</code></pre> until the 'maximumCallCount' has been exceeded by the caller, after
+    which this method does nothing.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/BE28C2C3">LogLimited<wbr>(Object, <wbr>Object, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Calls <pre><code class="cs">Debug.Log(message, context)</code></pre> until the 'maximumCallCount' has been exceeded by the
+    caller, after which this method does nothing.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/1BF2CA9F">LogTemp<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>Object)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    <pre><code class="cs">Debug.Log(message, context)</code></pre> with an [<code class="cs">System.ObsoleteAttribute</code>] warning so you remember
+    to remove any calls.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/71094710">LogTemp<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>Object, <wbr>Object)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    <pre><code class="cs">Debug.Log(prefix + ": " + message)</code></pre> with an [<code class="cs">System.ObsoleteAttribute</code>] warning so you
+    remember to remove any calls.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/3A60CDAC">MoveAsset<wbr>(string, <wbr>string, <wbr>bool)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Only]
+    Moves an asset from 'oldPath' to 'newPath' and deletes any empty directories at 'oldPath'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/69BC8138">Nullify<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Sets the reference to its default value (null for reference types) and returns the original value.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/49D168C3">Pop<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Removes and returns the last element in a list.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/96397AA6">PopLastOrCreate<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Removes and returns the last element in a list or creates a new one if the list is empty.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/BB068DE3">Release<wbr>(StringBuilder)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Gives a string builder back to the pool.
+    Use <code class="cs">Kybernetik.Utils.ReleaseToString(System.Text.StringBuilder)</code> if you also need its string.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/8799C21A">Release<wbr>&lt;T&gt;<wbr><wbr>(HashSet<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Clears the 'set' and puts it into the pool to be available for reuse.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/15734957">Release<wbr>&lt;T&gt;<wbr><wbr>(HashSet<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Clears the 'set' and puts it into the pool to be available for reuse, then sets the reference to null.
+    <p></p>
+    If 'set' is already null, this method will do nothing.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/62DB2C8C">Release<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Clears the 'list' and puts it into the pool to be available for reuse.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A08BBF87">Release<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Clears the 'list' and puts it into the pool to be available for reuse, then sets the reference to null.
+    <p></p>
+    If 'list' is already null, this method will do nothing.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/8EE7549D">Release<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Clears the 'dictionary' and puts it into the pool to be available for reuse.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/CF5D122E">Release<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Clears the 'dictionary' and puts it into the pool to be available for reuse, then sets the reference to null.
+    <p></p>
+    If 'dictionary' is already null, this method will do nothing.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/7197AD65">ReleaseToString<wbr>(StringBuilder)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gives a string builder to the pool and returns its string.
+    Use <code class="cs">Kybernetik.Utils.Release(System.Text.StringBuilder)</code> if you don't need its string.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/22884C77">RemoveAt<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int)<wbr></a></td>
+								<td>T[]</td>
+								<td>
+									<div>
+    Returns a copy of 'array' with the element at 'index' removed.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/11815907">Remove<wbr>Trailing<wbr>Slashes<wbr>(string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns 'str' with any forward slashes removed from the end.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/FD41E803">ReplaceSlashesBack<wbr>(string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Replaces forward slashes with back slashes.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/B2280781">Replace<wbr>Slashes<wbr>Forward<wbr>(string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Replaces back slashes with forward slashes.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/84170892">RequireCapacity<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    If the <code class="cs">System.Collections.Generic.List`1.Capacity</code> is less than the specified value, it is increased to that value.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/EA828243">SaveSubAssets<wbr>(Object, <wbr>Object)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    [Editor-Only] After you save the scene object 'obj' as an asset file and load it as 'asset', this method
+    goes through all the serialized <code class="cs">UnityEngine.Object</code> fields which weren't saved and adds them
+    as sub-assets. Returns true if any sub-assets were saved.
+    <p></p>
+    For example, creating a procedural <code class="cs">UnityEngine.Mesh</code>, assigning it to a <code class="cs">UnityEngine.MeshFilter</code>, and
+    saving the object as a prefab would not save the mesh anywhere unless you call this method or
+    <code class="cs">UnityEditor.AssetDatabase.AddObjectToAsset(UnityEngine.Object,UnityEngine.Object)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/C42B36CB">SelectAsset<wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Selects the specified asset in the Unity Editor.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/9CD7B94D">SelectObject<wbr>(Object)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Selects 'target' in the Unity Editor.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/AF5DF30C">SetCount<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Adds or removes items to bring the <code class="cs">System.Collections.Generic.List`1.Count</code> equal to the specified 'count'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/7FDA516C">Set<wbr>Hide<wbr>Flags<wbr>Recursive<wbr>(Transform, <wbr>HideFlags)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Sets <pre><code class="cs">transform.hideFlags = flags</code></pre> and does the same for all the children of 'transform'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/D8775C0F">SetReference<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>T)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Checks and sets 'currentValue' if 'newValue' is different.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/4F4487B4">SetSize<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    If the 'array' is null or its length isn't equal to the specified 'size' this method replaces it with a new
+    array of that 'size'. Unlike <code class="cs">System.Array.Resize``1(``0[]@,System.Int32)</code> this method does not copy the elements from the old
+    array into the new one.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/A4F5EBE8">SetSize<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int)<wbr></a></td>
+								<td>T[]</td>
+								<td>
+									<div>
+    If the 'array' is null or its length isn't equal to the specified 'size' this method allocates a new array
+    of that 'size', otherwise it just returns the 'array'. Unlike <code class="cs">System.Array.Resize``1(``0[]@,System.Int32)</code> this method does
+    not copy the elements from the old array into the new one.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/795AC0DA">SetValue<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>T)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Returns true and sets 'currentValue' if 'newValue' is different.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/51B2B718">SkipWhiteSpace<wbr>(string, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Increments 'index' until 'str[index]' is no longer a whitespace character.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/6B9DDCA2">Skip<wbr>White<wbr>Space<wbr>Backwards<wbr>(string, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Decrements 'index' until 'str[index]' is no longer a whitespace character.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/B34DB1AD">StableInsertionSort<wbr>&lt;T&gt;<wbr><wbr>(IList<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Sorts 'list', maintaining the order of any elements with an identical comparison
+    (unlike the standard <code class="cs">System.Collections.Generic.List`1.Sort</code> method).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/38C0B82D">StableInsertionSort<wbr>&lt;T&gt;<wbr><wbr>(IList<wbr>&lt;T&gt;<wbr>, <wbr>Comparison<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Sorts 'list', maintaining the order of any elements with an identical comparison
+    (unlike the standard <code class="cs">System.Collections.Generic.List`1.Sort(System.Comparison{`0})</code> method).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/8BC8C226">Swap<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>T)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Swaps the references 'a' and 'b'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/96EDCCA6">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(IEnumerable<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Sorts a collection of <code class="cs">Kybernetik.IDependant`1</code>.
+    If ItemA depends on ItemB, ItemA will be put later in the returned list.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/5151922C">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(IEnumerable<wbr>&lt;T&gt;<wbr>, <wbr>Func<wbr>&lt;T, <wbr>IEnumerable<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Sorts an array according to an array of dependants.
+    If ItemA depends on ItemB, ItemA will be put later in the returned list.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/76997792">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(IEnumerable<wbr>&lt;T&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;IDependant<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Sorts a collection according to a collection of dependants.
+    If ItemA depends on ItemB, ItemA will be put later in the returned list.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/66D48582">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int, <wbr>Func<wbr>&lt;T, <wbr>IEnumerable<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Sorts an array according to an array of dependants.
+    If ItemA depends on ItemB, ItemA will be put later in the returned list.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/9B5E91B4">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int, <wbr>Func<wbr>&lt;T, <wbr>IEnumerable<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Sorts an array according to an array of dependants.
+    If ItemA depends on ItemB, ItemA will be put later in the returned list.
+    This method assigns a new list and releases the old one to the CollectionPool.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils/E4B0E9B5">TruncateForLabel<wbr>(string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Truncate the given string so it can fit in a GUI label.
+    MaxLength = 16,382.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

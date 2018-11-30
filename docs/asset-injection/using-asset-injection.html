@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - Using Asset Injection</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#usage-conditions">Usage Conditions</a></p>
+<p><a href="#system-overview">System Overview</a></p>
+<p><a href="#injectors-panel">Injectors Panel</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li><a href="/weaver/docs/introduction">Introduction</a></li>
+                <li><a href="/weaver/docs/weaver-window">Weaver Window</a></li>
+                <li class="treeview">
+                    <a href="/weaver/docs/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/examples/frame-rate">01 Frame Rate</a></li>
+                <li><a href="/weaver/docs/examples/floating-text">02 Floating Text</a></li>
+                <li><a href="/weaver/docs/examples/building">03 Building</a></li>
+                <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
+                <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
+                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/weaver/docs/asset-injection">Asset Injection</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-injection/the-problem">The Problem</a></li>
+                <li class="selected"><a href="/weaver/docs/asset-injection/using-asset-injection">Using Asset Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/injection-attribute-types">Injection Attribute Types</a></li>
+                <li><a href="/weaver/docs/asset-injection/asset-naming">Asset Naming</a></li>
+                <li><a href="/weaver/docs/asset-injection/read-only-fields">Read-Only Fields</a></li>
+                <li><a href="/weaver/docs/asset-injection/pref-injection">Pref Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/runtime-injection">Runtime Injection</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-lists">Asset Lists</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-lists/creating-a-list">Creating a List</a></li>
+                <li><a href="/weaver/docs/asset-lists/lazy-asset-lists">Lazy Asset Lists</a></li>
+                <li><a href="/weaver/docs/asset-lists/procedural-asset-lists">Procedural Asset Lists</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/project-constants">Project Constants</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/project-constants/animations">Animations</a></li>
+                <li><a href="/weaver/docs/project-constants/layers">Layers</a></li>
+                <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
+                <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
+                <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/procedural-assets">Procedural Assets</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/procedural-assets/defining-a-procedural-asset">Defining a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/generating-a-procedural-asset">Generating a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/asset-generators">Asset Generators</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-meshes">Procedural Meshes</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-scripts">Procedural Scripts</a></li>
+                <li><a href="/weaver/docs/procedural-assets/dependencies">Dependencies</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
+                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/change-log">Change Log</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/change-log/weaver-v5-0">Weaver v5.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-1">Weaver v4.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-0">Weaver v4.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v3-0">Weaver v3.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v2-0">Weaver v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-1">Weaver v1.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-0">Weaver v1.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Using Asset Injection</h1>
+		</section>
+	<section class="content">
+		<p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out this feature in the Unity Editor, but it will not be available in a runtime build unless you purchase Weaver Pro.</em></p>
+<p>When you make a public field or use the <code>[SerializeField]</code> attribute in Unity, you are making use of a concept known as Dependency Injection. Instead of finding a reference itself, your script just says “<em>I need X</em>” and relies on Unity to give it what it needs. This makes your code quite flexible because it isn’t locked into any particular hierarchy configuration and is easy to debug because you can clearly see which object is assigned to the field using the inspector.</p>
+<p>Unfortunately, Unity’s serialization system doesn’t support <code>static</code> fields, so that’s where Weaver’s Asset Injection system comes in. Here’s an overview of how to use it:</p>
+<ol>
+<li>Create a <code>static</code> field (or property) of any asset type such as <code>GameObject</code>, <code>AudioClip</code>, <code>Texture</code>, or any <code>Component</code> or <code>ScriptableObject</code> type.</li>
+<li>Add a <code>[Weaver.AssetReference]</code> attribute to the field to indicate that it expects to be given a value by Weaver. There are various different <a href="injection-attribute-types">Injection Attribute Types</a> which each have different behaviour.</li>
+<li>Weaver will automatically try to find a target asset using the <a href="asset-naming">Asset Naming</a> rules when the attribute is first added. Otherwise you will need to assign an asset manually and <img align="right" src="potential-target.png" width="42">Weaver will show a <code>[?]</code> icon on any assets of appropriate types in the Project Window to indicate that they could be injected into the field. Right Click on the icon and select <em>Open Weaver Window</em> then drag the asset into the highlighted field in the <a href="../weaver-window">Injectors</a> panel to assign it.</li>
+</ol>
+<p>With that done, Weaver will automatically assign the chosen asset to the attributed field, both in the Unity Editor and in runtime builds. This is very similar to having a regular serialized instance field that shows up in the inspector.</p>
+<h1 id="usage-conditions">Usage Conditions</h1>
+<ul>
+<li>You can use injection attributes on both fields and properties.</li>
+<li>They <strong>must</strong> be <code>static</code>.</li>
+<li>They do <strong>not</strong> need to be <code>public</code>. You can use any access modifiers you like.</li>
+<li>Fields <strong>can</strong> be <code>readonly</code> so you don't accidentally reassign their value. <a href="read-only-fields">However, this opens up the potential for certain issues if used incorrectly</a>. Getter-only auto-properties can also be used in the .NET 4.x scripting runtime.</li>
+</ul>
+<h1 id="system-overview">System Overview</h1>
+<p>The following table shows what happens once you add an injection attribute to a field.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Event</th>
+<th>What Weaver Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attribute first added</td>
+<td>Search the project for an asset of the appropriate type according to the <a href="asset-naming">Asset Naming</a> rules and log a notification if one is found. You can always assign the asset manually in the <a href="#injectors-panel">Injectors Panel</a>.</td>
+</tr>
+<tr>
+<td>Editor startup</td>
+<td>Assign the chosen asset to the field (except for <code>[AssetInstance]</code> and <code>[ObjectPool]</code> injectors).</td>
+</tr>
+<tr>
+<td>Enter play mode</td>
+<td>Assign the chosen asset to the field. If no asset has been set and the attribute hasn't been marked as <a href="../../api/Weaver/InjectionAttribute/13B52A54"><code>Optional</code></a> it will log a warning.</td>
+</tr>
+<tr>
+<td>Compile runtime build</td>
+<td>[Pro-Only] Procedurally generate the <a href="runtime-injection">Runtime Injection</a> script, attach it to an object in the first scene being built so it can run immediately on startup, and give it serialized references to the assets associated with every injection attribute. A warning will also be logged for any missing assets as above.</td>
+</tr>
+<tr>
+<td>Startup in a runtime build</td>
+<td>[Pro-Only] As soon as the first scene is loaded the <a href="runtime-injection">Runtime Injection</a> script assigns each of its serialized references to their respective fields.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="injectors-panel">Injectors Panel</h1>
+<p>The <strong>Injectors</strong> panel in the <a href="../weaver-window">Weaver Window</a> shows a field for each injection attribute in your project except for <a href="../procedural-assets">Procedural Assets</a> which are shown in the <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Procedural Assets Panel</a> instead. The fields are grouped according to their namespace.</p>
+<p>It also shows the following options:</p>
+<table class="table">
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show Project Window Overlays</td>
+<td>If enabled: an extra icon will be shown in the Project Window on each asset targeted by an asset injection attribute.</td>
+</tr>
+<tr>
+<td>Auto Find Assets</td>
+<td>Indicates whether the system should automatically search for appropriate assets for any asset injection attributes when they are first added.</td>
+</tr>
+<tr>
+<td>Log Asset Found</td>
+<td>Indicates whether a message should be logged when a new asset is found for an asset injection attribute.</td>
+</tr>
+<tr>
+<td>Enable Runtime Injection</td>
+<td>[Pro-Only] Indicates whether the <a href="runtime-injection">Runtime Injector Script</a> should be generated so that injection attributes can be used in runtime code (for builds, not play mode in the editor).</td>
+</tr>
+<tr>
+<td>Catch Injector Exceptions</td>
+<td>[Pro-Only] Indicates whether the <a href="runtime-injection">Runtime Injector Script</a> should have try/catch blocks around the code for each injection attribute so that an exception caused by one won't prevent others from initialising.</td>
+</tr>
+<tr>
+<td>Time Injector Code</td>
+<td>[Pro-Only] Indicates whether the <a href="runtime-injection">Runtime Injector Script</a> should time its execution and log a message.</td>
+</tr>
+<tr>
+<td>Log Injector Code</td>
+<td>[Pro-Only] Indicates whether the <a href="runtime-injection">Runtime Injector Script</a> should log a message whenever it interacts with user code to aid in debugging.</td>
+</tr>
+<tr>
+<td>InjectorScriptBuilder.Script</td>
+<td>[Pro-Only] The actual injector for the procedural <a href="runtime-injection">Runtime Injector Script</a>.</td>
+</tr>
+</tbody>
+</table>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

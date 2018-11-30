@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - Generating a Procedural Asset</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#procedural-assets-panel">Procedural Assets Panel</a></p>
+<p><a href="#exceptions">Exceptions</a></p>
+<p><a href="#internal-process">Internal Process</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li><a href="/weaver/docs/introduction">Introduction</a></li>
+                <li><a href="/weaver/docs/weaver-window">Weaver Window</a></li>
+                <li class="treeview">
+                    <a href="/weaver/docs/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/examples/frame-rate">01 Frame Rate</a></li>
+                <li><a href="/weaver/docs/examples/floating-text">02 Floating Text</a></li>
+                <li><a href="/weaver/docs/examples/building">03 Building</a></li>
+                <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
+                <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
+                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-injection">Asset Injection</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-injection/the-problem">The Problem</a></li>
+                <li><a href="/weaver/docs/asset-injection/using-asset-injection">Using Asset Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/injection-attribute-types">Injection Attribute Types</a></li>
+                <li><a href="/weaver/docs/asset-injection/asset-naming">Asset Naming</a></li>
+                <li><a href="/weaver/docs/asset-injection/read-only-fields">Read-Only Fields</a></li>
+                <li><a href="/weaver/docs/asset-injection/pref-injection">Pref Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/runtime-injection">Runtime Injection</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-lists">Asset Lists</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-lists/creating-a-list">Creating a List</a></li>
+                <li><a href="/weaver/docs/asset-lists/lazy-asset-lists">Lazy Asset Lists</a></li>
+                <li><a href="/weaver/docs/asset-lists/procedural-asset-lists">Procedural Asset Lists</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/project-constants">Project Constants</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/project-constants/animations">Animations</a></li>
+                <li><a href="/weaver/docs/project-constants/layers">Layers</a></li>
+                <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
+                <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
+                <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/weaver/docs/procedural-assets">Procedural Assets</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/procedural-assets/defining-a-procedural-asset">Defining a Procedural Asset</a></li>
+                <li class="selected"><a href="/weaver/docs/procedural-assets/generating-a-procedural-asset">Generating a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/asset-generators">Asset Generators</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-meshes">Procedural Meshes</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-scripts">Procedural Scripts</a></li>
+                <li><a href="/weaver/docs/procedural-assets/dependencies">Dependencies</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
+                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/change-log">Change Log</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/change-log/weaver-v5-0">Weaver v5.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-1">Weaver v4.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-0">Weaver v4.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v3-0">Weaver v3.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v2-0">Weaver v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-1">Weaver v1.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-0">Weaver v1.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Generating a Procedural Asset</h1>
+		</section>
+	<section class="content">
+		<p>Once you have defined a procedural asset (or made changes to an existing one), you need to generate it - either using the <code>[G]</code> button next to the asset in the Procedural Assets panel of the Weaver Window or by right clicking on the asset's overlay icon in the Project Window and using the <code>Generate</code> command.</p>
+<ul>
+<li>The <code>[G]</code> button has different effects depending on which mouse button you use:
+<ul>
+<li>Left Click = generate the target asset (and any of its <a href="dependencies">Dependencies</a>).</li>
+<li>Right Click = generate all procedural assets in the same namespace as the target asset.</li>
+<li>Middle Click = generate all procedural assets.</li>
+</ul>
+</li>
+<li>When you generate procedural assets, a popup displays a list of all assets being generated.</li>
+<li>After each asset is generated, the time it took to generate and save it is shown (measured in milliseconds), followed by the time it took to generate. So an asset that shows “100ms (10)” took 10 milliseconds to execute the asset generator method itself, and a total of 100 milliseconds for the entire generation and saving process.</li>
+<li>The window will close automatically when done unless you hold <code>Shift</code> as it finishes.</li>
+</ul>
+<img src="asset-generator-window.png" width="100%">
+<h1 id="procedural-assets-panel">Procedural Assets Panel</h1>
+<p>The <strong>Procedural Assets</strong> panel in the <a href="../weaver-window">Weaver Window</a> shows a field for each procedural asset in your project. The fields are grouped according to their namespace.</p>
+<p>It also shows the following options:</p>
+<table class="table">
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output Directory</td>
+<td>The directory in which new procedural assets are initially saved. After being saved the first time, regenerating an asset will continue to overwrite the existing one, even if you move it somewhere else in the project.</td>
+</tr>
+<tr>
+<td>Include Namespace in Name</td>
+<td>If enabled: newly created procedural assets will be named according to their <code>Namespace.DeclaringType.Member</code>. Otherwise the <code>Namespace</code> will be omitted.</td>
+</tr>
+<tr>
+<td>Check For Missing Assets</td>
+<td>If enabled: Weaver will notify you when entering play mode or starting a build if there are any procedural assets that haven't yet been generated.</td>
+</tr>
+<tr>
+<td>Auto Generate On Build</td>
+<td>If enabled: all procedural assets will automatically be generated when starting a build. You can disable this feature for a specific asset by setting <code>AutoGenerateOnBuild = false</code> in the <code>[ProceduralAsset]</code> attribute's constructor.</td>
+</tr>
+<tr>
+<td>Notify When Deleting Old Assets</td>
+<td>If enabled: the system will notify you whenever regenerating a procedural asset list deletes an old asset.</td>
+</tr>
+<tr>
+<td>Use Weaver Namespace</td>
+<td>If enabled: procedural scripts will be put inside the Weaver namespace by default.</td>
+</tr>
+<tr>
+<td>Auto Generate On Save</td>
+<td>If enabled: saving the scene or project will automatically regenerate any procedural scripts that need to change.</td>
+</tr>
+<tr>
+<td>Notify When Generating</td>
+<td>If enabled: a message will be logged whenever a procedural script is generated.</td>
+</tr>
+<tr>
+<td>Keep Obsolete Members</td>
+<td>If enabled: procedural scripts will keep their old members when regenerating and mark them as <code>[Obsolete]</code> until you build instead of simply removing them.</td>
+</tr>
+<tr>
+<td>Asset Generators</td>
+<td>A foldout which lists the details of every <a href="asset-generators">Asset Generator</a> currently in your project.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="exceptions">Exceptions</h1>
+<p>If an exception is thrown by any of the assets being generated, it stops generating and shows the offending asset in red along with the exception details and buttons to Retry, Skip, Abort, or open the source file which threw the exception.</p>
+<img src="asset-generator-exception.png" width="100%">
+<h1 id="internal-process">Internal Process</h1>
+<p>Weaver executes the following process to generate each Procedural Asset:</p>
+<ol>
+<li>Create a new temporary scene so that the current scene isn’t accidentally modified.</li>
+<li>Determine the correct <a href="asset-generators">Asset Generator</a> to use for the asset based on its type.</li>
+<li>Invoke the generator method using that <a href="asset-generators">Asset Generator</a>.</li>
+<li>Either overwrite the existing asset if there was one or save the generated object as a new asset in the <code>Output Directory</code> specified in the Weaver Window.</li>
+<li>Close the temporary scene and return to the original scene setup.</li>
+</ol>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

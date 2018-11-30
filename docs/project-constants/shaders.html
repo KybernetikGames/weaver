@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - Shaders</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#scenes-panel">Scenes Panel</a></p>
+<p><a href="#sample-output">Sample Output</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li><a href="/weaver/docs/introduction">Introduction</a></li>
+                <li><a href="/weaver/docs/weaver-window">Weaver Window</a></li>
+                <li class="treeview">
+                    <a href="/weaver/docs/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/examples/frame-rate">01 Frame Rate</a></li>
+                <li><a href="/weaver/docs/examples/floating-text">02 Floating Text</a></li>
+                <li><a href="/weaver/docs/examples/building">03 Building</a></li>
+                <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
+                <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
+                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-injection">Asset Injection</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-injection/the-problem">The Problem</a></li>
+                <li><a href="/weaver/docs/asset-injection/using-asset-injection">Using Asset Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/injection-attribute-types">Injection Attribute Types</a></li>
+                <li><a href="/weaver/docs/asset-injection/asset-naming">Asset Naming</a></li>
+                <li><a href="/weaver/docs/asset-injection/read-only-fields">Read-Only Fields</a></li>
+                <li><a href="/weaver/docs/asset-injection/pref-injection">Pref Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/runtime-injection">Runtime Injection</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-lists">Asset Lists</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-lists/creating-a-list">Creating a List</a></li>
+                <li><a href="/weaver/docs/asset-lists/lazy-asset-lists">Lazy Asset Lists</a></li>
+                <li><a href="/weaver/docs/asset-lists/procedural-asset-lists">Procedural Asset Lists</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/weaver/docs/project-constants">Project Constants</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/project-constants/animations">Animations</a></li>
+                <li><a href="/weaver/docs/project-constants/layers">Layers</a></li>
+                <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
+                <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
+                <li class="selected"><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/procedural-assets">Procedural Assets</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/procedural-assets/defining-a-procedural-asset">Defining a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/generating-a-procedural-asset">Generating a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/asset-generators">Asset Generators</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-meshes">Procedural Meshes</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-scripts">Procedural Scripts</a></li>
+                <li><a href="/weaver/docs/procedural-assets/dependencies">Dependencies</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
+                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/change-log">Change Log</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/change-log/weaver-v5-0">Weaver v5.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-1">Weaver v4.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-0">Weaver v4.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v3-0">Weaver v3.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v2-0">Weaver v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-1">Weaver v1.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-0">Weaver v1.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Shaders</h1>
+		</section>
+	<section class="content">
+		<p>The procedural <code>Shaders</code> script contains constants corresponding to the IDs of and properties and keywords in the shaders you add to the list in the Weaver Window so that instead of <code>material.SetTexture("_OcclusionMap", texture)</code> you can use <code>material.SetTexture(Shaders.Standard._OcclusionMap, texture)</code>.</p>
+<p>If you want to release a shader to the public which users may want to control via code, feel free to use this system to generate a script to release with the shader.</p>
+<h1 id="scenes-panel">Scenes Panel</h1>
+<p>The <strong>Scenes</strong> panel in the <a href="../weaver-window">Weaver Window</a> allows the procedural script to be entirely disabled and allows you to specify which shaders you want it to include:</p>
+<h1 id="sample-output">Sample Output</h1>
+<pre><code>// This file was procedurally generated by Weaver. Any modifications will be overwritten.
+
+#pragma warning disable IDE1006 // Naming Styles.
+
+namespace Weaver
+{
+    /// &lt;summary&gt;This class was procedurally generated by Weaver.&lt;/summary&gt;
+    public static class Shaders
+    {
+        /// &lt;summary&gt;Standard&lt;/summary&gt;
+        public static class Standard
+        {
+            /// &lt;summary&gt;Shader Name (for use with &lt;see cref="UnityEngine.Shader.Find(string)"/&gt;)&lt;/summary&gt;
+            public const string Name = "Standard";
+
+            /// &lt;summary&gt;Color [Color]&lt;/summary&gt;
+            public static readonly int _Color = UnityEngine.Shader.PropertyToID("_Color");
+
+            /// &lt;summary&gt;Albedo [2D Texture]&lt;/summary&gt;
+            public static readonly int _MainTex = UnityEngine.Shader.PropertyToID("_MainTex");
+
+            /// &lt;summary&gt;Alpha Cutoff [Range(Default=0.5, Min=0, Max=1)]&lt;/summary&gt;
+            public static readonly int _Cutoff = UnityEngine.Shader.PropertyToID("_Cutoff");
+
+            /// &lt;summary&gt;Smoothness [Range(Default=0.5, Min=0, Max=1)]&lt;/summary&gt;
+            public static readonly int _Glossiness = UnityEngine.Shader.PropertyToID("_Glossiness");
+
+            /// &lt;summary&gt;Smoothness Scale [Range(Default=1, Min=0, Max=1)]&lt;/summary&gt;
+            public static readonly int _GlossMapScale = UnityEngine.Shader.PropertyToID("_GlossMapScale");
+
+            /// &lt;summary&gt;Smoothness texture channel [Float]&lt;/summary&gt;
+            public static readonly int _SmoothnessTextureChannel = UnityEngine.Shader.PropertyToID("_SmoothnessTextureChannel");
+
+            /// &lt;summary&gt;Metallic [Range(Default=0, Min=0, Max=1)]&lt;/summary&gt;
+            public static readonly int _Metallic = UnityEngine.Shader.PropertyToID("_Metallic");
+
+            /// &lt;summary&gt;Metallic [2D Texture]&lt;/summary&gt;
+            public static readonly int _MetallicGlossMap = UnityEngine.Shader.PropertyToID("_MetallicGlossMap");
+
+            /// &lt;summary&gt;Specular Highlights [Float]&lt;/summary&gt;
+            public static readonly int _SpecularHighlights = UnityEngine.Shader.PropertyToID("_SpecularHighlights");
+
+            /// &lt;summary&gt;Glossy Reflections [Float]&lt;/summary&gt;
+            public static readonly int _GlossyReflections = UnityEngine.Shader.PropertyToID("_GlossyReflections");
+
+            /// &lt;summary&gt;Scale [Float]&lt;/summary&gt;
+            public static readonly int _BumpScale = UnityEngine.Shader.PropertyToID("_BumpScale");
+
+            /// &lt;summary&gt;Normal Map [2D Texture]&lt;/summary&gt;
+            public static readonly int _BumpMap = UnityEngine.Shader.PropertyToID("_BumpMap");
+
+            /// &lt;summary&gt;Height Scale [Range(Default=0.02, Min=0.005, Max=0.08)]&lt;/summary&gt;
+            public static readonly int _Parallax = UnityEngine.Shader.PropertyToID("_Parallax");
+
+            /// &lt;summary&gt;Height Map [2D Texture]&lt;/summary&gt;
+            public static readonly int _ParallaxMap = UnityEngine.Shader.PropertyToID("_ParallaxMap");
+
+            /// &lt;summary&gt;Strength [Range(Default=1, Min=0, Max=1)]&lt;/summary&gt;
+            public static readonly int _OcclusionStrength = UnityEngine.Shader.PropertyToID("_OcclusionStrength");
+
+            /// &lt;summary&gt;Occlusion [2D Texture]&lt;/summary&gt;
+            public static readonly int _OcclusionMap = UnityEngine.Shader.PropertyToID("_OcclusionMap");
+
+            /// &lt;summary&gt;Color [Color]&lt;/summary&gt;
+            public static readonly int _EmissionColor = UnityEngine.Shader.PropertyToID("_EmissionColor");
+
+            /// &lt;summary&gt;Emission [2D Texture]&lt;/summary&gt;
+            public static readonly int _EmissionMap = UnityEngine.Shader.PropertyToID("_EmissionMap");
+
+            /// &lt;summary&gt;Detail Mask [2D Texture]&lt;/summary&gt;
+            public static readonly int _DetailMask = UnityEngine.Shader.PropertyToID("_DetailMask");
+
+            /// &lt;summary&gt;Detail Albedo x2 [2D Texture]&lt;/summary&gt;
+            public static readonly int _DetailAlbedoMap = UnityEngine.Shader.PropertyToID("_DetailAlbedoMap");
+
+            /// &lt;summary&gt;Scale [Float]&lt;/summary&gt;
+            public static readonly int _DetailNormalMapScale = UnityEngine.Shader.PropertyToID("_DetailNormalMapScale");
+
+            /// &lt;summary&gt;Normal Map [2D Texture]&lt;/summary&gt;
+            public static readonly int _DetailNormalMap = UnityEngine.Shader.PropertyToID("_DetailNormalMap");
+
+            /// &lt;summary&gt;UV Set for secondary textures [Float]&lt;/summary&gt;
+            public static readonly int _UVSec = UnityEngine.Shader.PropertyToID("_UVSec");
+
+            /// &lt;summary&gt;__mode [Float]&lt;/summary&gt;
+            public static readonly int _Mode = UnityEngine.Shader.PropertyToID("_Mode");
+
+            /// &lt;summary&gt;__src [Float]&lt;/summary&gt;
+            public static readonly int _SrcBlend = UnityEngine.Shader.PropertyToID("_SrcBlend");
+
+            /// &lt;summary&gt;__dst [Float]&lt;/summary&gt;
+            public static readonly int _DstBlend = UnityEngine.Shader.PropertyToID("_DstBlend");
+
+            /// &lt;summary&gt;__zw [Float]&lt;/summary&gt;
+            public static readonly int _ZWrite = UnityEngine.Shader.PropertyToID("_ZWrite");
+        }
+    }
+}
+</code></pre>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

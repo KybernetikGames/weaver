@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - Object Pooling</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#utilities-and-extensions">Utilities and Extensions</a></p>
+<p><a href="#destroy-or-release">Destroy or Release?</a></p>
+<p><a href="#asset-injection">Asset Injection</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li><a href="/weaver/docs/introduction">Introduction</a></li>
+                <li><a href="/weaver/docs/weaver-window">Weaver Window</a></li>
+                <li class="treeview">
+                    <a href="/weaver/docs/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/examples/frame-rate">01 Frame Rate</a></li>
+                <li><a href="/weaver/docs/examples/floating-text">02 Floating Text</a></li>
+                <li><a href="/weaver/docs/examples/building">03 Building</a></li>
+                <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
+                <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
+                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-injection">Asset Injection</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-injection/the-problem">The Problem</a></li>
+                <li><a href="/weaver/docs/asset-injection/using-asset-injection">Using Asset Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/injection-attribute-types">Injection Attribute Types</a></li>
+                <li><a href="/weaver/docs/asset-injection/asset-naming">Asset Naming</a></li>
+                <li><a href="/weaver/docs/asset-injection/read-only-fields">Read-Only Fields</a></li>
+                <li><a href="/weaver/docs/asset-injection/pref-injection">Pref Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/runtime-injection">Runtime Injection</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-lists">Asset Lists</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-lists/creating-a-list">Creating a List</a></li>
+                <li><a href="/weaver/docs/asset-lists/lazy-asset-lists">Lazy Asset Lists</a></li>
+                <li><a href="/weaver/docs/asset-lists/procedural-asset-lists">Procedural Asset Lists</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/project-constants">Project Constants</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/project-constants/animations">Animations</a></li>
+                <li><a href="/weaver/docs/project-constants/layers">Layers</a></li>
+                <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
+                <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
+                <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/procedural-assets">Procedural Assets</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/procedural-assets/defining-a-procedural-asset">Defining a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/generating-a-procedural-asset">Generating a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/asset-generators">Asset Generators</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-meshes">Procedural Meshes</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-scripts">Procedural Scripts</a></li>
+                <li><a href="/weaver/docs/procedural-assets/dependencies">Dependencies</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
+                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/change-log">Change Log</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/change-log/weaver-v5-0">Weaver v5.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-1">Weaver v4.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-0">Weaver v4.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v3-0">Weaver v3.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v2-0">Weaver v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-1">Weaver v1.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-0">Weaver v1.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Object Pooling</h1>
+		</section>
+	<section class="content">
+		<p>The <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> class allows you to easily and efficiently reuse objects instead of creating and destroying them all the time, which can improve performance. It is fully generic so it can be used with any type of object such as <code>Component</code>s in the scene, <code>ScriptableObject</code> assets, or any other class. Note that <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> is in the <code>Kybernetik</code> namespace so its source code is included in both Weaver Lite and Pro.</p>
+<p>Several of the Weaver examples make use of pools: <a href="../examples/floating-text">Floating Text</a>, <a href="../examples/missiles">Missiles</a>, and <a href="../examples/missile-command">Missile Command</a>.</p>
+<p>Basic usage of an object pool is quite simple:</p>
+<ol>
+<li>Construct a <code>new <a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> with a delegate that will be used to create new items as they are needed. You can optionally specify a number of items to <code>preAllocate</code> immediately.</li>
+<li>Call <code>Acquire</code> to get an object from the pool.</li>
+<li>Call <code>Release</code> when you are done with the object to give it back to the pool.</li>
+</ol>
+<h1 id="utilities-and-extensions">Utilities and Extensions</h1>
+<p>The non-generic <code><a href="/weaver/api/Kybernetik/ObjectPool">ObjectPool</a></code> class contains various utilities and extension methods for creating and interacting with pools:</p>
+<ul>
+<li><code>CreateDefaultPool</code> returns a pool that creates new items using a the default constructor of T.</li>
+<li><code>CreateComponentPool</code> takes a prefab of any <code>Component</code> type and returns a pool that creates new items by instantiating that prefab.</li>
+<li><code>GetSharedComponentPool</code> is similar, but it stores each pool it creates so it can return the same one if it is given the same prefab again. The examples mentioned above use this method so that each prefab with a <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> component has its own pool of instances (same for <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> and <code><a href="/weaver/api/Weaver.Examples/Explosion">Explosion</a></code>).</li>
+<li><code>CreatePrefabPool</code> and <code>GetSharedPrefabPool</code> are the same thing for <code>GameObject</code> prefabs. Generally you will want a specific <code>Component</code> on the prefab though, so it's often best to use the component type directly.</li>
+<li><code>TryRelease</code> releases the item to the given pool, or returns false if the pool is null.</li>
+<li><code>TryReleaseOrDestroy</code> is similar, but calls <code>Object.Destroy</code> on the item if the pool is null.</li>
+<li><code>TryReleaseOrDestroyGameObject</code> is similar, but if the object is released it's <code>GameObject</code> is automatically deactivated, or if the pool is null it calls <code>Object.Destroy</code> on the component's <code>GameObject</code> (rather than only destroying the component).</li>
+</ul>
+<p>By default, an <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> will use a <code>HashSet&lt;T&gt;</code> as its <code>ActiveObjects</code> collection for efficiently adding and removing items, but you can give it any type of collection in the constructor and if you want to use a <code>List&lt;T&gt;</code> in particular, you can use the <code><a href="/weaver/api/Kybernetik/PooledList_1">PooledList&lt;T&gt;</a></code> class instead of <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code>. The non-generic <code><a href="/weaver/api/Kybernetik/PooledList">PooledList</a></code> class also has similar utilities and extension methods.</p>
+<h1 id="destroy-or-release">Destroy or Release?</h1>
+<p>Other object pooling systems generally force you to choose whether something can be used on its own or will be pooled:</p>
+<ul>
+<li>If the object destroys itself when it's done then it can't be reused in an object pool.</li>
+<li>If the object deactivates itself when it's done then using it without an object pool would leave it inactive without ever reusing it, which isn't necessarily a problem but would be wasting memory at the very least.</li>
+<li>If the object simply indicates that it is done and relies on something else to respond accordingly, it still depends on something else and can't be used on its own.</li>
+</ul>
+<p>The static <code><a href="/weaver/api/Kybernetik/ObjectPool_1/D0FBD753">ObjectPool&lt;T&gt;.Current</a></code> property allows you to avoid the problem. When a pool creates a new item, the pool is assigned to that property (and cleared immediately after) so that the new object can get a reference to the pool that created it in its constructor. This means the object can decide what to do when it's done based on whether it came from a pool or not.</p>
+<p><code><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour&lt;T&gt;</a></code> is a <code>Component</code> class which makes use of that feature in conjunction with the <code>ObjectPool.TryReleaseOrDestroyGameObject&lt;T&gt;</code> extension method. All of the examples mentioned above inherit from <code><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour&lt;T&gt;</a></code> so that while they are currently only used in object pools, you could for example have a big boss fire a custom once-off <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> prefab without using a pool and it would still work properly.</p>
+<h1 id="asset-injection">Asset Injection</h1>
+<p>The <code>[AssetPool]</code> attribute allows <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> fields to have their value set by the <a href="../asset-injection">Asset Injection</a> system. The <code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> class contains an example of this: each of its text types is an injected prefab the user can assign in the <a href="../introduction/weaver-window">Weaver Window</a>, then on startup Weaver automatically creates an <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> for each of them which will instantiate their prefab to create its items.</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

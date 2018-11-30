@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - Weaver v3.0</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet" />
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"></img> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"></img> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"></img> Blog</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"></img> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"></img> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"></img> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"></img> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"></img> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li><a href="/weaver/docs/introduction">Introduction</a></li>
+                <li><a href="/weaver/docs/weaver-window">Weaver Window</a></li>
+                <li class="treeview">
+                    <a href="/weaver/docs/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/examples/frame-rate">01 Frame Rate</a></li>
+                <li><a href="/weaver/docs/examples/floating-text">02 Floating Text</a></li>
+                <li><a href="/weaver/docs/examples/building">03 Building</a></li>
+                <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
+                <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
+                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-injection">Asset Injection</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-injection/the-problem">The Problem</a></li>
+                <li><a href="/weaver/docs/asset-injection/using-asset-injection">Using Asset Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/injection-attribute-types">Injection Attribute Types</a></li>
+                <li><a href="/weaver/docs/asset-injection/asset-naming">Asset Naming</a></li>
+                <li><a href="/weaver/docs/asset-injection/read-only-fields">Read-Only Fields</a></li>
+                <li><a href="/weaver/docs/asset-injection/pref-injection">Pref Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/runtime-injection">Runtime Injection</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-lists">Asset Lists</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-lists/creating-a-list">Creating a List</a></li>
+                <li><a href="/weaver/docs/asset-lists/lazy-asset-lists">Lazy Asset Lists</a></li>
+                <li><a href="/weaver/docs/asset-lists/procedural-asset-lists">Procedural Asset Lists</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/project-constants">Project Constants</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/project-constants/animations">Animations</a></li>
+                <li><a href="/weaver/docs/project-constants/layers">Layers</a></li>
+                <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
+                <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
+                <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/procedural-assets">Procedural Assets</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/procedural-assets/defining-a-procedural-asset">Defining a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/generating-a-procedural-asset">Generating a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/asset-generators">Asset Generators</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-meshes">Procedural Meshes</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-scripts">Procedural Scripts</a></li>
+                <li><a href="/weaver/docs/procedural-assets/dependencies">Dependencies</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
+                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/weaver/docs/change-log">Change Log</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/change-log/weaver-v5-0">Weaver v5.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-1">Weaver v4.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-0">Weaver v4.0</a></li>
+                <li class="selected"><a href="/weaver/docs/change-log/weaver-v3-0">Weaver v3.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v2-0">Weaver v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-1">Weaver v1.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-0">Weaver v1.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Weaver v3.0</h1>
+		</section>
+	<section class="content">
+		<ul>
+<li>Weaver Lite now allows you to create up to 5 procedural assets (was Pro-Only).</li>
+<li>Weaver Lite now limits the Asset Linker to no more than 10 asset links (was unlimited).</li>
+<li>New experimental feature: Auto Generate in Play Mode. Disabled by default.</li>
+<li>New feature: Auto Generate on Build.</li>
+<li>New Pro-Only feature: Procedural Asset Collections.</li>
+<li>Massive performance optimizations to the sub-asset saving system. A large object heirarchy that previously took 4.2 seconds to save its sub assets now takes 0.3 seconds.</li>
+<li>Double click to generate assets in the Procedural Asset Manager.</li>
+<li>Drag and drop assets out of the Procedural Asset Manager and Asset Linker.</li>
+<li>Added menu items &quot;<em>Assets/Add Selection to Asset Linker</em>&quot; and &quot;<em>Assets/Remove Selection from Asset Linker</em>&quot;.</li>
+<li>Added a project window overlay for linked assets. You can middle click it to open the Asset Linker.</li>
+<li>Asset Linker initialisation is now split over multiple frames so the editor doesn't lock up when opening the window in a large project.</li>
+<li>Instead of regenerating the Asset Linker script immediately whenever you add/delete/move/rename a linked asset, it will now wait until you click on a different <code>EditorWindow</code> to take focus away from the Project Window. Likewise if the game is playing, it will wait until you stop playing.</li>
+<li>Added a toggle to the Layer Linker for all layers at once.</li>
+<li>Added the ability to add a comment to each custom mask in the Layer Linker Window.</li>
+<li>Asset generation now takes place in a temporary scene, so any unparented objects accidentally left in the scene will be properly destroyed (with a log message to let you know) and all prefab instances will receive any changes to the prefab as expected.</li>
+<li>Sub-assets can now be referenced multiple times in that asset. Previously only the first reference was kept.</li>
+<li>Added Weaver tab to the <em>Edit/Preferences</em> menu.</li>
+</ul>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - 02 Floating Text</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#system-scripts">System Scripts</a></p>
+<p><a href="#example-scripts">Example Scripts</a></p>
+<p><a href="#floating-text-mesh-pro">Floating Text Mesh Pro</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li><a href="/weaver/docs/introduction">Introduction</a></li>
+                <li><a href="/weaver/docs/weaver-window">Weaver Window</a></li>
+                <li class="treeview active">
+                    <a href="/weaver/docs/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/examples/frame-rate">01 Frame Rate</a></li>
+                <li class="selected"><a href="/weaver/docs/examples/floating-text">02 Floating Text</a></li>
+                <li><a href="/weaver/docs/examples/building">03 Building</a></li>
+                <li><a href="/weaver/docs/examples/missiles">04 Missiles</a></li>
+                <li><a href="/weaver/docs/examples/missile-command">05 Missile Command</a></li>
+                <li><a href="/weaver/docs/examples/meta-asset-list">06 Meta Asset List</a></li>
+                <li><a href="/weaver/docs/examples/build-details">Build Details</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-injection">Asset Injection</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-injection/the-problem">The Problem</a></li>
+                <li><a href="/weaver/docs/asset-injection/using-asset-injection">Using Asset Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/injection-attribute-types">Injection Attribute Types</a></li>
+                <li><a href="/weaver/docs/asset-injection/asset-naming">Asset Naming</a></li>
+                <li><a href="/weaver/docs/asset-injection/read-only-fields">Read-Only Fields</a></li>
+                <li><a href="/weaver/docs/asset-injection/pref-injection">Pref Injection</a></li>
+                <li><a href="/weaver/docs/asset-injection/runtime-injection">Runtime Injection</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/asset-lists">Asset Lists</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/asset-lists/creating-a-list">Creating a List</a></li>
+                <li><a href="/weaver/docs/asset-lists/lazy-asset-lists">Lazy Asset Lists</a></li>
+                <li><a href="/weaver/docs/asset-lists/procedural-asset-lists">Procedural Asset Lists</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/project-constants">Project Constants</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/project-constants/animations">Animations</a></li>
+                <li><a href="/weaver/docs/project-constants/layers">Layers</a></li>
+                <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
+                <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
+                <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/obsolete-values">Obsolete Values</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/procedural-assets">Procedural Assets</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/procedural-assets/defining-a-procedural-asset">Defining a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/generating-a-procedural-asset">Generating a Procedural Asset</a></li>
+                <li><a href="/weaver/docs/procedural-assets/asset-generators">Asset Generators</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-meshes">Procedural Meshes</a></li>
+                <li><a href="/weaver/docs/procedural-assets/procedural-scripts">Procedural Scripts</a></li>
+                <li><a href="/weaver/docs/procedural-assets/dependencies">Dependencies</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/misc">Miscellaneous</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
+                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
+                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/weaver/docs/change-log">Change Log</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/weaver/docs/change-log/weaver-v5-0">Weaver v5.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-1">Weaver v4.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v4-0">Weaver v4.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v3-0">Weaver v3.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v2-0">Weaver v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-1">Weaver v1.1</a></li>
+                <li><a href="/weaver/docs/change-log/weaver-v1-0">Weaver v1.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
+                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>02 Floating Text</h1>
+		</section>
+	<section class="content">
+		<p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/02 Floating Text</em>. It demonstrates <a href="../asset-injection">Asset Injection</a> again, but instead of a singleton-like approach with only one prefab it uses a different prefab for each kind of text. It also demonstrates the use of <a href="../misc/object-pooling">Object Pooling</a> to efficiently reuse each text instance.</p>
+<p>In this example we are making a system to manage various different kinds of text that can be floating in the scene:</p>
+<ul>
+<li>Damage numbers so you know how much damage is dealt with each hit.</li>
+<li>Status effect notifications like “stunned”, “frozen”, etc.</li>
+<li>Speech bubbles for characters talking.</li>
+</ul>
+<p>Those text types all have a few things in common:</p>
+<ul>
+<li>They aren’t tied to a specific scene or object: they are global systems that should be shared by everything in the game. All fire damage shows the same color text, all speech uses the same font, and so on.</li>
+<li>They all use the same general logic: spawn at a position, always face the camera, fade out after a time, use <a href="../misc/object-pooling">Object Pooling</a> to maximise performance, etc.</li>
+<li>But they can each have totally different appearances and extra behaviour added: damage numbers bounce around, status effects fade out gradually, speech bubbles make their text only appear one letter at a time, and so on.</li>
+<li>This means they’re perfect candidates for prefabs assigned using asset injection.</li>
+</ul>
+<p>The scripts in this example are split into two groups: the <a href="#system-scripts">System Scripts</a> contain the actual functionality of the floating text system and could potentially be reused in a real game while the <a href="#example-scripts">Example Scripts</a> are simply the bare minimum required to show the system in action for the purpose of the example.</p>
+<h1 id="system-scripts">System Scripts</h1>
+<ul>
+<li>These scripts are located in <em>Assets/Plugins/Weaver/Examples/02 Floating Text/Code/Floating Text</em>.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> is the base script which manages the lifetime of the text.
+<ul>
+<li><code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> inherits from <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> and uses Unity's inbuilt <code>TextMesh</code> component for its text.</li>
+<li>See <a href="#floating-text-mesh-pro">Floating Text Mesh Pro</a> below for more information.</li>
+</ul>
+</li>
+<li><code><a href="/weaver/api/Weaver.Examples/BillboardManager">BillboardManager</a></code> controls the rotation of the text objects to keep them constantly facing the camera (or whatever object the manager is attached to).</li>
+<li><code><a href="/weaver/api/Weaver.Examples/FloatingTextBounce">FloatingTextBounce</a></code>, <code><a href="/weaver/api/Weaver.Examples/FloatingTextFade">FloatingTextFade</a></code>, and <code><a href="/weaver/api/Weaver.Examples/FloatingTextTypewriter">FloatingTextTypewriter</a></code> are all "modifiers" that can be added alongside a <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> to alter its behaviour.</li>
+<li>If you wish to use any of these scripts in your game, it is recommended that you make a new script, copy the contents into it, and change the namespace. Otherwise updating Weaver may alter that script and cause errors where your other code references it.</li>
+</ul>
+<h1 id="example-scripts">Example Scripts</h1>
+<ul>
+<li>These scripts are located in <em>Assets/Plugins/Weaver/Examples/02 Floating Text/Code</em>.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/FollowMouse">FollowMouse</a></code> is a very simple script to represent a moving player object by having it follow the mouse cursor around.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/DamageOnContact">DamageOnContact</a></code> and <code><a href="/weaver/api/Weaver.Examples/StunOnContact">StunOnContact</a></code> are simple representations of a damage system and a status effect (debuff).</li>
+<li><code><a href="/weaver/api/Weaver.Examples/Conversation">Conversation</a></code> plays through a simple sequence of lines of text as if several characters were talking to each other.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> provides a central location for accessing various the different kinds of used in this example.
+<ul>
+<li>It contains several private <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> fields which are injected by <code>[AssetPool]</code> attributes.</li>
+<li>This means each field targets its own prefab just like with the previous <a href="01-frame-rate">01 Frame Rate</a> example, but instead of getting that prefab directly assigned to it they each get constructed into an <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> that can create new instances of the prefab on demand and recycle them after they are used.</li>
+<li>The name of the <em>Text Manager</em> folder and the prefabs it contains follow one of the <a href="../asset-injection/using-asset-injection#asset-naming">Asset Naming</a> rules to automatically match up with the script and field names when you first import Weaver.</li>
+</ul>
+</li>
+</ul>
+<h1 id="floating-text-mesh-pro">Floating Text Mesh Pro</h1>
+<p>In order to prevent tieing the <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> system to a specific type of output, the class is <code>abstract</code> so that all the references to Unity's inbuilt <code>TextMesh</code> component are instead contained in the <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> child class. This is known as the <a href="https://en.wikipedia.org/wiki/Facade_pattern">Facade Pattern</a> which allows you to easily use another text system such as <a href="https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126">Text Mesh Pro</a> by writing a script like the one below. Any code that expects a <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> would be able to use a <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> or a <code>FloatingTextMeshPro</code> without needing to know or care which system was used.</p>
+<pre><code>using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Kybernetik;
+
+namespace Weaver.Examples
+{
+    public sealed class FloatingTextMeshPro : <a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>
+    {
+        /************************************************************************************************************************/
+
+        /// &lt;summary&gt;The component used to display the actual text.&lt;/summary&gt;
+        [SerializeField]
+        private TMPro.TextMeshPro _TextMesh;
+
+        /// &lt;summary&gt;The component used to display the actual text.&lt;/summary&gt;
+        public TMPro.TextMeshPro TextMesh { get { return _TextMesh; } }
+
+        /// &lt;summary&gt;The text string currently being shown.&lt;/summary&gt;
+        public override string Text
+        {
+            get { return _TextMesh.text; }
+            set { _TextMesh.text = value; }
+        }
+
+        /// &lt;summary&gt;The height of the text in world-space.&lt;/summary&gt;
+        public override float Size
+        {
+            get { return _TextMesh.fontSize * 0.1f; }
+            set { _TextMesh.fontSize = value * 10; }
+        }
+
+        /// &lt;summary&gt;The &lt;see cref="UnityEngine.Color"/&gt; of the text.&lt;/summary&gt;
+        public override Color Color
+        {
+            get { return _TextMesh.color; }
+            set { _TextMesh.color = value; }
+        }
+
+        /// &lt;summary&gt;
+        /// Called by Unity when this component is first added (in Edit Mode) or the "Reset" function is used.
+        /// &lt;/summary&gt;
+        public override void Reset()
+        {
+            base.Reset();
+            _TextMesh = gameObject.GetOrAddComponent&lt;TMPro.TextMeshPro&gt;();
+        }
+
+        /************************************************************************************************************************/
+    }
+}
+</code></pre>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

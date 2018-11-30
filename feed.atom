@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="https://kybernetikgames.github.io/weaver" />
+	<id>https://kybernetikgames.github.io/weaver</id>
+	<title>Weaver</title>
+	<rights>2018</rights>
+	<updated>2018-11-30T09:17:13Z</updated>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2018/11/weaver-v5-0" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2018/11/weaver-v5-0</id>
+		<title>Weaver v5.0 - My singletons bring all the boys to the yard</title>
+		<updated>2018-11-22T00:00:00Z</updated>
+		<content>&lt;p&gt;Have you ever wanted to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../docs/asset-injection"&gt;Use [SerializeField] on a static field or property (to make a singleton or similar global system)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../docs/asset-lists"&gt;Automatically get a strongly typed list of assets in a particular folder?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../docs/project-constants"&gt;Stop using magic strings to access animations, layers, navigation areas, scenes, and shaders?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../docs/procedural-assets"&gt;Easily generate procedural assets in the Unity Editor which can then be used like regular assets?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Well I just released a massive update to my Weaver plugin which lets you do all those things. Please check it out and let me know if you have any questions, feedback, feature requests, etc.&lt;/p&gt;
+&lt;p&gt;If you are upgrading from an earlier version of Weaver, the &lt;a href="../docs/change-log"&gt;Change Log&lt;/a&gt; contains an &lt;a href="../docs/change-log/weaver-v5-0#upgrading-to-weaver-5"&gt;Upgrade Guide&lt;/a&gt; to help you.&lt;/p&gt;
+&lt;p&gt;[&lt;a href="http://u3d.as/rt6"&gt;Weaver Lite&lt;/a&gt;] [&lt;a href="http://u3d.as/rt5"&gt;Weaver Pro&lt;/a&gt;] [&lt;a href="/weaver"&gt;Documentation&lt;/a&gt;] [&lt;a href="mailto:KybernetikGames&amp;#64;gmail.com?subject=Weaver"&gt;Support: KybernetikGames&amp;#64;gmail.com&lt;/a&gt;]&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;Have you ever wanted to:&lt;/p&gt;</summary>
+	</entry>
+</feed>

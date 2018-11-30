@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - API - Kybernetik Namespace</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#InterfaceTypes">Interface Types</a></p>
+<p><a href="#Namespaces">Namespaces</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/weaver/assets/js/lunr.min.js"></script>
+    <script src="/weaver/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+	<li class="header">Namespaces</li>   
+
+				<li class="treeview active selected">
+				<a href="/weaver/api/Kybernetik">Kybernetik</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/weaver/api/Kybernetik.ProceduralScripting">Kybernetik<wbr>.ProceduralScripting</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/weaver/api/Weaver">Weaver</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/weaver/api/Weaver.Examples">Weaver<wbr>.Examples</a></li>
+			<li><a href="/weaver/api/Weaver.Procedural">Weaver<wbr>.Procedural</a></li>
+</ul></li>      
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Kybernetik <small>Namespace</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Various utilities used by Kybernetik products.
+    <p></p>
+    <em>Source code is included.</em>
+    </div>
+
+
+
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/CSharp">CSharp</a></td>
+									<td>
+    A variety of methods relating to C# code.
+    Particularly useful for generating procedural code.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/CustomInspector">CustomInspector</a></td>
+									<td>[Editor-Only]
+    A component that uses a custom <code class="cs">System.Action</code> to draw the inspector.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></td>
+									<td>
+    Encapsulates lists of vertices, normals, etc. to simplify the procedural generation of meshes.
+    <p></p>
+    To use: simply add elements to the lists (<code class="cs">Kybernetik.MeshBuilder.Vertices</code>, <code class="cs">Kybernetik.MeshBuilder.Indices</code>, <code class="cs">Kybernetik.MeshBuilder.UVs</code>,
+    etc.) then call any of the Compile() overloads. You can also implicitly cast a <code class="cs">Kybernetik.MeshBuilder</code> to a
+    <code class="cs">UnityEngine.Mesh</code>.
+    <p></p>
+    You can efficiently reuse a <code class="cs">Kybernetik.MeshBuilder</code> by calling <code class="cs">Kybernetik.MeshBuilder.Clear</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/MeshUtils">MeshUtils</a></td>
+									<td>
+    Various utility methods for using the <code class="cs">Kybernetik.MeshBuilder</code> class.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/ObjectPool">ObjectPool</a></td>
+									<td>
+    Various utilities and extension methods for <code class="cs">Kybernetik.ObjectPool`1</code>.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool</a><wbr>&lt;<a href="/weaver/api/Kybernetik/ObjectPool_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A collection of objects that can create new items as necessary.
+    Get an object from the pool with <code class="cs">Kybernetik.ObjectPool`1.Acquire</code>.
+    Return it to the pool with <code class="cs">Kybernetik.ObjectPool`1.Release(`0)</code>.
+    <p></p>
+    The non-generic <code class="cs">Kybernetik.ObjectPool</code> class contains some useful methods of creating commonly used pools.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour</a><wbr>&lt;<a href="/weaver/api/Kybernetik/PoolableBehaviour_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A <code class="cs">UnityEngine.MonoBehaviour</code> component which automatically detects the <code class="cs">Kybernetik.ObjectPool`1</code> that
+    created it so it can be released back to that pool (or simply destroyed if it wasn't created by a pool) using
+    the <code class="cs">Kybernetik.ObjectPool.TryReleaseOrDestroyGameObject``1(``0)</code> extension method.
+    <p></p>
+    When inheriting from this class, <span name="T" class="typeparamref">T</span> should always be the child class itself, I.E.
+    <pre><code class="cs">class ChildClass : PoolableBehaviour&lt;ChildClass&gt;</code></pre>
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/PooledList">PooledList</a></td>
+									<td>
+    Various utilities and extension methods for <code class="cs">Kybernetik.PooledList`1</code>.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/PooledList_1">PooledList</a><wbr>&lt;<a href="/weaver/api/Kybernetik/PooledList_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A <code class="cs">System.Collections.Generic.List`1</code> of active objects backed by an <code class="cs">Kybernetik.ObjectPool`1</code> of inactive objects ready to
+    be reused.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection">Reflection</a></td>
+									<td>A variety of utility methods relating to reflection.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Substring">Substring</a></td>
+									<td>
+    Encapsulates a string to treat it as a variable substring without the memory allocation and garbage collection
+    costs of string.Substring().
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Timer">Timer</a></td>
+									<td>A simple timer system that works both in the editor and at runtime using unscaled time.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/UnityScripts">UnityScripts</a></td>
+									<td>A variety of utility methods relating to script assets in Unity.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils">Utils</a></td>
+									<td>A variety of miscellaneous utility methods.</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="InterfaceTypes">Interface Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Interface</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/IDependant_1">IDependant</a><wbr>&lt;<a href="/weaver/api/Kybernetik/IDependant_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    Indicates that a type can depend on other objects.
+    Used for topological sorting.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/IPoolable">IPoolable</a></td>
+									<td>
+    An object with a callback method for when it is released to an <code class="cs">Kybernetik.ObjectPool`1</code>.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Namespaces">Namespaces</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Namespace</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik.ProceduralScripting">Kybernetik<wbr>.ProceduralScripting</a></td>
+									<td>
+    Procedural scripting utilities.
+    <p></p>
+    <em>Source code is included.</em>
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

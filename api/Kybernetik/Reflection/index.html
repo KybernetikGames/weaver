@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - API - Reflection Class</title>
+        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
+        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
+        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
+        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#fields">Fields</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/weaver/assets/js/lunr.min.js"></script>
+    <script src="/weaver/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/weaver/api/Kybernetik.Core.dll">Kybernetik<wbr>.Core<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/weaver/api/Kybernetik">Kybernetik</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/weaver/api/Kybernetik/CSharp">CSharp</a></li>
+				<li><a href="/weaver/api/Kybernetik/CustomInspector">CustomInspector</a></li>
+				<li><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></li>
+				<li><a href="/weaver/api/Kybernetik/MeshUtils">MeshUtils</a></li>
+				<li><a href="/weaver/api/Kybernetik/ObjectPool">ObjectPool</a></li>
+				<li><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/PooledList_1">PooledList<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/PooledList">PooledList</a></li>
+				<li class="selected"><a href="/weaver/api/Kybernetik/Reflection">Reflection</a></li>
+				<li><a href="/weaver/api/Kybernetik/Substring">Substring</a></li>
+				<li><a href="/weaver/api/Kybernetik/Timer">Timer</a></li>
+				<li><a href="/weaver/api/Kybernetik/UnityScripts">UnityScripts</a></li>
+				<li><a href="/weaver/api/Kybernetik/Utils">Utils</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/weaver/api/Kybernetik/IDependant_1">IDependant<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/weaver/api/Kybernetik/IPoolable">IPoolable</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Reflection <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">A variety of utility methods relating to reflection.</div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/weaver/api/Kybernetik.Core.dll">Kybernetik<wbr>.Core<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/weaver/api/Kybernetik">Kybernetik</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>Object</li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph TD
+	Base0["Object"]--&gt;Type
+	Type["Reflection"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static class Reflection</code></pre>
+
+
+
+
+
+
+
+
+
+			<h1 id="fields">Fields</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Constant Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/9C8B4EE2">AnyAccessBindings</a></td>
+								<td>60</td>
+								<td>
+									<div><code class="cs">System.Reflection.BindingFlags</code> for any access modifiers.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/A0CCD758">InstanceBindings</a></td>
+								<td>52</td>
+								<td>
+									<div><code class="cs">System.Reflection.BindingFlags</code> for instance access modifiers.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/CD3F4BE3">Public<wbr>Instance<wbr>Bindings</a></td>
+								<td>20</td>
+								<td>
+									<div><code class="cs">System.Reflection.BindingFlags</code> for public and instance.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/8300A57C">PublicStaticBindings</a></td>
+								<td>24</td>
+								<td>
+									<div><code class="cs">System.Reflection.BindingFlags</code> for public and static.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/883D121A">StaticBindings</a></td>
+								<td>56</td>
+								<td>
+									<div><code class="cs">System.Reflection.BindingFlags</code> for static access modifiers.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/BCA4CD10">AppendDeepToString<wbr>(StringBuilder, <wbr>int, <wbr>Object, <wbr>int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Builds a string containing the values of each of the specified object's fields.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/18D8A763">CanBeConst<wbr>(Type)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    All built-in types except <code class="cs">System.Object</code> can be const.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/A975A385">Compare<wbr>Namespace<wbr>Then<wbr>Name<wbr>(Type, <wbr>Type)<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Compares types by namespace, and if they are in the same namespace then compares them by name.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/ADAC19E4">DeepToString<wbr>(Object)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Builds a string containing the values of each of the specified object's fields.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/5861D29E">For<wbr>Each<wbr>Custom<wbr>Attribute<wbr>&lt;T&gt;<wbr><wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>Action<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Calls 'method' once for each attribute of the specified type on 'target'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/9BE86A90">ForEachType<wbr>(Action<wbr>&lt;Type&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Calls the specified method once for each type in every currently loaded assembly.
+    <p></p>
+    Most situations where you want to do something for each type are in reference to something specific.
+    For example: when searching for every type with a certain attribute, you only need to look in assemblies
+    that reference the assembly containing the attribute so you should instead use
+    <code class="cs">Kybernetik.Reflection</code>.<code class="cs">Kybernetik.Reflection.Assemblies.ForEachTypeInDependantAssemblies(System.Reflection.Assembly,System.Action{System.Type})</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/420AAA2B">GetAttributedFields<wbr>&lt;TAttribute&gt;<wbr><wbr>(Type, <wbr>BindingFlags, <wbr>List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;FieldInfo&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Gets all fields with the specified attribute in 'type'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/6AB44CDA">GetAttributedMethods<wbr>&lt;TAttribute&gt;<wbr><wbr>(BindingFlags, <wbr>List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;MethodInfo&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Gets all methods with the specified attribute in every type in the currently loaded assemblies.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/DC0BA7C0">GetAttributedMethods<wbr>&lt;TAttribute&gt;<wbr><wbr>(Type, <wbr>BindingFlags, <wbr>List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;MethodInfo&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Gets all methods with the specified attribute in 'type'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/0BECD67F">Get<wbr>Attributed<wbr>Properties<wbr>&lt;TAttribute&gt;<wbr><wbr>(Type, <wbr>BindingFlags, <wbr>List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;PropertyInfo&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Gets all properties with the specified attribute in 'type'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/9E565694">GetAttributedTypes<wbr>&lt;TAttribute&gt;<wbr><wbr>(List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;Type&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Gets all types with the specified attribute all currently loaded assemblies.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/DEC296C0">GetCallingMethod<wbr>(int)<wbr></a></td>
+								<td>MethodBase</td>
+								<td>
+									<div>
+    Returns the <code class="cs">System.Reflection.MethodBase</code> for the calling method.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/B18FDA2E">GetCallingTypePrefix<wbr>(int)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns "Namespace.CallingType.".</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/A25C0071">GetCustomAttribute<wbr>&lt;T&gt;<wbr><wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>bool)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Gets a single custom attribute of type T and casts it.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/5C7B834D">GetDelegate<wbr>&lt;T&gt;<wbr><wbr>(MethodInfo)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    Creates a delegate of the specified type from 'method'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/DF452245">GetDelegate<wbr>&lt;T&gt;<wbr><wbr>(MethodInfo, <wbr>T)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Creates a delegate of the specified type from 'method'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/FAEFF4BE">GetDerivedTypes<wbr>(Type, <wbr>bool)<wbr></a></td>
+								<td>List<wbr>&lt;Type&gt;<wbr></td>
+								<td>
+									<div>
+    Gets all non-abstract types in the currently loaded assemblies which derive from the specified base type
+    (including the base type itself if it isn't abstract).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/DA192F79">GetDerivedTypes<wbr>(Type, <wbr>ICollection<wbr>&lt;Type&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Gets all non-abstract types in the currently loaded assemblies which derive from the specified base type
+    (including the base type itself if it isn't abstract).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/D442BB17">Get<wbr>Generic<wbr>Interface<wbr>Arguments<wbr>(Type, <wbr>Type)<wbr></a></td>
+								<td>Type[]</td>
+								<td>
+									<div>
+    If 'type' implements the 'interfaceType' this method returns the generic arguments it uses for that interface.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/8DAAAEA1">GetImplementingTypes<wbr>(Type)<wbr></a></td>
+								<td>List<wbr>&lt;Type&gt;<wbr></td>
+								<td>
+									<div>
+    Gets all non-abstract types in the currently loaded assemblies which have a parameterless constructor and
+    implement the specified interface.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/9924CFB7">Get<wbr>Inheritance<wbr>Modifier<wbr>(Type, <wbr>string, <wbr>Type[])<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Returns null, "override" or "new" as appropriate for a method called 'methodName' in a child of 'baseType'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/D044E26E">GetMemberFunc<wbr>&lt;T&gt;<wbr><wbr>(Type, <wbr>string, <wbr>Object, <wbr>string, <wbr>BindingFlags)<wbr></a></td>
+								<td>Func<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+    Tries to find a field/property/method in the 'declaringType' with the 'name' and creates a delegate to get
+    its value.
+    <p></p>
+    If a member is found but can't be converted to an appropriate delegate, the 'error' message describes the
+    problem.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/7C9B6FCA">GetMethod<wbr>(Type, <wbr>string, <wbr>BindingFlags, <wbr>Type[], <wbr>Type, <wbr>bool)<wbr></a></td>
+								<td>MethodInfo</td>
+								<td>
+									<div>
+    Gets a <code class="cs">System.Reflection.MethodInfo</code> for a method called 'name' in 'type' with the correct parameter types and return type.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/D8EFE47C">Has<wbr>Default<wbr>Constructor<wbr>(Type)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'type' has a public parameterless constructor.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/A31DE5A9">HasFlags<wbr>(BindingFlags, <wbr>BindingFlags)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'bindings' contains all the flags in 'flags'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/867B8920">HasGetAndSet<wbr>(PropertyInfo, <wbr>bool)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'property' has both a getter and setter.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/B68195F0">HasImplicitCast<wbr>(Type, <wbr>Type)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Returns true if 'from' can be implicitly cast to 'to'.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/CB14D724">Has<wbr>Parameterless<wbr>Constructor<wbr>(Type, <wbr>BindingFlags)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'type' has a parameterless constructor.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/3C761059">Is<wbr>(Type, <wbr>Type)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'type' is descended from 'baseType' (or implements it if it's an interface).</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/2BA76186">IsNestedIn<wbr>(Type, <wbr>Type)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'type' is nested inside 'outerType'.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/B69574A6">IsObsolete<wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>bool)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'target' has an [<code class="cs">System.ObsoleteAttribute</code>].</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/D005808C">Is<wbr>Subclass<wbr>Of<wbr>Generic<wbr>Definition<wbr>(Type, <wbr>Type)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'type' is descended from 'generic' (where 'generic' is a generic type definition).</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/765859A0">Is<wbr>Subclass<wbr>Of<wbr>Generic<wbr>Definition<wbr>(Type, <wbr>Type, <wbr>Type[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>Checks if 'type' is descended from 'generic' (where 'generic' is a generic type definition).</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/9DC952C6">OneObject<wbr>(Object)<wbr></a></td>
+								<td>Object[]</td>
+								<td>
+									<div>
+    Returns <code class="cs">System.Object</code>[1] { obj }.
+    <p></p>
+    The array is kept in a field marked with [<code class="cs">System.ThreadStaticAttribute</code>], so it is thread safe
+    but cannot be used recursively within a single thread.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/3577D67D">OneType<wbr>(Type)<wbr></a></td>
+								<td>Type[]</td>
+								<td>
+									<div>
+    Returns <code class="cs">System.Type</code>[1] { type }.
+    <p></p>
+    The array is kept in a field marked with [<code class="cs">System.ThreadStaticAttribute</code>], so it is thread safe
+    but cannot be used recursively within a single thread.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/D8669869">ToAccessModifier<wbr>(BindingFlags)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>Returns a description of the access modifier associated with 'bindings'</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/F2E151DD">TryGetPropertyGetter<wbr>&lt;T&gt;<wbr><wbr>(Type, <wbr>string, <wbr>Func<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Tries to get the getter method of a property and create a delegate from it.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/B2392D96">TwoObjects<wbr>(Object, <wbr>Object)<wbr></a></td>
+								<td>Object[]</td>
+								<td>
+									<div>
+    Returns <code class="cs">System.Object</code>[2] { obj0, obj1 }.
+    <p></p>
+    The array is kept in a field marked with [<code class="cs">System.ThreadStaticAttribute</code>], so it is thread safe
+    but cannot be used recursively within a single thread.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection/B33CA698">TwoTypes<wbr>(Type, <wbr>Type)<wbr></a></td>
+								<td>Type[]</td>
+								<td>
+									<div>
+    Returns <code class="cs">System.Type</code>[2] { type0, type1 }.
+    <p></p>
+    The array is kept in a field marked with [<code class="cs">System.ThreadStaticAttribute</code>], so it is thread safe
+    but cannot be used recursively within a single thread.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
