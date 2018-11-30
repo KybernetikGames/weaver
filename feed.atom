@@ -4,7 +4,7 @@
 	<id>https://kybernetikgames.github.io/weaver</id>
 	<title>Weaver</title>
 	<rights>2018</rights>
-	<updated>2018-11-30T11:03:07Z</updated>
+	<updated>2018-11-30T12:58:19Z</updated>
 	<entry>
 		<author>
 			<name>Kailas</name>
@@ -25,5 +25,165 @@
 &lt;p&gt;[&lt;a href="http://u3d.as/rt6"&gt;Weaver Lite&lt;/a&gt;] [&lt;a href="http://u3d.as/rt5"&gt;Weaver Pro&lt;/a&gt;] [&lt;a href="/weaver"&gt;Documentation&lt;/a&gt;] [&lt;a href="mailto:KybernetikGames&amp;#64;gmail.com?subject=Weaver"&gt;Support: KybernetikGames&amp;#64;gmail.com&lt;/a&gt;]&lt;/p&gt;
 </content>
 		<summary>&lt;p&gt;Have you ever wanted to:&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2017/11/weaver-v4-1" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2017/11/weaver-v4-1</id>
+		<title>Weaver v4.1</title>
+		<updated>2017-11-29T00:00:00Z</updated>
+		<content>&lt;p&gt;&lt;strong&gt;Asset Store Links&lt;/strong&gt;: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Lite version: Free&lt;/a&gt;, &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Pro version: &lt;del&gt;$50&lt;/del&gt; now only &lt;strong&gt;$10&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Weaver is my procedural asset framework which I created to fix a bunch of problems I have with Unity: primarily the need for magic-string based resource loading and the lack of nested prefabs.&lt;/p&gt;
+&lt;p&gt;Here are the major changes in version 4.1:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When the procedural script folder is deleted (Assets/Weaver), the dialogue box asking where you want to save procedural scripts now also has an option to delete Weaver itself. Some users were previously deleting that folder to remove Weaver from their project without realising that the actual plugin is located in Assets/Plugins/Weaver.&lt;/li&gt;
+&lt;li&gt;New Shader Linker system generates a script containing the ID values of all properties and keyword constants in the linked shaders.&lt;/li&gt;
+&lt;li&gt;Added support for Sprite atlases to the Asset Linker.&lt;/li&gt;
+&lt;li&gt;Linker systems (and any other procedural scripts you make using the SimpleScriptBuilder class) will now automatically remove all obsolete members when you build the project.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please check it out and let me know what you think.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Asset Store Links&lt;/strong&gt;: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Lite version: Free&lt;/a&gt;, &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Pro version: &lt;del&gt;$50&lt;/del&gt; now only &lt;strong&gt;$10&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;One thing I'm not too happy about is that I couldn't find a proper way to get the keywords of a shader for the Shader Linker so I ended up parsing the actual shader text to look for &lt;code&gt;#pragma multi_compile&lt;/code&gt; and &lt;code&gt;#pragma shader_feature&lt;/code&gt; lines. If anyone knows of a better way of doing this I'd love to hear it.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;&lt;strong&gt;Asset Store Links&lt;/strong&gt;: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Lite version: Free&lt;/a&gt;, &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Pro version: &lt;del&gt;$50&lt;/del&gt; now only &lt;strong&gt;$10&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2017/11/weaver-v4-0" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2017/11/weaver-v4-0</id>
+		<title>Weaver v4.0</title>
+		<updated>2017-11-02T00:00:00Z</updated>
+		<content>&lt;p&gt;&lt;strong&gt;Asset Store Links&lt;/strong&gt;: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Lite version: Free&lt;/a&gt;, &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Pro version: &lt;del&gt;$50&lt;/del&gt; now only &lt;strong&gt;$10&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Weaver is my procedural asset framework which I created to fix a bunch of problems I have with Unity: primarily the need for magic-string based resource loading and the lack of nested prefabs.&lt;/p&gt;
+&lt;p&gt;Here are the major changes in version 4.0:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It actually works on OSX now.&lt;/li&gt;
+&lt;li&gt;Added the Animation Linker and Scene Linker so you can now deal with animations and scenes using type-safe constants and extension methods, just like the existing systems for resource loading and layers.&lt;/li&gt;
+&lt;li&gt;Significant performance optimisations in the initialisation of editor windows and generation of procedural assets.&lt;/li&gt;
+&lt;li&gt;The BuildDetails class (which provides an automated build number and build date) is now a procedural script instead of a procedural ScriptableObject, making it much more efficient at runtime and preventing the errors that occur if you try to load an asset before Unity has fully initialised.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please check it out and let me know what you think.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Asset Store Links&lt;/strong&gt;: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Lite version: Free&lt;/a&gt;, &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Pro version: &lt;del&gt;$50&lt;/del&gt; now only &lt;strong&gt;$10&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;&lt;strong&gt;Asset Store Links&lt;/strong&gt;: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Lite version: Free&lt;/a&gt;, &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Pro version: &lt;del&gt;$50&lt;/del&gt; now only &lt;strong&gt;$10&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2017/04/weaver-v3-0" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2017/04/weaver-v3-0</id>
+		<title>Weaver v3.0</title>
+		<updated>2017-04-26T00:00:00Z</updated>
+		<content>&lt;p&gt;Weaver is my procedural asset framework which I created to fix a bunch of problems I have with Unity: primarily the need for string-based resource loading and the lack of nested prefabs.&lt;/p&gt;
+&lt;p&gt;Asset Store: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Weaver Lite (Free)&lt;/a&gt; and &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Weaver Pro (on sale for $24.50)&lt;/a&gt;. When I submitted the update I actually increased the price to $50, but then it went on sale and it's still showing 30% off the old price ($35). &lt;strong&gt;The sale ends on 30/4&lt;/strong&gt;, so get it while it's hot.&lt;/p&gt;
+&lt;p&gt;Probably the most prominent changes in 3.0 are the reworked limitations of the Lite version to allow people to demo all of the major features instead of allowing unlimited access to some and completely locking others, and a bunch of extra screenshots on the store page. But in terms of actual features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Auto-generate in Play Mode: Weaver can automatically regenerate your procedural assets when they are used in play mode so that you can modify the source and hit play immediately without needing to always regenerate the asset you modified first. This feature can cause lots of different problems that you wouldn't normally have so it's disabled by default. There's a whole section about it in the manual.&lt;/li&gt;
+&lt;li&gt;Auto-generate on Build: pretty much the same, but far less problematic. It just makes sure that you're using the latest version of all your procedural assets whenever you do a build.&lt;/li&gt;
+&lt;li&gt;Procedural Asset Collections (Pro Only): I've had a few requests from people wanting to take external data like a spreadsheet of enemy stats and import it to turn it into prefabs. That's what this is for; you just write a method that returns a list (or any collection type) of objects and give it a [ProceduralAssetCollection] attribute, and Weaver will take care of saving them as assets and provide you with an array to access them at runtime (automatically loading each one as it is first used).&lt;/li&gt;
+&lt;li&gt;Massive performance optimizations to the sub-asset saving system. A large object heirarchy that previously took 4.2 seconds to save its sub assets now takes 0.3 seconds.&lt;/li&gt;
+&lt;li&gt;The store page has a summary of the change log and the full list is included in the package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Asset Store: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Weaver Lite (Free)&lt;/a&gt; and &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Weaver Pro (on sale for $24.50)&lt;/a&gt;.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;Weaver is my procedural asset framework which I created to fix a bunch of problems I have with Unity: primarily the need for string-based resource loading and the lack of nested prefabs.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2017/01/weaver-v2-0" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2017/01/weaver-v2-0</id>
+		<title>Weaver v2.0</title>
+		<updated>2017-01-06T00:00:00Z</updated>
+		<content>&lt;p&gt;Weaver is my procedural asset framework which I created to fix a bunch of problems I have with Unity: primarily the need for string-based resource loading and the lack of nested prefabs.&lt;/p&gt;
+&lt;p&gt;Asset Store: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Weaver Lite (Free)&lt;/a&gt; and &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Weaver Pro ($35)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The biggest change in 2.0 is that I've reworked the settings files from using ScriptableObjects to using my own serialization system I've been working on. This fixed a whole bunch of problems which stemmed from the need to delay initialisation until Unity actually allows ScriptableObjects to be loaded and also from the uncertainty of which order things would initialise in.&lt;/p&gt;
+&lt;p&gt;Other notable changes include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Major structural rework of the assemblies and examples (make sure you delete any old version before importing the new one).&lt;/li&gt;
+&lt;li&gt;GUI improvements in the various EditorWindows, particularly the Layer Linker.&lt;/li&gt;
+&lt;li&gt;Improvements to the user manual and comments in the public API and in the examples.&lt;/li&gt;
+&lt;li&gt;The full change log is available on the asset store page (by clicking the version number below the images) and is also included in the package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I'd really appreciate some honest feedback if you check it out.&lt;/p&gt;
+&lt;p&gt;Asset Store: &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60305"&gt;Weaver Lite (Free)&lt;/a&gt; and &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/60304"&gt;Weaver Pro ($35)&lt;/a&gt;.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;Weaver is my procedural asset framework which I created to fix a bunch of problems I have with Unity: primarily the need for string-based resource loading and the lack of nested prefabs.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2016/04/weaver-v1-0" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2016/04/weaver-v1-0</id>
+		<title>Weaver v1.0</title>
+		<updated>2016-04-24T00:00:00Z</updated>
+		<content>&lt;p&gt;&lt;strong&gt;Weaver&lt;/strong&gt; is a tool that provides safe and robust links between your code and the rest of your project. Instead of using magic strings with Resources.Load and LayerMask.NameToLayer, Weaver procedurally generates scripts which allow you to directly reference assets and layers.&lt;/p&gt;
+&lt;p&gt;Instead of code like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Resources.Load&amp;lt;GameObject&amp;gt;(&amp;quot;Creatures/Goblins/Warrior&amp;quot;)
+LayerMask.NameToLayer(&amp;quot;HopefullyThisIsTheNameOfMyCustomLayer&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Weaver gives you properties/constants to reference assets/layers directly:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Assets.Resources.Creatures.Goblins.Warrior
+Layers.TheActualNameOfMyCustomLayer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It also exposes the underlying procedural asset framework so you can easily create your own procedural assets.&lt;/p&gt;
+&lt;p&gt;I've decided to release the Lite version of Weaver while I'm making images and stuff for the asset store page to hopefully get some feedback before I submit it.&lt;/p&gt;
+&lt;p&gt;Questions and suggestions are most welcome.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;&lt;strong&gt;Weaver&lt;/strong&gt; is a tool that provides safe and robust links between your code and the rest of your project. Instead of using magic strings with Resources.Load and LayerMask.NameToLayer, Weaver procedurally generates scripts which allow you to directly reference assets and layers.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2016/01/procedural-asset-framework-v2-0" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2016/01/procedural-asset-framework-v2-0</id>
+		<title>Procedural Asset Framework v2.0</title>
+		<updated>2016-01-12T00:00:00Z</updated>
+		<content>&lt;p&gt;The &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/49075"&gt;Full Version&lt;/a&gt; is available for &lt;strong&gt;$25&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/52447"&gt;Lite Version&lt;/a&gt; is &lt;strong&gt;Free&lt;/strong&gt; and includes all the features of the full version, but limits you to a maximum of 15 procedural assets per project.&lt;/p&gt;
+&lt;p&gt;At its core, the Procedural Asset Framework gives you the ability to procedurally generate assets using code and reference them using generics. The system is very open in how it can be used, allowing you to integrate it into your workflow as you see fit, for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you create a &lt;code&gt;PlayerPrefab : Procedural.Prefab&lt;/code&gt; class, you can reference the generated prefab in code using &lt;code&gt;Static&amp;lt;PlayerPrefab&amp;gt;.Instance&lt;/code&gt;. Or if you want to use it like a regular prefab, you can still drag it into a scene or into a field in a component, or load it using Resources.Load like any regular prefab.&lt;/li&gt;
+&lt;li&gt;Alternatively, if you don't actually want to generate the asset using code, but you do want to be able to reference it using generics, you can make a &lt;code&gt;PlayerPrefab : Procedural.ManualAsset&amp;lt;GameObject&amp;gt;&lt;/code&gt; class and give it the path to your asset (inside a Resources folder).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Other Features&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Procedural Layers Script&lt;/strong&gt;: a procedurally generated script which contains an int constant corresponding to each of the layers in your project (including custom layers). This means that instead of &lt;code&gt;LayerMask.NameToLayer(&amp;quot;MyCustomLayer&amp;quot;)&lt;/code&gt;, you can use &lt;code&gt;Layers.MyCustomLayer&lt;/code&gt;. Not only is this more efficient, but it also means that there's no risk of getting the name wrong, and if you rename any of the layers you can simply regenerate the script, then the compiler will warn you about anywhere you are still using the old name so you can clean up your code.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Custom Layer Masks&lt;/strong&gt;: you can also specify custom layer masks to be added to the script using the Layer Mask Manager window. Instead of using &lt;code&gt;(1 &amp;lt;&amp;lt; Layers.Default) | (1 &amp;lt;&amp;lt; Layers.Player) | (1 &amp;lt;&amp;lt; Layers.Enemy) ...&lt;/code&gt;, you can just make a custom mask and select the layers you want it to include, then reference it using &lt;code&gt;Layers.MyCustomMask&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[PreBuild] Attribute&lt;/strong&gt;: an attribute which can be placed on (almost) any method to have Unity call it automatically whenever you build the project. The attribute can be placed on any static method to have it called once at the start of a build. It can also be placed on an instance method in a MonoBehaviour class, which will cause it to be called once on every instance of that class in every scene included in the build.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Procedural App Details&lt;/strong&gt;: automated build numbering (and build date), as well as runtime access to the product name and company name you specify in the Player Settings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Questions, feedback, and feature requests are most welcome.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;The &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/49075"&gt;Full Version&lt;/a&gt; is available for &lt;strong&gt;$25&lt;/strong&gt;.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>Kailas</name>
+		</author>
+		<link href="https://kybernetikgames.github.io/weaver/blog/2015/11/procedural-asset-framework-v1-0" />
+		<id>https://kybernetikgames.github.io/weaver/blog/2015/11/procedural-asset-framework-v1-0</id>
+		<title>Procedural Asset Framework v1.0</title>
+		<updated>2015-11-26T00:00:00Z</updated>
+		<content>&lt;p&gt;&lt;a href="https://www.assetstore.unity3d.com/en/#!/content/49075"&gt;Asset Store Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As a programmer, I try to use a more code-centric approach to development than Unity easily provides. I often found myself looking for ways to do things like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoiding the need to use strings everywhere for resource loading and for accessing layers.&lt;/li&gt;
+&lt;li&gt;Supporting prefab inheritance.&lt;/li&gt;
+&lt;li&gt;Generating complex stuff in the editor to make the game load faster at runtime.&lt;/li&gt;
+&lt;li&gt;Merging changes made to an asset by multiple team members.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The result is my &lt;a href="https://www.assetstore.unity3d.com/en/#!/content/49075"&gt;Procedural Asset Framework&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Questions, feedback, and feature suggestions are most welcome.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;&lt;a href="https://www.assetstore.unity3d.com/en/#!/content/49075"&gt;Asset Store Link&lt;/a&gt;&lt;/p&gt;</summary>
 	</entry>
 </feed>
