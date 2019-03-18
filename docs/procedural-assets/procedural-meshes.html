@@ -197,18 +197,18 @@
 			<h1>Procedural Meshes</h1>
 		</section>
 	<section class="content">
-		<html><head></head><body><p>One of the most common reasons you may want to create a procedural asset is to generate a <code>Mesh</code> using code. Weaver allows you to easily and efficiently create procedural meshes using the <code>Kybernetik.MeshBuilder</code> class, both to efficiently generate and regenerate a dynamic mesh at runtime as well as to generate a procedural asset in the Unity Editor:</p>
+		<p>One of the most common reasons you may want to create a procedural asset is to generate a <code>Mesh</code> using code. Weaver allows you to easily and efficiently create procedural meshes using the <code>Kybernetik.MeshBuilder</code> class, both to efficiently generate and regenerate a dynamic mesh at runtime as well as to generate a procedural asset in the Unity Editor:</p>
 <ul>
 <li>The <a href="../examples/building">Building Example</a> demonstrates how to generate a simple procedural mesh.</li>
-<li>Construct a <code>new <a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> by specifying the initial vertex and index capacity. These values are simply the starting size for the internal lists which will expand as needed.</li>
-<li>By default, a <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> will contain UVs and Normals. If you want any other channels such as UVs2 or Colors, you must specify the <code>MeshChannels</code> in the constructor.</li>
+<li>Construct a <code>new MeshBuilder</code> by specifying the initial vertex and index capacity. These values are simply the starting size for the internal lists which will expand as needed.</li>
+<li>By default, a <code>MeshBuilder</code> will contain UVs and Normals. If you want any other channels such as UVs2 or Colors, you must specify the <code>MeshChannels</code> in the constructor.</li>
 <li>If you wish to use a <code>MeshTopology</code> other than <code>Triangles</code> you can specify it in the constructor or set the <code>topology</code> field at any time.</li>
 <li>To build your mesh, you simply call <code>builder.Vertices.Add(...)</code> (remembering to always add the same number of values to all mesh channels) followed by either adding values to the <code>builder.Indices0</code> list or calling any of the <code>builder.Index...</code> methods.</li>
-<li>Once you are finished building, you can either implicitly cast your <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> to a <code>Mesh</code> or use any of the <code>Compile</code> method overloads.</li>
-<li>If you wish to reuse your <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> you can simply call <code>Clear</code> between each use.</li>
-<li>Note that the source code of the <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> class is included in Weaver Lite.</li>
+<li>Once you are finished building, you can either implicitly cast your <code>MeshBuilder</code> to a <code>Mesh</code> or use any of the <code>Compile</code> method overloads.</li>
+<li>If you wish to reuse your <code>MeshBuilder</code> you can simply call <code>Clear</code> between each use.</li>
+<li>Note that the source code of the <code>MeshBuilder</code> class is included in Weaver Lite.</li>
 </ul>
-</body></html>
+
 	</section>
                 
             </div>           

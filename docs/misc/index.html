@@ -197,7 +197,8 @@
 			<h1>Miscellaneous</h1>
 		</section>
 	<section class="content">
-		<html><head></head><body><ul>
+		
+<ul>
   <li>
   Weaver is designed so that you can move it anywhere in your project and specify any <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Output Directory</a>, however it is recommended that you keep Weaver itself <strong>inside</strong> the <em>Assets/Plugins</em> folder and the <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Output Directory</a> <strong>outside</strong> that folder. Otherwise you may experience unexpected issues.
   </li>
@@ -205,7 +206,7 @@
   If you are only using the <a href="../project-constants">Project Constants</a> and none of your runtime code references anything else in the <code>Weaver</code> namespace, you can go to <em>Assets/Plugins/Weaver/<strong>Runtime</strong>/Weaver.dll</em> and set it to not be used in any platforms to save a small amount of build size.
   </li>
   <li>
-  Similarly, if none of your runtime code references anything else in the <code>Kybernetik</code> namespace (such as <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> or <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code>), you can exclude <em>Assets/Plugins/Weaver/<strong>Runtime</strong>/Kybernetik.Core.dll</em> from builds as well. Note that neither of the runtime assemblies depends on the other so you can disable either one on its own.
+  Similarly, if none of your runtime code references anything else in the <code>Kybernetik</code> namespace (such as <code>ObjectPool&lt;T&gt;</code> or <code>MeshBuilder</code>), you can exclude <em>Assets/Plugins/Weaver/<strong>Runtime</strong>/Kybernetik.Core.dll</em> from builds as well. Note that neither of the runtime assemblies depends on the other so you can disable either one on its own.
   </li>
 </ul>
 
@@ -233,7 +234,7 @@ Summaries of Weaver&#x27;s other general utilities.									</td>
 					</table>
 				</div>
 			</div> 
-</body></html>
+
 	</section>
                 
             </div>           

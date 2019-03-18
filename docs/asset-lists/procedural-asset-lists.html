@@ -201,7 +201,7 @@
 <p>Sometimes it is useful to generate an unknown number of <a href="../procedural-assets">Procedural Assets</a>. For example, you might want to set up a spreadsheet containing the stats of every enemy in your game so you can easily analyse and work with them in a program such as Microsoft Excel before turning them into prefabs in Unity.</p>
 <p>Defining a procedural Asset List works much like <a href="../procedural-assets/defining-a-procedural-asset">defining any other Procedural Asset</a>, except that:</p>
 <ul>
-<li>The field can be any type derived from <code><a href="/weaver/api/Weaver/AssetListBase">AssetListBase</a></code>.</li>
+<li>The field can be any type derived from <code>AssetListBase</code>.</li>
 <li>The method can return any type that implements the <code>IEnumerable&lt;T&gt;</code> interface, where <code>T</code> inherits from <code>UnityEngine.Object</code> (including <code>T[]</code> or <code>List&lt;T&gt;</code>). Note that the chosen return type has no impact on the way the assets are accessed at runtime (see below).</li>
 <li>Then the list can be <a href="../procedural-assets/generating-a-procedural-asset">generated like any other Procedural Asset</a>.</li>
 </ul>

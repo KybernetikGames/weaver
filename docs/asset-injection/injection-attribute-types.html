@@ -197,8 +197,8 @@
 			<h1>Injection Attribute Types</h1>
 		</section>
 	<section class="content">
-		<html><head></head><body><p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out this feature in the Unity Editor, but it will not be available in a runtime build unless you purchase Weaver Pro.</em></p>
-<p>There are several different kinds of injection attributes included with Weaver and you can implement your own by creating a class that inherits from <code><a href="/weaver/api/Weaver/InjectionAttribute">InjectionAttribute</a></code> or <code><a href="/weaver/api/Weaver/AssetInjectionAttribute">AssetInjectionAttribute</a></code>.</p>
+		<p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out this feature in the Unity Editor, but it will not be available in a runtime build unless you purchase Weaver Pro.</em></p>
+<p>There are several different kinds of injection attributes included with Weaver and you can implement your own by creating a class that inherits from <code>InjectionAttribute</code> or <code>AssetInjectionAttribute</code>.</p>
 <table class="table">
 <thead>
 <tr>
@@ -209,40 +209,40 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="asset-reference.png" width="42"></td>
+<td><img src="asset-reference.png" width=42></td>
 <td><code>AssetReference</code></td>
 <td>Assigns an asset reference directly to the attributed member.</td>
 </tr>
 <tr>
-<td><img src="lazy-reference.png" width="42"></td>
+<td><img src="lazy-reference.png" width=42></td>
 <td></td>
-<td>If you want to ensure that the target asset doesn't get loaded until it is actually needed (instead of loading it on startup) you can use <code><a href="/weaver/api/Weaver/Asset_1">Asset&lt;T&gt;</a></code> as the field type (where <code>T</code> is the asset type). Note that this requires the asset to be in a <code>Resources</code> folder.</td>
+<td>If you want to ensure that the target asset doesn't get loaded until it is actually needed (instead of loading it on startup) you can use <code>Asset&lt;T&gt;</code> as the field type (where <code>T</code> is the asset type). Note that this requires the asset to be in a <code>Resources</code> folder.</td>
 </tr>
 <tr>
-<td><img src="asset-instance.png" width="42"></td>
+<td><img src="asset-instance.png" width=42></td>
 <td><code>AssetInstance</code></td>
 <td>Instantiates a copy of the target asset in the scene, calls <code>DontDestroyOnLoad</code> on it, and assigns it to the attributed member.</td>
 </tr>
 <tr>
-<td><img src="asset-pool.png" width="42"></td>
+<td><img src="asset-pool.png" width=42></td>
 <td><code>AssetPool</code></td>
-<td>Assigns an <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> which creates new objects by instantiating the target asset. See the <a href="../misc/object-pooling">Object Pooling</a> section for more information.</td>
+<td>Assigns an <code>ObjectPool&lt;T&gt;</code> which creates new objects by instantiating the target asset. See the <a href="../misc/object-pooling">Object Pooling</a> section for more information.</td>
 </tr>
 <tr>
-<td><img src="pref.png" width="42"></td>
+<td><img src="pref.png" width=42></td>
 <td><code>Pref</code></td>
-<td>Doesn't reference an asset, so it inherits directly from <code><a href="/weaver/api/Weaver/InjectionAttribute">InjectionAttribute</a></code> rather than <code><a href="/weaver/api/Weaver/AssetInjectionAttribute">AssetInjectionAttribute</a></code>. Simply assigns a value loaded from <code>PlayerPrefs</code> on startup and saves the value back to <code>PlayerPrefs</code> on shutdown. See <a href="pref-injection">Pref Injection</a> for more details.</td>
+<td>Doesn't reference an asset, so it inherits directly from <code>InjectionAttribute</code> rather than <code>AssetInjectionAttribute</code>. Simply assigns a value loaded from <code>PlayerPrefs</code> on startup and saves the value back to <code>PlayerPrefs</code> on shutdown. See <a href="pref-injection">Pref Injection</a> for more details.</td>
 </tr>
 <tr>
-<td><img src="pref.png" width="42"></td>
+<td><img src="pref.png" width=42></td>
 <td><code>EditorPref</code></td>
 <td>[Editor-Only] Same as <code>Pref</code> but uses <code>EditorPrefs</code> instead.</td>
 </tr>
 </tbody>
 </table>
-<p>When you apply any <code><a href="/weaver/api/Weaver/InjectionAttribute">InjectionAttribute</a></code> you can specify certain <a href="/weaver/api/Weaver/InjectionAttribute/#Properties">optional properties</a> in its constructor to modify its behaviour. For example: <code>[AssetReference(Optional = true)]</code>. Each specific attribute type may also have additional optional properties.</p>
+<p>When you apply any <code>InjectionAttribute</code> you can specify certain <a href="/weaver/api/Weaver/InjectionAttribute/#Properties">optional properties</a> in its constructor to modify its behaviour. For example: <code>[AssetReference(Optional = true)]</code>. Each specific attribute type may also have additional optional properties.</p>
 <p>You can also use the <code>[OnInjectionComplete]</code> attribute on a static parameterless method to have Weaver automatically call it on startup after all fields have been injected. This is useful if you want to imemdiately do something with multiple injected values since you can't be sure of the order they will be assigned.</p>
-</body></html>
+
 	</section>
                 
             </div>           

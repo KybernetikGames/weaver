@@ -197,7 +197,7 @@
 			<h1>Build Details</h1>
 		</section>
 	<section class="content">
-		<html><head></head><body><p>This example is a single script located at <em>Assets/Plugins/Weaver/BuildDetailsScriptBuilder.cs</em>. It implements an automated build numbering system which can be useful on its own, but also demonstrates how you can create your own <a href="../procedural-assets/procedural-scripts">Procedural Scripts</a>.</p>
+		<p>This example is a single script located at <em>Assets/Plugins/Weaver/BuildDetailsScriptBuilder.cs</em>. It implements an automated build numbering system which can be useful on its own, but also demonstrates how you can create your own <a href="../procedural-assets/procedural-scripts">Procedural Scripts</a>.</p>
 <ul>
 <li>The bare minimum required for a <a href="../procedural-assets">Procedural Asset</a> is a field or property marked with an <a href="../asset-injection">Asset Injection</a> attribute and an appropriate generator method.
 <ul>
@@ -206,9 +206,9 @@
 <li>Since <code>MonoScript</code> is an editor-only type, the <code>[ProceduralAsset]</code> attribute automatically has <code>EditorOnly</code> set to true. The script is generated and gets compiled into a build like any other script, but the <code>BuildDetailsScriptBuilder.Script</code> property doesn't actually need to be assigned at runtime (and can't be because <code>MonoScript</code> doesn't exist at runtime).</li>
 </ul>
 </li>
-<li>The <code>BuildDetailsScriptBuilder</code> class inherits from <code><a href="/weaver/api/Weaver.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></code> to utilise its ability to automatically gather the reflection <code>FieldInfo</code> of the existing fields. This allows it to easily get the existing <code>BuildNumber</code> and increment it when regenerating the script during a build.</li>
+<li>The <code>BuildDetailsScriptBuilder</code> class inherits from <code>SimpleScriptBuilder</code> to utilise its ability to automatically gather the reflection <code>FieldInfo</code> of the existing fields. This allows it to easily get the existing <code>BuildNumber</code> and increment it when regenerating the script during a build.</li>
 </ul>
-</body></html>
+
 	</section>
                 
             </div>           
