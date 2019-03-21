@@ -217,32 +217,32 @@
 <h1 id="system-scripts">System Scripts</h1>
 <ul>
 <li>These scripts are located in <em>Assets/Plugins/Weaver/Examples/02 Floating Text/Code/Floating Text</em>.</li>
-<li><code>FloatingText</code> is the base script which manages the lifetime of the text.
+<li><code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> is the base script which manages the lifetime of the text.
 <ul>
-<li><code>FloatingTextUnity</code> inherits from <code>FloatingText</code> and uses Unity's inbuilt <code>TextMesh</code> component for its text.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> inherits from <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> and uses Unity's inbuilt <code>TextMesh</code> component for its text.</li>
 <li>See <a href="#floating-text-mesh-pro">Floating Text Mesh Pro</a> below for more information.</li>
 </ul>
 </li>
-<li><code>BillboardManager</code> controls the rotation of the text objects to keep them constantly facing the camera (or whatever object the manager is attached to).</li>
-<li><code>FloatingTextBounce</code>, <code>FloatingTextFade</code>, and <code>FloatingTextTypewriter</code> are all "modifiers" that can be added alongside a <code>FloatingText</code> to alter its behaviour.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/BillboardManager">BillboardManager</a></code> controls the rotation of the text objects to keep them constantly facing the camera (or whatever object the manager is attached to).</li>
+<li><code><a href="/weaver/api/Weaver.Examples/FloatingTextBounce">FloatingTextBounce</a></code>, <code><a href="/weaver/api/Weaver.Examples/FloatingTextFade">FloatingTextFade</a></code>, and <code><a href="/weaver/api/Weaver.Examples/FloatingTextTypewriter">FloatingTextTypewriter</a></code> are all "modifiers" that can be added alongside a <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> to alter its behaviour.</li>
 <li>If you wish to use any of these scripts in your game, it is recommended that you make a new script, copy the contents into it, and change the namespace. Otherwise updating Weaver may alter that script and cause errors where your other code references it.</li>
 </ul>
 <h1 id="example-scripts">Example Scripts</h1>
 <ul>
 <li>These scripts are located in <em>Assets/Plugins/Weaver/Examples/02 Floating Text/Code</em>.</li>
-<li><code>FollowMouse</code> is a very simple script to represent a moving player object by having it follow the mouse cursor around.</li>
-<li><code>DamageOnContact</code> and <code>StunOnContact</code> are simple representations of a damage system and a status effect (debuff).</li>
-<li><code>Conversation</code> plays through a simple sequence of lines of text as if several characters were talking to each other.</li>
-<li><code>TextManager</code> provides a central location for accessing various the different kinds of used in this example.
+<li><code><a href="/weaver/api/Weaver.Examples/FollowMouse">FollowMouse</a></code> is a very simple script to represent a moving player object by having it follow the mouse cursor around.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/DamageOnContact">DamageOnContact</a></code> and <code><a href="/weaver/api/Weaver.Examples/StunOnContact">StunOnContact</a></code> are simple representations of a damage system and a status effect (debuff).</li>
+<li><code><a href="/weaver/api/Weaver.Examples/Conversation">Conversation</a></code> plays through a simple sequence of lines of text as if several characters were talking to each other.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> provides a central location for accessing various the different kinds of used in this example.
 <ul>
-<li>It contains several private <code>ObjectPool&lt;FloatingText&gt;</code> fields which are injected by <code>[AssetPool]</code> attributes.</li>
-<li>This means each field targets its own prefab just like with the previous <a href="frame-rate">Frame Rate</a> example, but instead of getting that prefab directly assigned to it they each get constructed into an <code>ObjectPool&lt;FloatingText&gt;</code> that can create new instances of the prefab on demand and recycle them after they are used.</li>
+<li>It contains several private <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> fields which are injected by <code>[AssetPool]</code> attributes.</li>
+<li>This means each field targets its own prefab just like with the previous <a href="frame-rate">Frame Rate</a> example, but instead of getting that prefab directly assigned to it they each get constructed into an <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> that can create new instances of the prefab on demand and recycle them after they are used.</li>
 <li>The name of the <em>Text Manager</em> folder and the prefabs it contains follow one of the <a href="../asset-injection/using-asset-injection#asset-naming">Asset Naming</a> rules to automatically match up with the script and field names when you first import Weaver.</li>
 </ul>
 </li>
 </ul>
 <h1 id="floating-text-mesh-pro">Floating Text Mesh Pro</h1>
-<p>In order to avoid tieing the <code>FloatingText</code> system to a specific type of output, the base class is <code>abstract</code> with all the references to Unity's inbuilt <code>TextMesh</code> component are instead contained in the <code>FloatingTextUnity</code> child class. This is known as the <a href="https://en.wikipedia.org/wiki/Facade_pattern">Facade Pattern</a> which allows you to easily use another text system such as <a href="https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126">Text Mesh Pro</a> by writing a script like the one below. Any code that expects a <code>FloatingText</code> would be able to use a <code>FloatingTextUnity</code> or a <code>FloatingTextMeshPro</code> without needing to know or care which system was used.</p>
+<p>In order to avoid tieing the <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> system to a specific type of output, the base class is <code>abstract</code> with all the references to Unity's inbuilt <code>TextMesh</code> component are instead contained in the <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> child class. This is known as the <a href="https://en.wikipedia.org/wiki/Facade_pattern">Facade Pattern</a> which allows you to easily use another text system such as <a href="https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126">Text Mesh Pro</a> by writing a script like the one below. Any code that expects a <code><a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a></code> would be able to use a <code><a href="/weaver/api/Weaver.Examples/FloatingTextUnity">FloatingTextUnity</a></code> or a <code>FloatingTextMeshPro</code> without needing to know or care which system was used.</p>
 <pre><code>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -251,7 +251,7 @@ using Kybernetik;
 
 namespace Weaver.Examples
 {
-    public sealed class FloatingTextMeshPro : FloatingText
+    public sealed class FloatingTextMeshPro : <a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>
     {
         /************************************************************************************************************************/
 

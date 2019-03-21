@@ -200,19 +200,19 @@
 		<p>Each of the <a href="../project-constants">Project Constants</a> systems generates a procedural script and you can create your own by making a procedural <code>MonoScript</code> with a generator method that takes a <code>System.Text.StringBuilder</code> parameter. To generate the script, Weaver will run your method then save the contents of the <code>StringBuilder</code> as a <code>.cs</code> file for Unity to import as a script.</p>
 <ul>
 <li>The <a href="../examples/build-details">Build Details Script Builder</a> demonstrates how to generate a simple procedural script.</li>
-<li>In order to generate their script text, the <a href="../project-constants">Project Constants</a> systems use the <code>Kybernetik.ProceduralScripting</code> namespace which contains classes like <code>ScriptBuilder</code> and <code>TypeBuilder</code>. These classes are located in <em>Kybernetik.dll</em>, meaning that their source code is available even to Weaver Lite users.
+<li>In order to generate their script text, the <a href="../project-constants">Project Constants</a> systems use the <code>Kybernetik.ProceduralScripting</code> namespace which contains classes like <code><a href="/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder">ScriptBuilder</a></code> and <code><a href="/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder">TypeBuilder</a></code>. These classes are located in <em>Kybernetik.dll</em>, meaning that their source code is available even to Weaver Lite users.
 <ul>
-<li>The <code>Weaver.SimpleScriptBuilder</code> class inherits from the base <code>ScriptBuilder</code> and simplifies the creation of procedural scripts containing a single root type with the same name as the script.</li>
+<li>The <code>Weaver.SimpleScriptBuilder</code> class inherits from the base <code><a href="/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder">ScriptBuilder</a></code> and simplifies the creation of procedural scripts containing a single root type with the same name as the script.</li>
 </ul>
 </li>
 <li>Procedural scripts using this system will be automatically regenerated if necessary whenever assets are saved such as when the user presses <code>Ctrl + S</code> to save the scene or when the project is built.</li>
-<li>The <code>ScriptBuilder</code> base class defines the member naming conventions, code region names, and handling rules for <a href="../project-constants/obsolete-members">Obsolete Members</a>.
+<li>The <code><a href="/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder">ScriptBuilder</a></code> base class defines the member naming conventions, code region names, and handling rules for <a href="../project-constants/obsolete-members">Obsolete Members</a>.
 <ul>
 <li>The <code>GetPrimaryMemberName</code> method is used to turn an input string such as an animation name like <em>"Heavy Attack"</em> into a valid C# member name like <code>HeavyAttack</code>.</li>
 <li>If multiple members in the same type get the same primary member name, <code>GetFallbackMemberName</code> will be used to get a more unique name like <code>Heavy_Attack</code> for each of them. If there are still conflicts after that, an error will be logged.</li>
 </ul>
 </li>
-<li>The <code>TypeBuilder</code> class is used to gather the members you want and compare them to existing members using reflection to determine if anything has changed and the script needs to be regenerated.
+<li>The <code><a href="/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder">TypeBuilder</a></code> class is used to gather the members you want and compare them to existing members using reflection to determine if anything has changed and the script needs to be regenerated.
 <ul>
 <li>Add members using the various <code>Add...</code> methods. These methods return the added member builder in case you need any additional customisation.</li>
 <li>Call <code>PrepareToBuild</code> which determines the <code>Name</code> of each member from its <code>NameSource</code> and resolves any naming conflicts, then compares its member builders to the existing member information using reflection to determine if the script needs to be regenerated, in which case the method returns true.</li>

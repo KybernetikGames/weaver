@@ -197,7 +197,7 @@
 			<h1>Asset Naming</h1>
 		</section>
 	<section class="content">
-		<p>When you <em>first</em> apply an <code>AssetInjectionAttribute</code> such as an <code>[AssetReference]</code> or <code>[AssetInstance]</code> it uses the <code>AssetPathMatcher</code> class to search through all assets of the appropriate type in your project. This search picks the most appropriate asset to use based the end of its file path using the following criteria:</p>
+		<html><head></head><body><p>When you <em>first</em> apply an <code><a href="/weaver/api/Weaver/AssetInjectionAttribute">AssetInjectionAttribute</a></code> such as an <code>[AssetReference]</code> or <code>[AssetInstance]</code> it uses the <code>AssetPathMatcher</code> class to search through all assets of the appropriate type in your project. This search picks the most appropriate asset to use based the end of its file path using the following criteria:</p>
 <ol>
 <li>(highest priority) The optional <code>FileName</code> property set in the attribute's constructor.</li>
 <li>The full <code>Namespace.DeclaringType.MemberName</code> of the attributed member.</li>
@@ -209,11 +209,11 @@
 </ol>
 <p>The search is case-insensitive and any separator characters (dot <code>.</code>, comma <code>,</code>, slash <code>/</code>, plus <code>+</code>, minus <code>-</code>, or space <code></code>) are considered interchangeable and skippable. For example:</p>
 <ul>
-<li><code>MyGame.Player.Prefab</code> could match against a file path ending with <em>.../My Game/Player.prefab</em>. Note how &quot;<em>My Game</em>&quot; has a space not present in the member name and is a folder while &quot;<em>prefab</em>&quot; is actually the file extension.</li>
+<li><code>MyGame.Player.Prefab</code> could match against a file path ending with <em>.../My Game/Player.prefab</em>. Note how "<em>My Game</em>" has a space not present in the member name and is a folder while "<em>prefab</em>" is actually the file extension.</li>
 <li>Weaver itself makes use of this feature to identify the target assets for each of the <a href="../examples">Example Scripts</a> when it is first imported so that it doesn't need to include the Weaver Settings file (because doing so would overwrite your settings each time you import a new version of Weaver).
 <ul>
 <li><code>Weaver.Examples.FrameRate.Instance</code> is found at <em>Assets/Plugins/Weaver/Examples/01 Frame Rate/<strong>Frame Rate</strong>.prefab</em>.</li>
-<li><code>TextManager</code> finds its prefabs in the <em>Assets/Plugins/Weaver/Examples/02 Floating Text/<strong>Text Manager</strong></em> folder.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> finds its prefabs in the <em>Assets/Plugins/Weaver/Examples/02 Floating Text/<strong>Text Manager</strong></em> folder.</li>
 <li><code>Building.ProceduralOfficeBuilding</code> is found at <em>Assets/Plugins/Weaver/Examples/03 Building/<strong>Procedural Office Building</strong>.prefab</em>.</li>
 <li><code>GameOverScreen.Prefab</code> is found at <em>Assets/Plugins/Weaver/Examples/05 Missile Command/Prefabs/Resources/<strong>Game Over Screen.prefab</strong></em>.</li>
 <li><code>Score.Text</code> is found at <em>Assets/Plugins/Weaver/Examples/05 Missile Command/Prefabs/<strong>Score Text</strong>.prefab</em>.</li>
@@ -222,7 +222,7 @@
 </li>
 </ul>
 <p>This search is only conducted once when Weaver first detects you have added the attribute. After that it simply stores a reference to the asset (or remembers that it didn't find one) so the system doesn't have to search through your whole project all the time and doesn't change the target asset unexpectedly when you rename or move assets. You can always re-run the search using the <code>[F]</code> button in the <a href="using-asset-injection#injectors-panel">Injectors Panel</a>.</p>
-
+</body></html>
 	</section>
                 
             </div>           

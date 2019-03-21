@@ -197,7 +197,7 @@
 			<h1>Asset Generators</h1>
 		</section>
 	<section class="content">
-		<p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out procedural assets in the Unity Editor, but the <a href="../asset-injection">Asset Injection</a> will not be available in a runtime build unless you purchase Weaver Pro. You can still use the generated assets as regular assets though.</em></p>
+		<html><head></head><body><p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out procedural assets in the Unity Editor, but the <a href="../asset-injection">Asset Injection</a> will not be available in a runtime build unless you purchase Weaver Pro. You can still use the generated assets as regular assets though.</em></p>
 <p>By default, a procedural asset is saved using <code>AssetDatabase.CreateAsset</code> once your generator method returns it. Unfortunately, this doesn’t work for some asset types; a <code>GameObject</code> must be saved using the <code>PrefabUtility</code> class, a <code>Texture</code> must be encoded in a specific image format (such as png), and so on. This is what Asset Generators are for:</p>
 <ul>
 <li>You don’t need to call an Asset Generator yourself; Weaver will automatically pick the one that’s most appropriate for each asset type. However, you do need to be aware that certain asset types use different rules than others.</li>
@@ -222,28 +222,28 @@
 <td><code>()</code></td>
 </tr>
 <tr>
-<td><code>PrefabGenerator</code></td>
+<td><code><a href="/weaver/api/Weaver.Procedural/PrefabGenerator">PrefabGenerator</a></code></td>
 <td><code>GameObject</code>*</td>
 <td>.prefab</td>
 <td><code>GameObject</code></td>
 <td><code>()</code></td>
 </tr>
 <tr>
-<td><code>TextureGenerator</code></td>
+<td><code><a href="/weaver/api/Weaver.Procedural/TextureGenerator">TextureGenerator</a></code></td>
 <td><code>Texture2D</code></td>
 <td>.png</td>
 <td><code>Texture2D</code></td>
 <td><code>()</code></td>
 </tr>
 <tr>
-<td><code>TextGenerator</code></td>
+<td><code><a href="/weaver/api/Weaver.Procedural/TextGenerator">TextGenerator</a></code></td>
 <td><code>TextAsset</code></td>
 <td>.txt</td>
 <td><code>void</code></td>
 <td><code>(System.Text.StringBuilder)</code></td>
 </tr>
 <tr>
-<td><code>ScriptGenerator</code></td>
+<td><code><a href="/weaver/api/Weaver.Procedural/ScriptGenerator">ScriptGenerator</a></code></td>
 <td><code>MonoScript</code></td>
 <td>.cs</td>
 <td><code>void</code></td>
@@ -251,7 +251,7 @@
 </tr>
 <tr>
 <td><code>AssetListGenerator</code></td>
-<td><code>AssetListBase</code></td>
+<td><code><a href="/weaver/api/Weaver/AssetListBase">AssetListBase</a></code></td>
 <td>.asset</td>
 <td><code>IEnumerable&lt;T&gt;</code></td>
 <td><code>()</code></td>
@@ -259,11 +259,11 @@
 </tbody>
 </table>
 <ul>
-<li>*<code>PrefabGenerator</code> is also used for <code>Component</code> types.</li>
+<li>*<code><a href="/weaver/api/Weaver.Procedural/PrefabGenerator">PrefabGenerator</a></code> is also used for <code>Component</code> types.</li>
 <li>You can define your own Asset Generator by making a class that inherits from <code>Weaver.AssetGenerator&lt;T&gt;</code>. Weaver will automatically use your class whenever it generates a procedural asset of the specified type <code>T</code>.</li>
 <li>The Procedural Assets panel in the Weaver Window has a foldout to show the details of all Asset Generator types currently in your project.</li>
 </ul>
-
+</body></html>
 	</section>
                 
             </div>           

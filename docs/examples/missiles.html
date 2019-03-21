@@ -197,25 +197,25 @@
 			<h1>04 Missiles</h1>
 		</section>
 	<section class="content">
-		<p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/04 Missiles</em>. Demonstrates an <a href="../asset-lists">Asset List</a> which automatically gathers all prefabs in a folder in conjunction with <a href="../misc/object-pooling">Object Pooling</a> at runtime.</p>
+		<html><head></head><body><p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/04 Missiles</em>. Demonstrates an <a href="../asset-lists">Asset List</a> which automatically gathers all prefabs in a folder in conjunction with <a href="../misc/object-pooling">Object Pooling</a> at runtime.</p>
 <ul>
-<li><em>Assets/Plugins/Weaver/Examples/04 Missiles/Missiles.asset</em> is an <a href="../asset-lists">Asset List</a>. Specifically, a <code>MissileList</code> which inherits from <code>AssetList&lt;Missile&gt;</code>. It automatically gathers all prefabs with a <code>Missile</code> component in the target folder when entering play mode or compiling a runtime build so they can be accessed efficiently as a simple list at runtime.</li>
-<li><code>MissileRain</code> has various parameters that determine how often it will fire and how fast the missiles it fires will be travelling. <code>FixedUpdate</code> determines when to <code>Fire</code>, which picks a random missile prefab from the list, uses <code>ObjectPool.GetSharedComponentPool</code> to get the <code>ObjectPool&lt;Missile&gt;</code> that manages instances of that particular prefab, and launches an instance from that pool.
+<li><em>Assets/Plugins/Weaver/Examples/04 Missiles/Missiles.asset</em> is an <a href="../asset-lists">Asset List</a>. Specifically, a <code><a href="/weaver/api/Weaver/MissileList">MissileList</a></code> which inherits from <code>AssetList&lt;<a href="/weaver/api/Weaver.Examples/Missile">Missile</a>&gt;</code>. It automatically gathers all prefabs with a <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> component in the target folder when entering play mode or compiling a runtime build so they can be accessed efficiently as a simple list at runtime.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/MissileRain">MissileRain</a></code> has various parameters that determine how often it will fire and how fast the missiles it fires will be travelling. <code>FixedUpdate</code> determines when to <code>Fire</code>, which picks a random missile prefab from the list, uses <code>ObjectPool.GetSharedComponentPool</code> to get the <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/Missile">Missile</a>&gt;</code> that manages instances of that particular prefab, and launches an instance from that pool.
 <ul>
-<li>It can't just use a single <code>ObjectPool&lt;Missile&gt;</code> for all its missiles because the ones spawned by each prefab are different, so each prefab needs its own pool.</li>
+<li>It can't just use a single <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/Missile">Missile</a>&gt;</code> for all its missiles because the ones spawned by each prefab are different, so each prefab needs its own pool.</li>
 <li>This also means that anything else firing instances of the same prefab could use the same pool.</li>
 </ul>
 </li>
-<li><code>Missile</code> flies straight and explodes when it collides with something or takes damage.
+<li><code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> flies straight and explodes when it collides with something or takes damage.
 <ul>
-<li>Each <code>Missile</code> has a reference to a particular <code>Explosion</code> prefab so they can have different types. In this case, slow missiles have a larger explosion.</li>
-<li>Each <code>Missile</code> could have its own <code>Explosion</code> instance, but since only one or the other will be active at any given time that would allocate more objects than necessary. Instead, they also use <code>ObjectPool.GetSharedComponentPool</code> so that every <code>Missile</code> with a particular <code>Explosion</code> prefab will share the same pool for it. Specifically, every instance of the <em>Large Missile.prefab</em> will use the same pool of the <em>Large Explosion.prefab</em> and since <em>Slow Missile.prefab</em> also uses the same explosion it will share the same pool as well.</li>
+<li>Each <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> has a reference to a particular <code><a href="/weaver/api/Weaver.Examples/Explosion">Explosion</a></code> prefab so they can have different types. In this case, slow missiles have a larger explosion.</li>
+<li>Each <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> could have its own <code><a href="/weaver/api/Weaver.Examples/Explosion">Explosion</a></code> instance, but since only one or the other will be active at any given time that would allocate more objects than necessary. Instead, they also use <code>ObjectPool.GetSharedComponentPool</code> so that every <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> with a particular <code><a href="/weaver/api/Weaver.Examples/Explosion">Explosion</a></code> prefab will share the same pool for it. Specifically, every instance of the <em>Large Missile.prefab</em> will use the same pool of the <em>Large Explosion.prefab</em> and since <em>Slow Missile.prefab</em> also uses the same explosion it will share the same pool as well.</li>
 </ul>
 </li>
-<li><code>Explosion</code> expands then contracts over time, uses <code>Plysics.OverlapSphere</code> to detect objects within its radius, and <code>DamageSystem.DealDamage</code> to try to hit them.</li>
-<li><code>DamageSystem</code>, <code>IDealDamage</code>, and <code>ITakeDamage</code> form a simple system which allows objects to pass damage messages around.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/Explosion">Explosion</a></code> expands then contracts over time, uses <code>Plysics.OverlapSphere</code> to detect objects within its radius, and <code>DamageSystem.DealDamage</code> to try to hit them.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/DamageSystem">DamageSystem</a></code>, <code><a href="/weaver/api/Weaver.Examples/IDealDamage">IDealDamage</a></code>, and <code><a href="/weaver/api/Weaver.Examples/ITakeDamage">ITakeDamage</a></code> form a simple system which allows objects to pass damage messages around.</li>
 </ul>
-
+</body></html>
 	</section>
                 
             </div>           

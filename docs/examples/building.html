@@ -197,22 +197,22 @@
 			<h1>03 Building</h1>
 		</section>
 	<section class="content">
-		<p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/03 Building</em>. It contains a simple destructible building to be used by the later <a href="missile-command">Missile Command</a> example and demonstrates how you can create a <a href="../procedural-assets">Procedural Asset</a>.</p>
+		<html><head></head><body><p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/03 Building</em>. It contains a simple destructible building to be used by the later <a href="missile-command">Missile Command</a> example and demonstrates how you can create a <a href="../procedural-assets">Procedural Asset</a>.</p>
 <ul>
-<li><code>Building</code> is a <code>partial</code> class which is split into multiple files. The file in this example contains the definition of the procedural asset while the code to destroy the buildings at runtime for the <a href="missile-command">Missile Command</a> example is located over in that folder because it isn't relevant to this example.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/Building">Building</a></code> is a <code>partial</code> class which is split into multiple files. The file in this example contains the definition of the procedural asset while the code to destroy the buildings at runtime for the <a href="missile-command">Missile Command</a> example is located over in that folder because it isn't relevant to this example.</li>
 <li>The <code>ProceduralOfficeBuilding</code> field uses a regular <a href="../asset-injection/injection-attribute-types"><code>[AssetReference]</code></a> attribute similar to the <a href="frame-rate">Frame Rate</a> example, except:
 <ul>
 <li>It also has a <code>[ProceduralAsset]</code> attribute because we want to generate it using code. It can still be assigned manually, but it will be shown in the <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Procedural Assets Panel</a> with a <code>[G]</code> button to generate it and overwrite whatever existing asset was assigned (instead of being shown in the regular <a href="../asset-injection/using-asset-injection#injectors-panel">Injectors Panel</a>).</li>
-<li>By default, it will find a method called &quot;Generate<em>FieldName</em>&quot; to use as the generator method (in this case, that's <code>GenerateProceduralOfficeBuilding</code>), but you can name a method of your choice by setting the optional <code>Generator</code> property.</li>
+<li>By default, it will find a method called "Generate<em>FieldName</em>" to use as the generator method (in this case, that's <code>GenerateProceduralOfficeBuilding</code>), but you can name a method of your choice by setting the optional <code>Generator</code> property.</li>
 <li>The <code>EditorOnly</code> property is set to <code>true</code> because we don't actually need this asset reference to be injected at runtime. We just want to generate the prefab in the Unity Editor, then use it in a scene like a regular prefab.</li>
 </ul>
 </li>
 <li>The <code>GenerateProceduralOfficeBuilding</code> method is used to generate the prefab.
 <ul>
 <li>All it needs to do is create, configure, and return the desired object, then Weaver will take care of saving it. In this case, it creates a <code>new GameObject</code> and adds various components but you can make practically any type of asset procedurally, including textures, meshes, animator controllers, and scriptable objects.</li>
-<li>The building uses a <a href="../procedural-assets/procedural-meshes">Procedural Mesh</a> created using the <code>MeshBuilder</code> class. That mesh could have been saved as a separate asset by making another field with its own <code>[AssetReference]</code> and <code>[ProceduralAsset]</code> attributes, but in this case the mesh is only going to be used by this one prefab, so it might as well be saved inside that prefab.</li>
+<li>The building uses a <a href="../procedural-assets/procedural-meshes">Procedural Mesh</a> created using the <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> class. That mesh could have been saved as a separate asset by making another field with its own <code>[AssetReference]</code> and <code>[ProceduralAsset]</code> attributes, but in this case the mesh is only going to be used by this one prefab, so it might as well be saved inside that prefab.</li>
 <li>The same is true for the two <code>Material</code>s which are assigned to the <code>MeshRenderer</code>. Weaver automatically detects that they aren't saved anywhere else so it will save them inside the prefab asset itself.</li>
-<li>Also note how the mesh uses two sub-meshes. The <code>MeshBuilder</code> constructor takes a <code>vertexCapacity</code> followed by two <code>indexCapacities</code> which causes it to allocate index lists for two sub-meshes - [0] for the base of the building and [1] for the windows. This allows the <code>MeshRenderer</code> to render each sub-mesh with its own <code>Material</code> to give them each a different color.</li>
+<li>Also note how the mesh uses two sub-meshes. The <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> constructor takes a <code>vertexCapacity</code> followed by two <code>indexCapacities</code> which causes it to allocate index lists for two sub-meshes - [0] for the base of the building and [1] for the windows. This allows the <code>MeshRenderer</code> to render each sub-mesh with its own <code>Material</code> to give them each a different color.</li>
 </ul>
 </li>
 <li>The name of the prefab follows one of the <a href="../asset-injection/asset-naming">Asset Naming</a> rules to automatically match up with the script name when you first import Weaver.
@@ -221,7 +221,7 @@
 </ul>
 </li>
 </ul>
-
+</body></html>
 	</section>
                 
             </div>           

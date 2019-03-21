@@ -197,17 +197,17 @@
 			<h1>06 Item Shop</h1>
 		</section>
 	<section class="content">
-		<p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/06 Meta Asset List</em>. It demonstrates the use of a <a href="../asset-lists/lazy-asset-lists#meta-asset-lists">Meta Asset List</a> to create a user interface that can display the details of its items without actually loading all the items into memory until they are needed.</p>
+		<html><head></head><body><p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/06 Meta Asset List</em>. It demonstrates the use of a <a href="../asset-lists/lazy-asset-lists#meta-asset-lists">Meta Asset List</a> to create a user interface that can display the details of its items without actually loading all the items into memory until they are needed.</p>
 <ul>
-<li><code>ItemMetaData</code> contains the details of an item (name, cost, description, etc.).</li>
-<li><code>Item</code> just holds an <code>ItemMetaData</code> field. It could have any other functionality, but all this example actually uses is the meta data.</li>
-<li><em>Assets/Plugins/Weaver/Examples/06 Meta Asset List/All Items.asset</em> is an <a href="../asset-lists">Asset List</a>. Specifically, an <code>ItemList</code> which inherits from <code>MetaAssetList&lt;Item, ItemMetaData&gt;</code>. It automatically gathers all prefabs with an <code>Item</code> component in the target folder when entering play mode or compiling a runtime build so they can be accessed efficiently as a simple list at runtime. When doing so it also retrieves the <code>ItemMetaData</code> of each <code>Item</code> and serializes that data alongside their resource paths so the meta-data of an <code>Item</code> can be accessed without loading the actual prefab.</li>
-<li><code>ItemDisplay</code> uses various UI components to show the details of an <code>Item</code>.
+<li><code><a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a></code> contains the details of an item (name, cost, description, etc.).</li>
+<li><code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> just holds an <code><a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a></code> field. It could have any other functionality, but all this example actually uses is the meta data.</li>
+<li><em>Assets/Plugins/Weaver/Examples/06 Meta Asset List/All Items.asset</em> is an <a href="../asset-lists">Asset List</a>. Specifically, an <code><a href="/weaver/api/Weaver/ItemList">ItemList</a></code> which inherits from <code>MetaAssetList&lt;Item, <a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a>&gt;</code>. It automatically gathers all prefabs with an <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> component in the target folder when entering play mode or compiling a runtime build so they can be accessed efficiently as a simple list at runtime. When doing so it also retrieves the <code><a href="/weaver/api/Weaver.Examples/ItemMetaData">ItemMetaData</a></code> of each <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> and serializes that data alongside their resource paths so the meta-data of an <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> can be accessed without loading the actual prefab.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/ItemDisplay">ItemDisplay</a></code> uses various UI components to show the details of an <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code>.
 <ul>
-<li>Note that everything will always show &quot;Is Loaded&quot; while in the Unity Editor, but they will only be loaded on demand in a runtime build. This ensures that the list always contains the correct references and data for the assets currently in the target directory while achieving the desired memory management at runtime.</li>
+<li>Note that everything will always show "Is Loaded" while in the Unity Editor, but they will only be loaded on demand in a runtime build. This ensures that the list always contains the correct references and data for the assets currently in the target directory while achieving the desired memory management at runtime.</li>
 </ul>
 </li>
-<li><code>ItemShop</code> simply initialises an <code>ItemDisplay</code> for each <code>Item</code> in the <code>ItemList</code>.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/ItemShop">ItemShop</a></code> simply initialises an <code><a href="/weaver/api/Weaver.Examples/ItemDisplay">ItemDisplay</a></code> for each <code><a href="/weaver/api/Weaver.Examples/Item">Item</a></code> in the <code><a href="/weaver/api/Weaver/ItemList">ItemList</a></code>.</li>
 <li>This example could be adapted to any scenario where you want to access certain details of objects without loading them upfront:
 <ul>
 <li>A shop could use the item meta-data to sort and categorise entries, and only load ones that are currently visible.</li>
@@ -216,7 +216,7 @@
 </ul>
 </li>
 </ul>
-
+</body></html>
 	</section>
                 
             </div>           

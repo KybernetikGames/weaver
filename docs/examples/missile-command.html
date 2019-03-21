@@ -197,18 +197,18 @@
 			<h1>05 Missile Command</h1>
 		</section>
 	<section class="content">
-		<p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/05 Missile Command</em>. It brings all the previous examples together in a simple game which also uses Pref Injection and Lazy Asset Injection.</p>
+		<html><head></head><body><p>This example scene is located in <em>Assets/Plugins/Weaver/Examples/05 Missile Command</em>. It brings all the previous examples together in a simple game which also uses Pref Injection and Lazy Asset Injection.</p>
 <ul>
-<li><code>Building</code> is a <code>partial</code> class which is split into multiple files. The file in this example contains the code to destroy the buildings when they are hit at runtime while the procedural asset generation code for the <a href="building">Building</a> example is located over in that folder because it isn't relevant to this example.</li>
-<li><code>GameOverScreen</code> uses <a href="../asset-injection/injection-attribute-types">Lazy Asset Injection</a> to get a reference to its prefab. Instead of having a <code>GameOverScreen</code> field to get a direct reference, it has a <code>Weaver.Asset&lt;GameOverScreen&gt;</code> so Weaver will inject the prefab's resource path, meaning that at runtime the prefab doesn't get loaded into memory until it is actually used.</li>
-<li><code>MissileLauncher</code> allows the player to aim with the mouse cursor and click to fire <code>Missile</code>s.</li>
-<li><code>Score</code> uses a UI <code>Text</code> component to display the current value and an injected <code>ObjectPool&lt;FloatingText&gt;</code> to indicate when the value is changed.
+<li><code><a href="/weaver/api/Weaver.Examples/Building">Building</a></code> is a <code>partial</code> class which is split into multiple files. The file in this example contains the code to destroy the buildings when they are hit at runtime while the procedural asset generation code for the <a href="building">Building</a> example is located over in that folder because it isn't relevant to this example.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/GameOverScreen">GameOverScreen</a></code> uses <a href="../asset-injection/injection-attribute-types">Lazy Asset Injection</a> to get a reference to its prefab. Instead of having a <code><a href="/weaver/api/Weaver.Examples/GameOverScreen">GameOverScreen</a></code> field to get a direct reference, it has a <code>Weaver.Asset&lt;<a href="/weaver/api/Weaver.Examples/GameOverScreen">GameOverScreen</a>&gt;</code> so Weaver will inject the prefab's resource path, meaning that at runtime the prefab doesn't get loaded into memory until it is actually used.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/MissileLauncher">MissileLauncher</a></code> allows the player to aim with the mouse cursor and click to fire <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code>s.</li>
+<li><code><a href="/weaver/api/Weaver.Examples/Score">Score</a></code> uses a UI <code>Text</code> component to display the current value and an injected <code>ObjectPool&lt;<a href="/weaver/api/Weaver.Examples/FloatingText">FloatingText</a>&gt;</code> to indicate when the value is changed.
 <ul>
 <li>It also uses <a href="../asset-injection/pref-injection"><code>[Pref]</code> Injection</a> to automatically save the high score value in <code>PlayerPrefs</code>.</li>
 </ul>
 </li>
 </ul>
-
+</body></html>
 	</section>
                 
             </div>           

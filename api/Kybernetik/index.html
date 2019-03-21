@@ -78,6 +78,9 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#InterfaceTypes">Interface Types</a></p>
+<p><a href="#Namespaces">Namespaces</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -137,9 +140,18 @@
                     <ul class="sidebar-menu">
                         
 	<li class="header">Namespaces</li>   
-			<li class=" selected"><a href="/weaver/api/Kybernetik">Kybernetik</a></li>
-			<li><a href="/weaver/api/Weaver">Weaver</a></li>
-      
+
+				<li class="treeview active selected">
+				<a href="/weaver/api/Kybernetik">Kybernetik</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/weaver/api/Kybernetik.ProceduralScripting">Kybernetik<wbr>.ProceduralScripting</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/weaver/api/Weaver">Weaver</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/weaver/api/Weaver.Examples">Weaver<wbr>.Examples</a></li>
+			<li><a href="/weaver/api/Weaver.Procedural">Weaver<wbr>.Procedural</a></li>
+</ul></li>      
 
                     </ul>
                             
@@ -167,6 +179,180 @@
 
 
 
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/CSharp">CSharp</a></td>
+									<td>
+    A variety of methods relating to C# code.
+    Particularly useful for generating procedural code.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/CustomInspector">CustomInspector</a></td>
+									<td>[Editor-Only]
+    A component that uses a custom <code class="cs">System.Action</code> to draw the inspector.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></td>
+									<td>
+    Encapsulates lists of vertices, normals, etc. to simplify the procedural generation of meshes.
+    <p></p>
+    To use: simply add elements to the lists (<code class="cs">Kybernetik.MeshBuilder.Vertices</code>, <code class="cs">Kybernetik.MeshBuilder.Indices</code>, <code class="cs">Kybernetik.MeshBuilder.UVs</code>,
+    etc.) then call any of the Compile() overloads. You can also implicitly cast a <code class="cs">Kybernetik.MeshBuilder</code> to a
+    <code class="cs">UnityEngine.Mesh</code>.
+    <p></p>
+    You can efficiently reuse a <code class="cs">Kybernetik.MeshBuilder</code> by calling <code class="cs">Kybernetik.MeshBuilder.Clear</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/MeshUtils">MeshUtils</a></td>
+									<td>
+    Various utility methods for using the <code class="cs">Kybernetik.MeshBuilder</code> class.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/ObjectPool">ObjectPool</a></td>
+									<td>
+    Various utilities and extension methods for <code class="cs">Kybernetik.ObjectPool`1</code>.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool</a><wbr>&lt;<a href="/weaver/api/Kybernetik/ObjectPool_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A collection of objects that can create new items as necessary.
+    Get an object from the pool with <code class="cs">Kybernetik.ObjectPool`1.Acquire</code>.
+    Return it to the pool with <code class="cs">Kybernetik.ObjectPool`1.Release(`0)</code>.
+    <p></p>
+    The non-generic <code class="cs">Kybernetik.ObjectPool</code> class contains some useful methods of creating commonly used pools.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour</a><wbr>&lt;<a href="/weaver/api/Kybernetik/PoolableBehaviour_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A <code class="cs">UnityEngine.MonoBehaviour</code> component which automatically detects the <code class="cs">Kybernetik.ObjectPool`1</code> that
+    created it so it can be released back to that pool (or simply destroyed if it wasn't created by a pool) using
+    the <code class="cs">Kybernetik.ObjectPool.TryReleaseOrDestroyGameObject``1(``0)</code> extension method.
+    <p></p>
+    When inheriting from this class, <span name="T" class="typeparamref">T</span> should always be the child class itself, I.E.
+    <pre><code class="cs">class ChildClass : PoolableBehaviour&lt;ChildClass&gt;</code></pre>
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/PooledList">PooledList</a></td>
+									<td>
+    Various utilities and extension methods for <code class="cs">Kybernetik.PooledList`1</code>.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/PooledList_1">PooledList</a><wbr>&lt;<a href="/weaver/api/Kybernetik/PooledList_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A <code class="cs">System.Collections.Generic.List`1</code> of active objects backed by an <code class="cs">Kybernetik.ObjectPool`1</code> of inactive objects ready to
+    be reused.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetikgames.github.io/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Reflection">Reflection</a></td>
+									<td>A variety of utility methods relating to reflection.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Substring">Substring</a></td>
+									<td>
+    Encapsulates a string to treat it as a variable substring without the memory allocation and garbage collection
+    costs of string.Substring().
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Timer">Timer</a></td>
+									<td>A simple timer system that works both in the editor and at runtime using unscaled time.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/UnityScripts">UnityScripts</a></td>
+									<td>A variety of utility methods relating to script assets in Unity.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/Utils">Utils</a></td>
+									<td>A variety of miscellaneous utility methods.</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="InterfaceTypes">Interface Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Interface</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik/IDependant_1">IDependant</a><wbr>&lt;<a href="/weaver/api/Kybernetik/IDependant_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    Indicates that a type can depend on other objects.
+    Used for topological sorting.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Kybernetik/IPoolable">IPoolable</a></td>
+									<td>
+    An object with a callback method for when it is released to an <code class="cs">Kybernetik.ObjectPool`1</code>.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Namespaces">Namespaces</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Namespace</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Kybernetik.ProceduralScripting">Kybernetik<wbr>.ProceduralScripting</a></td>
+									<td>
+    Procedural scripting utilities.
+    <p></p>
+    <em>Source code is included.</em>
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 	
 </section>
                 
