@@ -1,6 +1,6 @@
 body.layout-boxed {
   background-image: none;
-  background-color: #f4f4f4;
+  background-color: #f4ecff;
 }
 body.layout-boxed .top-banner {
   background-color: #8070d0;
@@ -558,25 +558,29 @@ code a {
 /* Mermaid */
 
 .mermaid {
-  overflow: hidden;
-  visibility: hidden;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  min-height: 200px;
 }
 .mermaid[data-processed="true"] {
-  visibility: visible;
+  visibility: visible !important;
+}
+.mermaid svg {
+  min-height: 200px;
 }
 .node rect,
 .node circle,
 .node ellipse,
 .node polygon {
-  fill: #ffffff;
-  stroke: #000;
+  fill: #ffffff !important;
+  stroke: #000 !important;
 }
 .type-node rect,
 .type-node circle,
 .type-node ellipse,
 .type-node polygon {
-  fill: #e6e3f6;
-  stroke: #000;
+  fill: #e6e3f6 !important;
+  stroke: #000 !important;
 }
 .cluster rect {
   fill: #f3f3f3 !important;

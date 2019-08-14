@@ -7,7 +7,6 @@
         <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <title>Weaver - API - IAssetList&lt;T&gt; Interface</title>
-        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
         <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
         <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -22,6 +21,7 @@
         <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <script src="/weaver/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/weaver/assets/js/html5shiv.min.js"></script>
         <script src="/weaver/assets/js/respond.min.js"></script>
@@ -56,14 +56,14 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"> User Manual</a></li>
-        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"> FAQ</a></li>
-        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"> Blog</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"> API v5.0</a></li>
-        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Try</a></li>
-        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"> Buy</a></li>
-        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"> Contact</a></li>
-        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"> Other Assets</a></li>
+                                    <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
+        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
+        <li><a href="https://kybernetikgames.github.io/kailas-dierk/unity-assets"><img src="/weaver/images/kybernetik.png" height="20" style="position:relative; left:-2px; top:-1px;"> Other Assets</a></li>
  
                         </ul>       
                     </div>
@@ -219,34 +219,34 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/weaver/api/Weaver/AssetList_1">AssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/AssetList_1#typeparam-T">T</a>&gt;<wbr></li>								
-											<li><a href="/weaver/api/Weaver/ObjectList">ObjectList</a></li>								
 											<li><a href="/weaver/api/Weaver/ItemList">ItemList</a></li>								
-											<li><a href="/weaver/api/Weaver/MissileList">MissileList</a></li>								
+											<li><a href="/weaver/api/Weaver/ObjectList">ObjectList</a></li>								
 											<li><a href="/weaver/api/Weaver/MetaAssetList_2">MetaAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/MetaAssetList_2#typeparam-TAsset">TAsset</a>, <wbr><a href="/weaver/api/Weaver/MetaAssetList_2#typeparam-TMeta">TMeta</a>&gt;<wbr></li>								
 											<li><a href="/weaver/api/Weaver/LazyAssetList_1">LazyAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/LazyAssetList_1#typeparam-T">T</a>&gt;<wbr></li>								
+											<li><a href="/weaver/api/Weaver/MissileList">MissileList</a></li>								
+											<li><a href="/weaver/api/Weaver/AssetList_1">AssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/AssetList_1#typeparam-T">T</a>&gt;<wbr></li>								
 									</ul>
 								</dd>				
 						</dl>
 					</div>		
 					<div class="col-md-6">
 						<div class="mermaid">
-							graph TD
-	Interface0["IEnumerable&lt;T&gt;"]-.-&gt;Type
+							graph BT
+	Type-.-&gt;Interface0["IEnumerable&lt;T&gt;"]
 	Type["IAssetList&lt;T&gt;"]
 class Type type-node
-	Type-.-&gt;Implementing0["AssetList&lt;T&gt;"]
-	click Implementing0 "/weaver/api/Weaver/AssetList_1"
-	Type-.-&gt;Implementing1["ObjectList"]
+	Implementing0["ItemList"]-.-&gt;Type
+	click Implementing0 "/weaver/api/Weaver/ItemList"
+	Implementing1["ObjectList"]-.-&gt;Type
 	click Implementing1 "/weaver/api/Weaver/ObjectList"
-	Type-.-&gt;Implementing2["ItemList"]
-	click Implementing2 "/weaver/api/Weaver/ItemList"
-	Type-.-&gt;Implementing3["MissileList"]
-	click Implementing3 "/weaver/api/Weaver/MissileList"
-	Type-.-&gt;Implementing4["MetaAssetList&lt;TAsset, TMeta&gt;"]
-	click Implementing4 "/weaver/api/Weaver/MetaAssetList_2"
-	Type-.-&gt;Implementing5["LazyAssetList&lt;T&gt;"]
-	click Implementing5 "/weaver/api/Weaver/LazyAssetList_1"
+	Implementing2["MetaAssetList&lt;TAsset, TMeta&gt;"]-.-&gt;Type
+	click Implementing2 "/weaver/api/Weaver/MetaAssetList_2"
+	Implementing3["LazyAssetList&lt;T&gt;"]-.-&gt;Type
+	click Implementing3 "/weaver/api/Weaver/LazyAssetList_1"
+	Implementing4["MissileList"]-.-&gt;Type
+	click Implementing4 "/weaver/api/Weaver/MissileList"
+	Implementing5["AssetList&lt;T&gt;"]-.-&gt;Type
+	click Implementing5 "/weaver/api/Weaver/AssetList_1"
 
 						</div>
 					</div>
@@ -339,22 +339,53 @@ class Type type-node
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top

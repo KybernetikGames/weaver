@@ -1,22 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <title>Weaver - Miscellaneous</title>
-        <link href="/weaver/assets/css/mermaid.css" rel="stylesheet">
         <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
-        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/weaver/assets/css/override.css" rel="stylesheet" />
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
         <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/weaver/assets/js/bootstrap.min.js"></script>        
         <script src="/weaver/assets/js/app.min.js"></script>         
@@ -24,6 +21,7 @@
         <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <script src="/weaver/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/weaver/assets/js/html5shiv.min.js"></script>
         <script src="/weaver/assets/js/respond.min.js"></script>
@@ -58,14 +56,14 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="18" width="18"></img> User Manual</a></li>
-        <li><a href="/weaver/docs/introduction#frequently-asked-questions"><img src="/weaver/images/faq.png" height="18" width="18"></img> FAQ</a></li>
-        <li><a href="/weaver/blog"><img src="/weaver/images/blog.png" height="18" width="18"></img> Blog</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="18" width="18"></img> API v5.0</a></li>
-        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"></img> Try</a></li>
-        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo-white.png" height="18" width="18"></img> Buy</a></li>
-        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="18" width="18"></img> Contact</a></li>
-        <li><a href="https://assetstore.unity.com/publishers/16747"><img src="/weaver/images/kybernetik.png" height="18" width="18"></img> Other Assets</a></li>
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
+        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
+        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
+        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
+        <li><a href="https://kybernetikgames.github.io/kailas-dierk/unity-assets"><img src="/weaver/images/kybernetik.png" height="20" style="position:relative; left:-2px; top:-1px;"> Other Assets</a></li>
  
                         </ul>       
                     </div>
@@ -166,18 +164,19 @@
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="/weaver/docs/change-log">Change Log</a> <a href="#" class="expand"></a>
+                    <a href="/weaver/docs/changes">Change Log</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/weaver/docs/change-log/weaver-v5-0">Weaver v5.0</a></li>
-                <li><a href="/weaver/docs/change-log/weaver-v4-1">Weaver v4.1</a></li>
-                <li><a href="/weaver/docs/change-log/weaver-v4-0">Weaver v4.0</a></li>
-                <li><a href="/weaver/docs/change-log/weaver-v3-0">Weaver v3.0</a></li>
-                <li><a href="/weaver/docs/change-log/weaver-v2-0">Weaver v2.0</a></li>
-                <li><a href="/weaver/docs/change-log/weaver-v1-1">Weaver v1.1</a></li>
-                <li><a href="/weaver/docs/change-log/weaver-v1-0">Weaver v1.0</a></li>
-                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
-                <li><a href="/weaver/docs/change-log/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v5-1">Weaver v5.1</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v5-0">Weaver v5.0</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v4-1">Weaver v4.1</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v4-0">Weaver v4.0</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v3-0">Weaver v3.0</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v2-0">Weaver v2.0</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v1-1">Weaver v1.1</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v1-0">Weaver v1.0</a></li>
+                <li><a href="/weaver/docs/changes/procedural-asset-framework-v2-0">Procedural Asset Framework v2.0</a></li>
+                <li><a href="/weaver/docs/changes/procedural-asset-framework-v1-0">Procedural Asset Framework v1.0</a></li>
 
                     </ul>
                 </li>
@@ -197,7 +196,8 @@
 			<h1>Miscellaneous</h1>
 		</section>
 	<section class="content">
-		<html><head></head><body><ul>
+		
+<ul>
   <li>
   Weaver is designed so that you can move it anywhere in your project and specify any <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Output Directory</a>, however it is recommended that you keep Weaver itself <strong>inside</strong> the <em>Assets/Plugins</em> folder and the <a href="../procedural-assets/generating-a-procedural-asset#procedural-assets-panel">Output Directory</a> <strong>outside</strong> that folder. Otherwise you may experience unexpected issues.
   </li>
@@ -227,13 +227,13 @@ Instructions for recompiling the Weaver source code.									</td>
 								<tr>
 									<td><strong><a href="/weaver/docs/misc/utilities">Utilities</a></strong></td>
 									<td>
-Summaries of Weaver&#x27;s other general utilities.									</td>
+Summaries of Weaver's other general utilities.									</td>
 								</tr>
 						</tbody>				
 					</table>
 				</div>
 			</div> 
-</body></html>
+
 	</section>
                 
             </div>           
@@ -256,22 +256,53 @@ Summaries of Weaver&#x27;s other general utilities.									</td>
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top
@@ -288,5 +319,5 @@ Summaries of Weaver&#x27;s other general utilities.									</td>
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
