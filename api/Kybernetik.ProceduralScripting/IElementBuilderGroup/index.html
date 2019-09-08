@@ -204,11 +204,11 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder">ScriptBuilder</a></li>								
-											<li><a href="/weaver/api/Weaver.Procedural/InjectorScriptBuilder">Injector<wbr>Script<wbr>Builder</a></li>								
 											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder">TypeBuilder</a></li>								
 											<li><a href="/weaver/api/Weaver.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></li>								
+											<li><a href="/weaver/api/Weaver.Procedural/InjectorScriptBuilder">Injector<wbr>Script<wbr>Builder</a></li>								
 											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/NamespaceBuilder">NamespaceBuilder</a></li>								
+											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder">ScriptBuilder</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -218,16 +218,16 @@
 							graph BT
 	Type["IElementBuilderGroup"]
 class Type type-node
-	Implementing0["ScriptBuilder"]-.-&gt;Type
-	click Implementing0 "/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder"
-	Implementing1["InjectorScriptBuilder"]-.-&gt;Type
-	click Implementing1 "/weaver/api/Weaver.Procedural/InjectorScriptBuilder"
-	Implementing2["TypeBuilder"]-.-&gt;Type
-	click Implementing2 "/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder"
-	Implementing3["SimpleScriptBuilder"]-.-&gt;Type
-	click Implementing3 "/weaver/api/Weaver.Procedural/SimpleScriptBuilder"
-	Implementing4["NamespaceBuilder"]-.-&gt;Type
-	click Implementing4 "/weaver/api/Kybernetik.ProceduralScripting/NamespaceBuilder"
+	Implementing0["TypeBuilder"]-.-&gt;Type
+	click Implementing0 "/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder"
+	Implementing1["SimpleScriptBuilder"]-.-&gt;Type
+	click Implementing1 "/weaver/api/Weaver.Procedural/SimpleScriptBuilder"
+	Implementing2["InjectorScriptBuilder"]-.-&gt;Type
+	click Implementing2 "/weaver/api/Weaver.Procedural/InjectorScriptBuilder"
+	Implementing3["NamespaceBuilder"]-.-&gt;Type
+	click Implementing3 "/weaver/api/Kybernetik.ProceduralScripting/NamespaceBuilder"
+	Implementing4["ScriptBuilder"]-.-&gt;Type
+	click Implementing4 "/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder"
 
 						</div>
 					</div>
