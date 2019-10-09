@@ -61,8 +61,8 @@
         <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
-        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
-        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
+        <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
+        <li><a href="/weaver/pro"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
         <li><a href="https://kybernetikgames.github.io/kailas-dierk/unity-assets"><img src="/weaver/images/kybernetik.png" height="20" style="position:relative; left:-2px; top:-1px;"> Other Assets</a></li>
  
                         </ul>       
@@ -197,7 +197,7 @@
 			<h1>Asset Generators</h1>
 		</section>
 	<section class="content">
-		<p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out procedural assets in the Unity Editor, but the <a href="../asset-injection">Asset Injection</a> will not be available in a runtime build unless you purchase Weaver Pro. You can still use the generated assets as regular assets though.</em></p>
+		<p><em><a href="/weaver/pro"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out procedural assets in the Unity Editor, but the <a href="../asset-injection">Asset Injection</a> will not be available in a runtime build unless you purchase Weaver Pro. You can still use the generated assets as regular assets though.</em></p>
 <p>By default, a procedural asset is saved using <code>AssetDatabase.CreateAsset</code> once your generator method returns it. Unfortunately, this doesn’t work for some asset types; a <code>GameObject</code> must be saved using the <code>PrefabUtility</code> class, a <code>Texture</code> must be encoded in a specific image format (such as png), and so on. This is what Asset Generators are for:</p>
 <ul>
 <li>You don’t need to call an Asset Generator yourself; Weaver will automatically pick the one that’s most appropriate for each asset type. However, you do need to be aware that certain asset types use different rules than others.</li>

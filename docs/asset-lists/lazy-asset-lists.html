@@ -61,8 +61,8 @@
         <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
-        <li><a href="http://u3d.as/rt6"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
-        <li><a href="http://u3d.as/rt5"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
+        <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
+        <li><a href="/weaver/pro"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
         <li><a href="https://kybernetikgames.github.io/kailas-dierk/unity-assets"><img src="/weaver/images/kybernetik.png" height="20" style="position:relative; left:-2px; top:-1px;"> Other Assets</a></li>
  
                         </ul>       
@@ -199,7 +199,7 @@
 			<h1>Lazy Asset Lists</h1>
 		</section>
 	<section class="content">
-		<p><em><a href="http://u3d.as/19Xb"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out asset lists in the Unity Editor, but they will always be empty in a runtime build unless you purchase Weaver Pro.</em></p>
+		<p><em><a href="/weaver/pro"><strong>Pro Only</strong></a>: Weaver Lite allows you to try out asset lists in the Unity Editor, but they will always be empty in a runtime build unless you purchase Weaver Pro.</em></p>
 <p>A regular Asset List that derives from <code><a href="/weaver/api/Weaver/AssetList_1">AssetList&lt;T&gt;</a></code> simply serializes a list of direct references to its assets, meaning that they will all be loaded into memory immediately when the list is loaded. This is often undesirable, particularly when referencing large assets or lots of them at once. Instead, you can enable the <code>Is Lazy</code> toggle when generating the list type to have it inherit from <code><a href="/weaver/api/Weaver/LazyAssetList_1">LazyAssetList&lt;T&gt;</a></code> so that it will serialize the resource paths of its assets and only load them as they are needed at runtime. Note that this means the target <code>Directory</code> must be in a Resources folder.</p>
 <p>Once you have a <code><a href="/weaver/api/Weaver/LazyAssetList_1">LazyAssetList&lt;T&gt;</a></code> you can access the asset or path at any given index using <code>GetAsset</code> or <code>GetPath</code> respectively. You can also use <code>MapPathToIndex</code> to compile a <code>Dictionary&lt;string path, int index&gt;</code> that will let you look up the index of an asset using its path. This can be useful for example if you want to select an asset from the list and serialize its path, then deserialize it and continue accessing that asset through the list.</p>
 <h1 id="meta-asset-lists">Meta Asset Lists</h1>
