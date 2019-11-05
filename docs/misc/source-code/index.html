@@ -240,7 +240,7 @@
   &lt;Analyzer Include="..\..\packages\SwitchAnalyzer.0.6.6\analyzers\dotnet\cs\SwitchAnalyzer.dll" /&gt;
 &lt;/ItemGroup&gt;
 </code></pre>
-<p>You will also need to place this command file in the <em>Source Code</em> folder in order for the Post-Build events to work: <a href="CopyToUnity.cmd">CopyToUnity.cmd</a>.</p>
+<p>You will also need to place this command file in the <em>Source Code</em> folder in order for the Post-Build events to work: <a href="CopyToUnity.cmd">CopyToUnity.cmd</a> (it's just a text file, so feel free to open it up to see what it does).</p>
 <p>These issues will be corrected in future releases.</p>
 <h1 id="compilation">Compilation</h1>
 <p>Once the solution is correctly set up, you will be able to make any desired modifications to the source code using your IDE, rebuild the solution so that the Post-Build events copy the compiled DLLs over to your Unity project, then return to Unity so that it can import the newly modified files.</p>
