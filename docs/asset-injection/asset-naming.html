@@ -207,7 +207,7 @@
 <li>(lowest priority) Same as above, but without the <code>Namespace</code>.</li>
 <li>All the above options check without the file extension first, then with it if a match wasn't found.</li>
 </ol>
-<p>The search is case-insensitive and any separator characters (dot <code>.</code>, comma <code>,</code>, slash <code>/</code>, plus <code>+</code>, minus <code>-</code>, or space <code></code>) are considered interchangeable and skippable. For example:</p>
+<p>The search is case-insensitive and any separator characters (dot <code>.</code>, comma <code>,</code>, slash <code>/</code>, plus <code>+</code>, minus <code>-</code>, or space <code> </code>) are considered interchangeable and skippable. For example:</p>
 <ul>
 <li><code>MyGame.Player.Prefab</code> could match against a file path ending with <em>.../My Game/Player.prefab</em>. Note how "<em>My Game</em>" has a space not present in the member name and is a folder while "<em>prefab</em>" is actually the file extension.</li>
 <li>Weaver itself makes use of this feature to identify the target assets for each of the <a href="../examples">Example Scripts</a> when it is first imported so that it doesn't need to include the Weaver Settings file (because doing so would overwrite your settings each time you import a new version of Weaver).

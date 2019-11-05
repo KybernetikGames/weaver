@@ -231,8 +231,8 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/weaver/api/Weaver/AssetInjectionAttribute">Asset<wbr>Injection<wbr>Attribute</a></li>								
 											<li><a href="/weaver/api/Weaver/PrefAttribute">PrefAttribute</a></li>								
+											<li><a href="/weaver/api/Weaver/AssetInjectionAttribute">Asset<wbr>Injection<wbr>Attribute</a></li>								
 									</ul>
 								</dd>			
 							
@@ -247,10 +247,10 @@
 	Type-.-&gt;Interface2["WeaverWindow.IItem"]
 	Type["InjectionAttribute"]
 class Type type-node
-	Derived0["AssetInjectionAttribute"]--&gt;Type
-	click Derived0 "/weaver/api/Weaver/AssetInjectionAttribute"
-	Derived1["PrefAttribute"]--&gt;Type
-	click Derived1 "/weaver/api/Weaver/PrefAttribute"
+	Derived0["PrefAttribute"]--&gt;Type
+	click Derived0 "/weaver/api/Weaver/PrefAttribute"
+	Derived1["AssetInjectionAttribute"]--&gt;Type
+	click Derived1 "/weaver/api/Weaver/AssetInjectionAttribute"
 
 						</div>
 					</div>
@@ -398,7 +398,7 @@ public abstract class InjectionAttribute : Attribute, IInjector, IHasCustomMenu,
 								<td>void</td>
 								<td>
 									<div>[Editor-Only]
-    Adds various functions for this attribute to the 'menu'.
+    Adds various functions for this attribute to the `menu`.
     </div>
 								</td>
 							</tr>
@@ -407,8 +407,8 @@ public abstract class InjectionAttribute : Attribute, IInjector, IHasCustomMenu,
 								<td>void</td>
 								<td>
 									<div>[Editor-Only]
-    Appends an opening bracket or comma depending on 'isFirst' followed by the specified 'detail' and sets
-    'isFirst' to false. Intended for use within <code class="cs">Weaver.InjectionAttribute.AppendDetails(System.Text.StringBuilder,System.Boolean@)</code>.
+    Appends an opening bracket or comma depending on `isFirst` followed by the specified `detail` and sets
+    `isFirst` to false. Intended for use within <code class="cs">Weaver.InjectionAttribute.AppendDetails(System.Text.StringBuilder,System.Boolean@)</code>.
     </div>
 								</td>
 							</tr>
@@ -435,7 +435,7 @@ public abstract class InjectionAttribute : Attribute, IInjector, IHasCustomMenu,
 								<td>void</td>
 								<td>
 									<div>[Editor-Only]
-    If the current event is a <code class="cs">UnityEngine.EventType.ContextClick</code> inside the 'area', this method builds a menu
+    If the current event is a <code class="cs">UnityEngine.EventType.ContextClick</code> inside the `area`, this method builds a menu
     using <code class="cs">Weaver.InjectionAttribute.AddItemsToMenu(UnityEditor.GenericMenu)</code> and shows it.
     </div>
 								</td>
@@ -511,7 +511,7 @@ public abstract class InjectionAttribute : Attribute, IInjector, IHasCustomMenu,
 								<td>bool</td>
 								<td>
 									<div>[Editor-Only]
-    Logs a message indicating that this attribute is invalid, followed by a 'message' explaining why.
+    Logs a message indicating that this attribute is invalid, followed by a `message` explaining why.
     Returns false.
     </div>
 								</td>

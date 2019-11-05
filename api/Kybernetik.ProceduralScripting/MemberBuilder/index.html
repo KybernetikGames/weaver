@@ -211,11 +211,11 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder">TypeBuilder</a></li>								
-											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/FieldBuilder">FieldBuilder</a></li>								
 											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/PropertyBuilder">PropertyBuilder</a></li>								
-											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/ConstructorBuilder">ConstructorBuilder</a></li>								
+											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/FieldBuilder">FieldBuilder</a></li>								
 											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/MethodBuilder">MethodBuilder</a></li>								
+											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder">TypeBuilder</a></li>								
+											<li><a href="/weaver/api/Kybernetik.ProceduralScripting/ConstructorBuilder">ConstructorBuilder</a></li>								
 									</ul>
 								</dd>			
 							
@@ -229,16 +229,16 @@
 	Base0--&gt;Base1["Object"]
 	Type["MemberBuilder"]
 class Type type-node
-	Derived0["TypeBuilder"]--&gt;Type
-	click Derived0 "/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder"
+	Derived0["PropertyBuilder"]--&gt;Type
+	click Derived0 "/weaver/api/Kybernetik.ProceduralScripting/PropertyBuilder"
 	Derived1["FieldBuilder"]--&gt;Type
 	click Derived1 "/weaver/api/Kybernetik.ProceduralScripting/FieldBuilder"
-	Derived2["PropertyBuilder"]--&gt;Type
-	click Derived2 "/weaver/api/Kybernetik.ProceduralScripting/PropertyBuilder"
-	Derived3["ConstructorBuilder"]--&gt;Type
-	click Derived3 "/weaver/api/Kybernetik.ProceduralScripting/ConstructorBuilder"
-	Derived4["MethodBuilder"]--&gt;Type
-	click Derived4 "/weaver/api/Kybernetik.ProceduralScripting/MethodBuilder"
+	Derived2["MethodBuilder"]--&gt;Type
+	click Derived2 "/weaver/api/Kybernetik.ProceduralScripting/MethodBuilder"
+	Derived3["TypeBuilder"]--&gt;Type
+	click Derived3 "/weaver/api/Kybernetik.ProceduralScripting/TypeBuilder"
+	Derived4["ConstructorBuilder"]--&gt;Type
+	click Derived4 "/weaver/api/Kybernetik.ProceduralScripting/ConstructorBuilder"
 
 						</div>
 					</div>
@@ -525,7 +525,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the declaration of this element in C# code to the specified 'text'.
+    Appends the declaration of this element in C# code to the specified `text`.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Kybernetik.ProceduralScripting/ElementBuilder">ElementBuilder</a></em></small></div>
 								</td>
@@ -575,7 +575,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Checks if the <code class="cs">Kybernetik.ProceduralScripting.ElementBuilder.Name</code> of this member matches the name of the 'existingMember'.
+    Checks if the <code class="cs">Kybernetik.ProceduralScripting.ElementBuilder.Name</code> of this member matches the name of the `existingMember`.
     <p></p>
     Overrides of this method should check other factors to ensure that the existing member matches this builder
     (such as field type and access modifiers) and if so, cache the member so it can be returned by <code class="cs">Kybernetik.ProceduralScripting.MemberBuilder.ExistingMember</code>.

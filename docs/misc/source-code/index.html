@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
         <title>Weaver - Source Code</title>
         <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
-        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/weaver/assets/css/override.css" rel="stylesheet" />
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
         <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/weaver/assets/js/bootstrap.min.js"></script>        
         <script src="/weaver/assets/js/app.min.js"></script>         
@@ -58,14 +56,14 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"/> Docs</a></li>
-        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"/> FAQ</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"/> API v5.1</a></li>
-        <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"/> Forum</a></li>
-        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"/> Contact</a></li>
-        <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"/> Try</a></li>
-        <li><a href="/weaver/pro"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"/> Buy</a></li>
-        <li><a href="https://kybernetikgames.github.io/kailas-dierk/unity-assets"><img src="/weaver/images/kybernetik.png" height="20" style="position:relative; left:-2px; top:-1px;"/> Other Assets</a></li>
+                                    <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
+        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
+        <li><a href="mailto:KybernetikGames@gmail.com?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
+        <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
+        <li><a href="/weaver/pro"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
+        <li><a href="https://kybernetikgames.github.io/kailas-dierk/unity-assets"><img src="/weaver/images/kybernetik.png" height="20" style="position:relative; left:-2px; top:-1px;"> Other Assets</a></li>
  
                         </ul>       
                     </div>
@@ -79,7 +77,13 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#extraction">Extraction</a></p>
+<p><a href="#unity-dlls">Unity DLLs</a></p>
+<p><a href="#solution-configuration">Solution Configuration</a></p>
+<p><a href="#missing-files">Missing Files</a></p>
+<p><a href="#compilation">Compilation</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -203,13 +207,43 @@
 <li>Weaver Pro includes its full source code at <em>Assets/Plugins/Weaver/Source Code.zip</em>.</li>
 <li>Weaver Lite does not include the source code, but you can download the source of <em>Kybernetik.Core.dll</em> <a href="kybernetik-core-source-code.zip">directly from here</a>.</li>
 </ul>
-<p>The solution contains several projects, each of which has a Post-Build event set up to automatically copy its DLL into the Unity project when it recompiles. For this to target the correct folder, you must extract the Source Code folder into your Unity project folder (the same folder as Assets, Library, etc.):</p>
+<p>Weaver is released as a set of pre-compiled DLLs in order to ensure that any compile-errors caused by the scripts it procedurally generates (the <a href="../../project-constants">Project Constants</a> scripts or any others you might make) cannot prevent Weaver itself from compiling, because that would prevent it from re-generating the scripts once the issue is fixed. Unfortunately this makes it inconvenient to actually modify Weaver because you need to do it outside Unity by following these instructions.</p>
+<h1 id="extraction">Extraction</h1>
+<p>The <em>Source Code.zip</em> must be extracted outside your <em>Assets</em> folder and contains a solution (<em>.sln</em> file) which can be opened and compiled by most IDEs (such as Visual Studio). Each of the projects in the solution has a Post-Build event set up to automatically copy its DLL into the Unity project when it recompiles. For this to target the correct folder, you must extract the Source Code folder into your Unity project folder (the same folder as Assets, Library, etc.):</p>
 <ul>
 <li>Unity Project: <em>.../Assets/Plugins/Weaver</em>.</li>
-<li>Source Code: <em>.../Source Code/Weaver.sln</em>.</li>
+<li>Source Code: <em>.../Source Code/Weaver Source Code/Weaver.sln</em>.</li>
 </ul>
-<p>If you frequently use classes in the <code>Weaver</code> namespace, you may want to consider adding <code>using Weaver;</code> to the top of Unity’s default script template (located in your Unity installation folder <em>/Editor/Data/Resources/ScriptTemplates/81-C# Script-NewBehaviourScript.cs</em>). Note that this change will be overwritten if you install a new version of Unity.</p>
-<p>The same applies to the <code>Kybernetik</code> namespace which contains many utilities used by Weaver.</p>
+<p>Otherwise, each time you recompile the DLLs, you will need to go into <em>.../Weaver Source Code/Project Name/bin/</em> for each project and manually copy the <em>Project Name.dll</em>, <em>.mdb</em>, and <em>.xml</em> to the corresponding folder in your Unity project.</p>
+<img align="right" src="solution-explorer.png">
+<h1 id="unity-dlls">Unity DLLs</h1>
+<p>The projects need to reference <em>UnityEngine.dll</em> and <em>UnityEditor.dll</em> in order to be compiled (the <code>.Runtime</code> projects only reference <em>UnityEngine.dll</em>). However, they cannot simply be included with the source code according to the Asset Store rules and cannot be located automatically since their location differs according to your Unity version.</p>
+<p>This means that their references will be missing (as shown on the right) so you need to remove them and add new references to the corresponding files in your Unity installation directory: <em>.../Editor/Data/Managed</em>. Or you can copy those DLLs into the <em>Weaver Source Code</em> directory and reference them from there to be able to easily replace them if you change to a new Unity version.</p>
+<p>You need to replace those broken references for each of the projects in the solution.</p>
+<img align="right" src="solution-configuration.png">
+<h1 id="solution-configuration">Solution Configuration</h1>
+<p>You will also need to set the Solution Configuration according to your Unity version:</p>
+<ul>
+<li><code>Pro</code> for any Unity version older than 2018.3.</li>
+<li><code>Pro 2018.3</code> for Unity 2018.3 or newer.</li>
+</ul>
+<h1 id="missing-files">Missing Files</h1>
+<p>Unfortunately, the source code released in Weaver v5.1 was not configured correctly and contains references to NuGet packages will probably not not be installed on your system. This means you will need to open each of the 4 <em>.csproj</em> files using a text editor and removing the following lines:</p>
+<pre><code>// Near the top:
+&lt;CodeAnalysisRuleSet&gt;..\..\Kybernetik.ruleset&lt;/CodeAnalysisRuleSet&gt;
+
+ ...
+
+// Near the bottom:
+&lt;ItemGroup&gt;
+  &lt;Analyzer Include="..\..\packages\codecracker.CSharp.1.1.0\analyzers\dotnet\cs\CodeCracker.CSharp.dll" /&gt;
+  &lt;Analyzer Include="..\..\packages\SwitchAnalyzer.0.6.6\analyzers\dotnet\cs\SwitchAnalyzer.dll" /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<p>You will also need to place this command file in the <em>Source Code</em> folder in order for the Post-Build events to work: <a href="CopyToUnity.cmd">CopyToUnity.cmd</a>.</p>
+<p>These issues will be corrected in future releases.</p>
+<h1 id="compilation">Compilation</h1>
+<p>Once the solution is correctly set up, you will be able to make any desired modifications to the source code using your IDE, rebuild the solution so that the Post-Build events copy the compiled DLLs over to your Unity project, then return to Unity so that it can import the newly modified files.</p>
 
 	</section>
                 
@@ -296,5 +330,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

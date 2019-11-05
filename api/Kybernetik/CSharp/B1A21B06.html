@@ -222,12 +222,12 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Returns the name of a 'type' as it would appear in C# code.
+    Returns the name of a `type` as it would appear in C# code.
     <p></p>
     For example, typeof(List&lt;float&gt;).FullName would give you:
     System.Collections.Generic.List`1[[System.Single, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
     <p></p>
-    This method would instead return a different result depending on the specified 'nameVerbosity':
+    This method would instead return a different result depending on the specified `nameVerbosity`:
     <p></p><code class="cs">Kybernetik.CSharp.NameVerbosity.Name</code> would return "List&lt;float&gt;"
     <p></p><code class="cs">Kybernetik.CSharp.NameVerbosity.FullName</code> would return "System.Collections.Generic.List&lt;float&gt;"
     <p></p><code class="cs">Kybernetik.CSharp.NameVerbosity.GlobalFullName</code> would return "global::System.Collections.Generic.List&lt;float&gt;"

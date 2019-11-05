@@ -202,9 +202,9 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/weaver/api/Weaver.Procedural/TextGenerator">TextGenerator</a></li>								
-											<li><a href="/weaver/api/Weaver.Procedural/PrefabGenerator">PrefabGenerator</a></li>								
 											<li><a href="/weaver/api/Weaver.Procedural/TextureGenerator">TextureGenerator</a></li>								
+											<li><a href="/weaver/api/Weaver.Procedural/PrefabGenerator">PrefabGenerator</a></li>								
+											<li><a href="/weaver/api/Weaver.Procedural/TextGenerator">TextGenerator</a></li>								
 									</ul>
 								</dd>			
 							
@@ -216,12 +216,12 @@
 	Type--&gt;Base0["Object"]
 	Type["AssetGenerator"]
 class Type type-node
-	Derived0["TextGenerator"]--&gt;Type
-	click Derived0 "/weaver/api/Weaver.Procedural/TextGenerator"
+	Derived0["TextureGenerator"]--&gt;Type
+	click Derived0 "/weaver/api/Weaver.Procedural/TextureGenerator"
 	Derived1["PrefabGenerator"]--&gt;Type
 	click Derived1 "/weaver/api/Weaver.Procedural/PrefabGenerator"
-	Derived2["TextureGenerator"]--&gt;Type
-	click Derived2 "/weaver/api/Weaver.Procedural/TextureGenerator"
+	Derived2["TextGenerator"]--&gt;Type
+	click Derived2 "/weaver/api/Weaver.Procedural/TextGenerator"
 
 						</div>
 					</div>
@@ -324,7 +324,7 @@ public class AssetGenerator</code></pre>
 								<td><a href="/weaver/api/Weaver.Procedural/AssetGenerator/B536EB58">AddItemsToMenu<wbr>(GenericMenu, <wbr>ProceduralAsset)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>Populates 'menu' with various items for the context menu of 'asset'.</div>
+									<div>Populates `menu` with various items for the context menu of `asset`.</div>
 								</td>
 							</tr>
 							<tr>
@@ -339,7 +339,7 @@ public class AssetGenerator</code></pre>
 								<td>void</td>
 								<td>
 									<div>
-    Destroys the specified 'obj'.
+    Destroys the specified `obj`.
     </div>
 								</td>
 							</tr>
@@ -356,7 +356,7 @@ public class AssetGenerator</code></pre>
 								<td><a href="/weaver/api/Weaver.Procedural/AssetGenerator/E31986CF">GetGeneratorMethod<wbr>(MemberInfo)<wbr></a></td>
 								<td>MethodInfo</td>
 								<td>
-									<div>Attempts to find the generator method assofiated with 'assetField'.</div>
+									<div>Attempts to find the generator method assofiated with `assetField`.</div>
 								</td>
 							</tr>
 							<tr>
@@ -381,7 +381,7 @@ public class AssetGenerator</code></pre>
 								<td><a href="/weaver/api/Weaver.Procedural/AssetGenerator/B31CF8B7">Invoke<wbr>Generator<wbr>Method<wbr>(ProceduralAsset)<wbr></a></td>
 								<td>Object</td>
 								<td>
-									<div>Invokes 'asset.GeneratorMethod' with the correct parameters for this <code class="cs">Weaver.Procedural.AssetGenerator</code>.</div>
+									<div>Invokes `asset.GeneratorMethod` with the correct parameters for this <code class="cs">Weaver.Procedural.AssetGenerator</code>.</div>
 								</td>
 							</tr>
 							<tr>
@@ -389,7 +389,7 @@ public class AssetGenerator</code></pre>
 								<td>void</td>
 								<td>
 									<div>
-    Saves 'obj' as an asset file at 'assetPath'. If successful, the 'obj' is destroyed and the reference is
+    Saves `obj` as an asset file at `assetPath`. If successful, the `obj` is destroyed and the reference is
     replaced with the newly saved asset.
     </div>
 								</td>
@@ -406,7 +406,7 @@ public class AssetGenerator</code></pre>
 								<td>bool</td>
 								<td>
 									<div>
-    Indicates whether a temporary scene should be opened while generating the specified 'asset'.
+    Indicates whether a temporary scene should be opened while generating the specified `asset`.
     Default is false.
     </div>
 								</td>

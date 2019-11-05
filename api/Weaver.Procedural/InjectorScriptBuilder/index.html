@@ -588,7 +588,7 @@ class Type type-node
 								<td>T</td>
 								<td>
 									<div>
-    Adds the specified 'member' to the <code class="cs">Kybernetik.ProceduralScripting.NamespaceBuilder.Elements</code> list and returns it.
+    Adds the specified `member` to the <code class="cs">Kybernetik.ProceduralScripting.NamespaceBuilder.Elements</code> list and returns it.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Kybernetik.ProceduralScripting/NamespaceBuilder">NamespaceBuilder</a></em></small></div>
 								</td>
@@ -611,7 +611,7 @@ class Type type-node
 									<div>
     Adds the specified <code class="cs">UnityEngine.Object</code> to the list of references for the injector script to serialize.
     <p></p>
-    If the 'obj' is null, an <code class="cs">System.ArgumentNullException</code> using the 'context' as the message.
+    If the `obj` is null, an <code class="cs">System.ArgumentNullException</code> using the `context` as the message.
     </div>
 								</td>
 							</tr>
@@ -620,7 +620,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik.ProceduralScripting/MethodBuilder">MethodBuilder</a></td>
 								<td>
 									<div>
-    Adds the 'contents' to the list of functions that will be called to build the specified 'method'.
+    Adds the `contents` to the list of functions that will be called to build the specified `method`.
     </div>
 								</td>
 							</tr>
@@ -629,7 +629,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik.ProceduralScripting/MethodBuilder">MethodBuilder</a></td>
 								<td>
 									<div>
-    Adds the 'contents' to the list of functions that will be called to build the specified 'method'.
+    Adds the `contents` to the list of functions that will be called to build the specified `method`.
     </div>
 								</td>
 							</tr>
@@ -701,7 +701,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Appends code to get the <code class="cs">System.Reflection.MemberInfo</code> of the specified 'attribute'.
+    Appends code to get the <code class="cs">System.Reflection.MemberInfo</code> of the specified `attribute`.
     </div>
 								</td>
 							</tr>
@@ -787,7 +787,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the declaration of the elements of this script in C# code to the specified 'text'.
+    Appends the declaration of the elements of this script in C# code to the specified `text`.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></em></small></div>
 								</td>
@@ -797,7 +797,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the declaration of this namespace in C# code to the specified 'text'.
+    Appends the declaration of this namespace in C# code to the specified `text`.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Kybernetik.ProceduralScripting/NamespaceBuilder">NamespaceBuilder</a></em></small></div>
 								</td>
@@ -807,7 +807,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends code to set the attributed member to the specified 'value'.
+    Appends code to set the attributed member to the specified `value`.
     </div>
 								</td>
 							</tr>
@@ -922,11 +922,11 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Converts the 'nameSource' into a valid member name according to the desired naming convention when the
+    Converts the `nameSource` into a valid member name according to the desired naming convention when the
     primary name returned by <code class="cs">Kybernetik.ProceduralScripting.ScriptBuilder.GetPrimaryMemberName(System.String)</code> caused a naming conflict.
     <p></p>
     By default, this method uses <code class="cs">Kybernetik.CSharp.ValidateMemberName(System.String,System.Boolean)</code> with the
-    'replaceWithUnderscores' parameter set to false.
+    `replaceWithUnderscores` parameter set to false.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder">ScriptBuilder</a></em></small></div>
 								</td>
@@ -936,8 +936,8 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Converts the 'nameSource' into a valid member name using <code class="cs">Kybernetik.ProceduralScripting.ScriptBuilder.GetPrimaryMemberName(System.String)</code>. If the name
-    is the same as the 'declaringTypeName', <code class="cs">Kybernetik.ProceduralScripting.ScriptBuilder.GetFallbackMemberName(System.String,System.String)</code> will be used instead.
+    Converts the `nameSource` into a valid member name using <code class="cs">Kybernetik.ProceduralScripting.ScriptBuilder.GetPrimaryMemberName(System.String)</code>. If the name
+    is the same as the `declaringTypeName`, <code class="cs">Kybernetik.ProceduralScripting.ScriptBuilder.GetFallbackMemberName(System.String,System.String)</code> will be used instead.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Kybernetik.ProceduralScripting/ScriptBuilder">ScriptBuilder</a></em></small></div>
 								</td>
@@ -947,7 +947,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Converts the 'nameSource' into a valid member name according to the desired naming convention.
+    Converts the `nameSource` into a valid member name according to the desired naming convention.
     <p></p>
     By default, this method uses <code class="cs">Kybernetik.CSharp.ValidateMemberName(System.String,System.Boolean)</code>.
     </div>
@@ -1016,7 +1016,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Procedural/SimpleScriptBuilder/DE872421">LogRebuildReason<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>Logs the 'reason' that this script should be rebuilt.</div>
+									<div>Logs the `reason` that this script should be rebuilt.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></em></small></div>
 								</td>
 							</tr>

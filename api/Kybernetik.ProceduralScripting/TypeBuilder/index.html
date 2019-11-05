@@ -454,7 +454,7 @@ class Type type-node
     list so they can be re-implemented as stubs and marked with the [<code class="cs">System.ObsoleteAttribute</code>] in order
     to avoid causing compile errors when members are removed or renamed when the script it rebuilt.
     <p></p>
-    This list will be null if no obsolete members are found or if the 'retainObsoleteMembers' parameter in
+    This list will be null if no obsolete members are found or if the `retainObsoleteMembers` parameter in
     <code class="cs">Kybernetik.ProceduralScripting.TypeBuilder.PrepareToBuild(System.Boolean,System.Boolean@)</code> is false.
     </div>
 								</td>
@@ -548,7 +548,7 @@ class Type type-node
 								<td>T</td>
 								<td>
 									<div>
-    Adds the specified 'member' to the <code class="cs">Kybernetik.ProceduralScripting.TypeBuilder.Elements</code> list and returns it.
+    Adds the specified `member` to the <code class="cs">Kybernetik.ProceduralScripting.TypeBuilder.Elements</code> list and returns it.
     </div>
 								</td>
 							</tr>
@@ -637,7 +637,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the declaration of this type in C# code to the specified 'text'.
+    Appends the declaration of this type in C# code to the specified `text`.
     </div>
 								</td>
 							</tr>
@@ -727,7 +727,7 @@ class Type type-node
 								<td>
 									<div>
     Creates (if necessary) and returns a <code class="cs">Kybernetik.ProceduralScripting.TypeBuilder</code> such that each directory in the specified
-    'filePath' corresponds to a nested type.
+    `filePath` corresponds to a nested type.
     </div>
 								</td>
 							</tr>
@@ -737,7 +737,7 @@ class Type type-node
 								<td>
 									<div>
     Creates (if necessary) and returns a <code class="cs">Kybernetik.ProceduralScripting.TypeBuilder</code> such that each directory in the specified
-    'filePath' corresponds to a nested type.
+    `filePath` corresponds to a nested type.
     </div>
 								</td>
 							</tr>
@@ -747,7 +747,7 @@ class Type type-node
 								<td>
 									<div>
     Creates (if necessary) and returns a <code class="cs">Kybernetik.ProceduralScripting.TypeBuilder</code> such that each directory in the specified
-    'filePath' corresponds to a nested type.
+    `filePath` corresponds to a nested type.
     </div>
 								</td>
 							</tr>
@@ -766,7 +766,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Checks if the <code class="cs">Kybernetik.ProceduralScripting.ElementBuilder.Name</code> and <code class="cs">Kybernetik.ProceduralScripting.MemberBuilder.Modifiers</code> match the 'existingMember'.
+    Checks if the <code class="cs">Kybernetik.ProceduralScripting.ElementBuilder.Name</code> and <code class="cs">Kybernetik.ProceduralScripting.MemberBuilder.Modifiers</code> match the `existingMember`.
     <p></p>
     If the member matches, this method returns true and the member can be accessed via <code class="cs">Kybernetik.ProceduralScripting.TypeBuilder.ExistingType</code>.
     </div>

@@ -339,7 +339,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Calls 'method' once for each attribute of the specified type on 'target'.
+    Calls `method` once for each attribute of the specified type on `target`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -363,7 +363,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/420AAA2B">GetAttributedFields<wbr>&lt;TAttribute&gt;<wbr><wbr>(Type, <wbr>BindingFlags, <wbr>List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;FieldInfo&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>Gets all fields with the specified attribute in 'type'.</div>
+									<div>Gets all fields with the specified attribute in `type`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -379,7 +379,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/DC0BA7C0">GetAttributedMethods<wbr>&lt;TAttribute&gt;<wbr><wbr>(Type, <wbr>BindingFlags, <wbr>List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;MethodInfo&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>Gets all methods with the specified attribute in 'type'.</div>
+									<div>Gets all methods with the specified attribute in `type`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -387,7 +387,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/0BECD67F">Get<wbr>Attributed<wbr>Properties<wbr>&lt;TAttribute&gt;<wbr><wbr>(Type, <wbr>BindingFlags, <wbr>List<wbr>&lt;TAttribute&gt;<wbr>, <wbr>List<wbr>&lt;PropertyInfo&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>Gets all properties with the specified attribute in 'type'.</div>
+									<div>Gets all properties with the specified attribute in `type`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -432,7 +432,7 @@ class Type type-node
 								<td>T</td>
 								<td>
 									<div>
-    Creates a delegate of the specified type from 'method'.
+    Creates a delegate of the specified type from `method`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -442,7 +442,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Creates a delegate of the specified type from 'method'.
+    Creates a delegate of the specified type from `method`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -474,7 +474,7 @@ class Type type-node
 								<td>Type[]</td>
 								<td>
 									<div>
-    If 'type' implements the 'interfaceType' this method returns the generic arguments it uses for that interface.
+    If `type` implements the `interfaceType` this method returns the generic arguments it uses for that interface.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -495,7 +495,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns null, "override" or "new" as appropriate for a method called 'methodName' in a child of 'baseType'.
+    Returns null, "override" or "new" as appropriate for a method called `methodName` in a child of `baseType`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -505,10 +505,10 @@ class Type type-node
 								<td>Func<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
-    Tries to find a field/property/method in the 'declaringType' with the 'name' and creates a delegate to get
+    Tries to find a field/property/method in the `declaringType` with the `name` and creates a delegate to get
     its value.
     <p></p>
-    If a member is found but can't be converted to an appropriate delegate, the 'error' message describes the
+    If a member is found but can't be converted to an appropriate delegate, the `error` message describes the
     problem.
     </div>
 											<div><small><em>static</em></small></div>
@@ -519,7 +519,7 @@ class Type type-node
 								<td>MethodInfo</td>
 								<td>
 									<div>
-    Gets a <code class="cs">System.Reflection.MethodInfo</code> for a method called 'name' in 'type' with the correct parameter types and return type.
+    Gets a <code class="cs">System.Reflection.MethodInfo</code> for a method called `name` in `type` with the correct parameter types and return type.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -528,7 +528,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/D8EFE47C">Has<wbr>Default<wbr>Constructor<wbr>(Type)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'type' has a public parameterless constructor.</div>
+									<div>Checks if `type` has a public parameterless constructor.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -536,7 +536,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/A31DE5A9">HasFlags<wbr>(BindingFlags, <wbr>BindingFlags)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'bindings' contains all the flags in 'flags'.</div>
+									<div>Checks if `bindings` contains all the flags in `flags`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -544,7 +544,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/867B8920">HasGetAndSet<wbr>(PropertyInfo, <wbr>bool)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'property' has both a getter and setter.</div>
+									<div>Checks if `property` has both a getter and setter.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -553,7 +553,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if 'from' can be implicitly cast to 'to'.
+    Returns true if `from` can be implicitly cast to `to`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -562,7 +562,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/CB14D724">Has<wbr>Parameterless<wbr>Constructor<wbr>(Type, <wbr>BindingFlags)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'type' has a parameterless constructor.</div>
+									<div>Checks if `type` has a parameterless constructor.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -570,7 +570,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/3C761059">Is<wbr>(Type, <wbr>Type)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'type' is descended from 'baseType' (or implements it if it's an interface).</div>
+									<div>Checks if `type` is descended from `baseType` (or implements it if it's an interface).</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -578,7 +578,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/2BA76186">IsNestedIn<wbr>(Type, <wbr>Type)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'type' is nested inside 'outerType'.</div>
+									<div>Checks if `type` is nested inside `outerType`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -586,7 +586,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/B69574A6">IsObsolete<wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>bool)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'target' has an [<code class="cs">System.ObsoleteAttribute</code>].</div>
+									<div>Checks if `target` has an [<code class="cs">System.ObsoleteAttribute</code>].</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -594,7 +594,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/D005808C">Is<wbr>Subclass<wbr>Of<wbr>Generic<wbr>Definition<wbr>(Type, <wbr>Type)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'type' is descended from 'generic' (where 'generic' is a generic type definition).</div>
+									<div>Checks if `type` is descended from `generic` (where `generic` is a generic type definition).</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -602,7 +602,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/765859A0">Is<wbr>Subclass<wbr>Of<wbr>Generic<wbr>Definition<wbr>(Type, <wbr>Type, <wbr>Type[])<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Checks if 'type' is descended from 'generic' (where 'generic' is a generic type definition).</div>
+									<div>Checks if `type` is descended from `generic` (where `generic` is a generic type definition).</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -636,7 +636,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/Reflection/D8669869">ToAccessModifier<wbr>(BindingFlags)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns a description of the access modifier associated with 'bindings'</div>
+									<div>Returns a description of the access modifier associated with `bindings`</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>

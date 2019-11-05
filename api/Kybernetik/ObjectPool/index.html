@@ -303,7 +303,7 @@ class Type type-node
 								<td>
 									<div>
     Removes and destroys items from the pool until the <code class="cs">System.Collections.Generic.List`1.Count</code> reaches the
-    'remainingSize'.
+    `remainingSize`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -327,7 +327,7 @@ class Type type-node
 								<td>Func<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
-    Creates a delegate that instantiates an inactive copy of the 'original' object and calls
+    Creates a delegate that instantiates an inactive copy of the `original` object and calls
     <code class="cs">UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)</code> on it.
     <p></p>
     In the Unity Editor the copies are also grouped under a parent object to keep the hierarchy view clean.
@@ -340,7 +340,7 @@ class Type type-node
 								<td>Func<wbr>&lt;GameObject&gt;<wbr></td>
 								<td>
 									<div>
-    Creates a delegate that instantiates an inactive copy of the 'original' object and calls
+    Creates a delegate that instantiates an inactive copy of the `original` object and calls
     <code class="cs">UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)</code> on it.
     <p></p>
     In the Unity Editor the copies are also grouped under a parent object to keep the hierarchy view clean.
@@ -353,9 +353,9 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool</a><wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
-    The first time this method is called for a particular 'original' it will call
+    The first time this method is called for a particular `original` it will call
     <code class="cs">Kybernetik.ObjectPool.CreateComponentPool``1(``0,System.Int32,System.Boolean)</code> and cache the returned pool so that subsequent calls using the same
-    'original' will return the same pool.
+    `original` will return the same pool.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -365,9 +365,9 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool</a><wbr>&lt;GameObject&gt;<wbr></td>
 								<td>
 									<div>
-    The first time this method is called for a particular 'original' it will call
+    The first time this method is called for a particular `original` it will call
     <code class="cs">Kybernetik.ObjectPool.CreatePrefabPool(UnityEngine.GameObject,System.Int32,System.Boolean)</code> and cache the returned pool so that subsequent calls using the same
-    'original' will return the same pool.
+    `original` will return the same pool.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -389,7 +389,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    If the 'pool' isn't null this method gives the 'item' to it and returns true.
+    If the `pool` isn't null this method gives the `item` to it and returns true.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -399,7 +399,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    If the 'pool' isn't null this method gives the 'item' to it and returns true.
+    If the `pool` isn't null this method gives the `item` to it and returns true.
     Otherwise this method destroys it and returns false.
     <p></p>
     Note that this method is likely not what you want to use for <code class="cs">UnityEngine.Component</code>s.
@@ -413,7 +413,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    If the 'pool' isn't null this method gives the 'component' to it, disables its <code class="cs">UnityEngine.GameObject</code>,
+    If the `pool` isn't null this method gives the `component` to it, disables its <code class="cs">UnityEngine.GameObject</code>,
     and returns true. Otherwise this method destroys the <code class="cs">UnityEngine.GameObject</code> and returns false.
     </div>
 											<div><small><em>static</em></small></div>
@@ -424,7 +424,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    If the 'pool' isn't null this method releases the 'component' to it, disables its <code class="cs">UnityEngine.GameObject</code>,
+    If the `pool` isn't null this method releases the `component` to it, disables its <code class="cs">UnityEngine.GameObject</code>,
     and returns true. Otherwise this method destroys the <code class="cs">UnityEngine.GameObject</code> and returns false.
     </div>
 											<div><small><em>static</em></small></div>
@@ -435,7 +435,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    If the 'behaviour' was created by an <code class="cs">Kybernetik.ObjectPool`1</code> this method releases the 'behaviour' to
+    If the `behaviour` was created by an <code class="cs">Kybernetik.ObjectPool`1</code> this method releases the `behaviour` to
     it, disables its <code class="cs">UnityEngine.GameObject</code>, and returns true.
     Otherwise this method destroys the <code class="cs">UnityEngine.GameObject</code> and returns false.
     </div>

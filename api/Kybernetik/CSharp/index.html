@@ -250,7 +250,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the C# declaration of the specified access 'modifiers' to the 'text'.
+    Appends the C# declaration of the specified access `modifiers` to the `text`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -296,8 +296,8 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends a call to the specified 'methodName'. If the method is non-public, the object is casted to the
-    'interfaceType' to call an explicitly implemented method.
+    Appends a call to the specified `methodName`. If the method is non-public, the object is casted to the
+    `interfaceType` to call an explicitly implemented method.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -315,7 +315,7 @@ class Type type-node
 								<td>int</td>
 								<td>
 									<div>
-    Appends the name and generic arguments of 'type' (after skipping the specified number).
+    Appends the name and generic arguments of `type` (after skipping the specified number).
     Returns the index of the last argument.
     </div>
 											<div><small><em>static</em></small></div>
@@ -328,7 +328,7 @@ class Type type-node
 									<div>
     Appends an [<code class="cs">System.ObsoleteAttribute</code>] with the specified message in its constructor.
     <p></p>
-    If 'message' is null, this method does nothing.
+    If `message` is null, this method does nothing.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -338,7 +338,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the C# declaration of a constructor with a signature matching the specified 'constructor' and an [Obsolete] attribute.
+    Appends the C# declaration of a constructor with a signature matching the specified `constructor` and an [Obsolete] attribute.
     <p></p>
     The body of the constructor will simply throw a <code class="cs">System.NotImplementedException</code>.
     </div>
@@ -350,7 +350,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the C# declaration of a field with a signature matching the specified 'field' and an [Obsolete] attribute.
+    Appends the C# declaration of a field with a signature matching the specified `field` and an [Obsolete] attribute.
     <p></p>
     If the field is static and <code class="cs">Kybernetik.CSharp.GetInitialiser(System.Object)</code> is able to determine the initialiser for
     its current value, that initialiser will also be included.
@@ -363,7 +363,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the C# declaration of a member with a signature matching the specified 'member' and an [Obsolete] attribute.
+    Appends the C# declaration of a member with a signature matching the specified `member` and an [Obsolete] attribute.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -373,7 +373,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the C# declaration of a method with a signature matching the specified 'method' and an [Obsolete] attribute.
+    Appends the C# declaration of a method with a signature matching the specified `method` and an [Obsolete] attribute.
     <p></p>
     The body of the method will simply throw a <code class="cs">System.NotImplementedException</code>.
     </div>
@@ -385,7 +385,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the C# declaration of a property with a signature matching the specified 'property' and an [Obsolete] attribute.
+    Appends the C# declaration of a property with a signature matching the specified `property` and an [Obsolete] attribute.
     <p></p>
     The body of the property will simply throw a <code class="cs">System.NotImplementedException</code>.
     </div>
@@ -397,7 +397,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends the C# declaration of a type with a signature matching the specified 'type' and an [Obsolete] attribute.
+    Appends the C# declaration of a type with a signature matching the specified `type` and an [Obsolete] attribute.
     <p></p>
     Also calls <code class="cs">Kybernetik.CSharp.AppendObsoleteDeclaration(System.Text.StringBuilder,System.Int32,System.Reflection.MemberInfo,System.String,System.Boolean)</code> for each of the type's members.
     </div>
@@ -418,7 +418,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/7A53DCB1">AppendParameters<wbr>(StringBuilder, <wbr>ParameterInfo[], <wbr>bool, <wbr>CSharp<wbr>.NameVerbosity)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>Appends the signature of 'method' as it would appear in C# code.</div>
+									<div>Appends the signature of `method` as it would appear in C# code.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -436,7 +436,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/CE2CF839">AppendSignature<wbr>(MethodInfo, <wbr>StringBuilder, <wbr>CSharp<wbr>.NameVerbosity, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>Appends the signature of 'method' as it would appear in C# code.</div>
+									<div>Appends the signature of `method` as it would appear in C# code.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -445,7 +445,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends 'comment' inside summary tags as appropriate for a C# XML comment.
+    Appends `comment` inside summary tags as appropriate for a C# XML comment.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -466,7 +466,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends and logs a message indicating that the specified 'member' was not handled.
+    Appends and logs a message indicating that the specified `member` was not handled.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -502,7 +502,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if 'modifiers' contains all of the flags specified in 'contains'.
+    Returns true if `modifiers` contains all of the flags specified in `contains`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -512,7 +512,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns the C# declaration of the specified access 'modifiers'.
+    Returns the C# declaration of the specified access `modifiers`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -522,7 +522,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Tries to return a string which could be used as a C# field initialiser to give the field the specified 'value'.
+    Tries to return a string which could be used as a C# field initialiser to give the field the specified `value`.
     Returns null if the 'value is null or if unable to determine the appropriate field initialiser.
     <p></p>
     If the value is a custom type with a static string GetInitialiser(T value) method, that method will be called to determine the result.
@@ -535,7 +535,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns the C# keyword associated with the specified 'type' such as <code class="cs"><a href="/weaver">int</a></code>, <code class="cs"><a href="/weaver">float</a></code>, <code class="cs"><a href="/weaver">string</a></code>, etc.
+    Returns the C# keyword associated with the specified `type` such as <code class="cs"><a href="/weaver">int</a></code>, <code class="cs"><a href="/weaver">float</a></code>, <code class="cs"><a href="/weaver">string</a></code>, etc.
     Returns null if there is no associated keyword.
     </div>
 											<div><small><em>static</em></small></div>
@@ -545,7 +545,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/8245B7F6">GetNameCS<wbr>(Action)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns the full name of a  'method' as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
+									<div>Returns the full name of a  `method` as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -553,7 +553,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/7E149EB7">GetNameCS<wbr>(Delegate)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns the full name of a  'method' as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
+									<div>Returns the full name of a  `method` as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -562,11 +562,11 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns the full name of a 'member' as it would appear in C# code.
+    Returns the full name of a `member` as it would appear in C# code.
     <p></p>
     For example, passing the <code class="cs">System.Reflection.MethodInfo</code> of this method in as its own parameter would return "<code class="cs">Kybernetik.CSharp</code>.GetNameCS".
     <p></p>
-    Note that when 'member' is a <code class="cs">System.Type</code>, this method calls <code class="cs">Kybernetik.CSharp.GetNameCS(System.Type,Kybernetik.CSharp.NameVerbosity)</code> instead.
+    Note that when `member` is a <code class="cs">System.Type</code>, this method calls <code class="cs">Kybernetik.CSharp.GetNameCS(System.Type,Kybernetik.CSharp.NameVerbosity)</code> instead.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -576,12 +576,12 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns the name of a 'type' as it would appear in C# code.
+    Returns the name of a `type` as it would appear in C# code.
     <p></p>
     For example, typeof(List&lt;float&gt;).FullName would give you:
     System.Collections.Generic.List`1[[System.Single, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
     <p></p>
-    This method would instead return a different result depending on the specified 'nameVerbosity':
+    This method would instead return a different result depending on the specified `nameVerbosity`:
     <p></p><code class="cs">Kybernetik.CSharp.NameVerbosity.Name</code> would return "List&lt;float&gt;"
     <p></p><code class="cs">Kybernetik.CSharp.NameVerbosity.FullName</code> would return "System.Collections.Generic.List&lt;float&gt;"
     <p></p><code class="cs">Kybernetik.CSharp.NameVerbosity.GlobalFullName</code> would return "global::System.Collections.Generic.List&lt;float&gt;"
@@ -595,7 +595,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/E4EF7AEC">GetNameCS<wbr>&lt;T, <wbr>TResult&gt;<wbr><wbr>(Func<wbr>&lt;T, <wbr>TResult&gt;<wbr>)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns the full name of a  'method' as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
+									<div>Returns the full name of a  `method` as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -603,7 +603,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/BF41C250">GetNameCS<wbr>&lt;T&gt;<wbr><wbr>(Action<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns the full name of a  'method' as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
+									<div>Returns the full name of a  `method` as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -611,7 +611,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/C002DC9E">GetNameCS<wbr>&lt;T1, <wbr>T2, <wbr>TResult&gt;<wbr><wbr>(Func<wbr>&lt;T1, <wbr>T2, <wbr>TResult&gt;<wbr>)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns the full name of a  'method' as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
+									<div>Returns the full name of a  `method` as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -619,7 +619,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/581911A1">GetNameCS<wbr>&lt;TResult&gt;<wbr><wbr>(Func<wbr>&lt;TResult&gt;<wbr>)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns the full name of a  'method' as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
+									<div>Returns the full name of a  `method` as it would appear in C# code. See: <code class="cs">Kybernetik.CSharp.GetNameCS(System.Reflection.MemberInfo,Kybernetik.CSharp.NameVerbosity)</code>.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -628,7 +628,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik.ProceduralScripting/AccessModifiers">AccessModifiers</a></td>
 								<td>
 									<div>
-    Returns the restrictiveness modifier (public/private/protected/internal) of the specified 'method'.
+    Returns the restrictiveness modifier (public/private/protected/internal) of the specified `method`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -637,7 +637,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/E767889A">GetSignature<wbr>(MethodInfo, <wbr>CSharp<wbr>.NameVerbosity, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool)<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div>Returns the signature of 'method' as it would appear in C# code.</div>
+									<div>Returns the signature of `method` as it would appear in C# code.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -645,7 +645,7 @@ class Type type-node
 								<td><a href="/weaver/api/Kybernetik/CSharp/EE273827">HasKeyword<wbr>(Type)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>Returns true if the specified 'type' is associated with a C# keyword such as <code class="cs"><a href="/weaver">int</a></code>, <code class="cs"><a href="/weaver">float</a></code>, <code class="cs"><a href="/weaver">string</a></code>, etc.</div>
+									<div>Returns true if the specified `type` is associated with a C# keyword such as <code class="cs"><a href="/weaver">int</a></code>, <code class="cs"><a href="/weaver">float</a></code>, <code class="cs"><a href="/weaver">string</a></code>, etc.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -654,7 +654,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if the specified 'field' has the specified access 'modifiers'.
+    Returns true if the specified `field` has the specified access `modifiers`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -664,7 +664,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if the specified 'method' has the specified access 'modifiers'.
+    Returns true if the specified `method` has the specified access `modifiers`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -674,7 +674,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if the specified 'property' has the specified access 'modifiers'.
+    Returns true if the specified `property` has the specified access `modifiers`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -684,7 +684,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if the specified 'property' has the specified access 'modifiers'.
+    Returns true if the specified `property` has the specified access `modifiers`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -694,7 +694,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if the specified 'type' has the specified access 'modifiers'.
+    Returns true if the specified `type` has the specified access `modifiers`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -704,7 +704,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns true if the 'word' is reserved by the C# language.
+    Returns true if the `word` is reserved by the C# language.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -732,7 +732,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns a string representation of the 'value' as a C# literal: either "true" or "false" instead of the
+    Returns a string representation of the `value` as a C# literal: either "true" or "false" instead of the
     uppercase forms returned by <code class="cs">System.Boolean.ToString</code>.
     </div>
 											<div><small><em>static</em></small></div>

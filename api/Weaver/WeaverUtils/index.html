@@ -399,7 +399,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Adds a function to open the specified 'url'.
+    Adds a function to open the specified `url`.
     If it begins with a '/' it is treated as a path relative to the <code class="cs">Weaver.WeaverUtils.DocumentationURL</code>.
     </div>
 											<div><small><em>static</em></small></div>
@@ -410,7 +410,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns the resource path substring of the 'assetPath' starting at the 'resourcePathStart' and ending
+    Returns the resource path substring of the `assetPath` starting at the `resourcePathStart` and ending
     without the file extension.
     </div>
 											<div><small><em>static</em></small></div>
@@ -431,7 +431,7 @@ class Type type-node
 								<td>Object</td>
 								<td>
 									<div>
-    Creates a new asset of the specified 'type' at the specified 'assetPath'.
+    Creates a new asset of the specified `type` at the specified `assetPath`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -463,11 +463,11 @@ class Type type-node
 								<td>string[]</td>
 								<td>
 									<div>
-    Returns the paths of all assets of the specified 'type'.
+    Returns the paths of all assets of the specified `type`.
     <p></p>
     The result is cached for efficiency and can be cleared by <code class="cs">Weaver.WeaverUtils.ClearAssetPathCache</code>.
     <p></p>
-    If the 'type' is a <code class="cs">UnityEngine.Component</code>, this method returns the paths of all prefabs so they will need
+    If the `type` is a <code class="cs">UnityEngine.Component</code>, this method returns the paths of all prefabs so they will need
     to be checked for that component individually.
     </div>
 											<div><small><em>static</em></small></div>
@@ -478,7 +478,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns a friendly display string for the specified attribute 'type' surrounded by square brackets.
+    Returns a friendly display string for the specified attribute `type` surrounded by square brackets.
     <p></p>
     For example, <code class="cs">Weaver.AssetReferenceAttribute</code> would return "[AssetReference]".
     </div>
@@ -500,7 +500,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns the full name of the 'type' and any types it is nested inside, but without the namespace prefix.
+    Returns the full name of the `type` and any types it is nested inside, but without the namespace prefix.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -510,7 +510,7 @@ class Type type-node
 								<td>GameObject</td>
 								<td>
 									<div>
-    If 'obj' is a <code class="cs">UnityEngine.GameObject</code> this method casts and returns it.
+    If `obj` is a <code class="cs">UnityEngine.GameObject</code> this method casts and returns it.
     Or if it is a <code class="cs">UnityEngine.Component</code> this method returns its <code class="cs">UnityEngine.Component.gameObject</code>.
     Otherwise it returns null.
     </div>
@@ -522,9 +522,9 @@ class Type type-node
 								<td>GameObject</td>
 								<td>
 									<div>
-    If 'obj' is a <code class="cs">UnityEngine.GameObject</code> this method casts and returns it.
+    If `obj` is a <code class="cs">UnityEngine.GameObject</code> this method casts and returns it.
     Or if it is a <code class="cs">UnityEngine.Component</code> this method returns its <code class="cs">UnityEngine.Component.gameObject</code> and
-    outputs the 'component'.
+    outputs the `component`.
     Otherwise it returns null.
     </div>
 											<div><small><em>static</em></small></div>
@@ -535,7 +535,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    Returns a copy of the 'path' with the file extension removed from the end and caches the result.
+    Returns a copy of the `path` with the file extension removed from the end and caches the result.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -544,7 +544,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver/WeaverUtils/853B60EC">GetRandomElement<wbr>&lt;T&gt;<wbr><wbr>(IAssetList<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
 								<td>T</td>
 								<td>
-									<div>Returns a random element from the 'list'.</div>
+									<div>Returns a random element from the `list`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -553,7 +553,7 @@ class Type type-node
 								<td>T</td>
 								<td>
 									<div>
-    Returns the first element in the 'list' which has its <code class="cs">Weaver.IReferenceIndex.ReferencedIndex</code> == 'index'.
+    Returns the first element in the `list` which has its <code class="cs">Weaver.IReferenceIndex.ReferencedIndex</code> == `index`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -575,7 +575,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Tries to determine whether the 'type' is only available in the Unity Editor.
+    Tries to determine whether the `type` is only available in the Unity Editor.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -585,7 +585,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Indicates whether the 'type' is <code class="cs">UnityEngine.GameObject</code> or is derived from <code class="cs">UnityEngine.Component</code>.
+    Indicates whether the `type` is <code class="cs">UnityEngine.GameObject</code> or is derived from <code class="cs">UnityEngine.Component</code>.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -606,9 +606,9 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Elements in the specified 'list' reference specific indices in another list.
+    Elements in the specified `list` reference specific indices in another list.
     Call this method when removing an element from the other list to adjust the
-    <code class="cs">Weaver.IReferenceIndex.ReferencedIndex</code> of the elements in this 'list' accordingly.
+    <code class="cs">Weaver.IReferenceIndex.ReferencedIndex</code> of the elements in this `list` accordingly.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -618,7 +618,7 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Opens the specified 'url'.
+    Opens the specified `url`.
     If it begins with a '/' it is treated as a path relative to the <code class="cs">Weaver.WeaverUtils.DocumentationURL</code>.
     </div>
 											<div><small><em>static</em></small></div>
@@ -664,7 +664,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    Returns the <code class="cs"><a href="/weaver">bool</a></code> value corresponding to the specified 'optional' value.
+    Returns the <code class="cs"><a href="/weaver">bool</a></code> value corresponding to the specified `optional` value.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -674,7 +674,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver/OptionalBool">OptionalBool</a></td>
 								<td>
 									<div>
-    Returns the <code class="cs">Weaver.OptionalBool</code> value corresponding to the specified 'value'.
+    Returns the <code class="cs">Weaver.OptionalBool</code> value corresponding to the specified `value`.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
