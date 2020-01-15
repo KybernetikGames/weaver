@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<id>https://kybernetikgames.github.io/weaver</id>
+	<id>kybernetik.com.au/weaver</id>
 	<title>Weaver</title>
-	<link rel="self" href="https://kybernetikgames.github.io/weaver" />
+	<link rel="self" href="kybernetik.com.au/weaver" />
 	<rights>2019</rights>
 	<updated>2019-11-05T00:38:56Z</updated>
 </feed>
