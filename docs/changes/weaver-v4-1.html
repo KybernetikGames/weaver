@@ -57,8 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -158,8 +157,6 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
-                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
-                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
 
                     </ul>
                 </li>
@@ -167,7 +164,7 @@
                     <a href="/weaver/docs/changes">Change Log</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/weaver/docs/changes/hotfix">Hotfix</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v6-0">Weaver v6.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-1">Weaver v5.1</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-0">Weaver v5.0</a></li>
                 <li class="selected"><a href="/weaver/docs/changes/weaver-v4-1">Weaver v4.1</a></li>
@@ -201,7 +198,7 @@
 <li>When the procedural script folder is deleted (<em>Assets/Weaver</em>), the dialogue box asking where you want to save procedural scripts now also has an option to delete Weaver itself. Some users were previously deleting that folder to remove Weaver from their project without realising that the actual plugin is located in <em>Assets/Plugins/Weaver</em>.</li>
 <li>New Shader Linker system generates a script containing the ID values of all properties and keyword constants in the linked shaders.</li>
 <li>Added support for <code>Sprite</code> atlases to the Asset Linker.</li>
-<li>Linker systems (and any other procedural scripts using the <code><a href="/weaver/api/Weaver.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></code> class) will now automatically remove all obsolete members when you build the project.</li>
+<li>Linker systems (and any other procedural scripts using the <code><a href="/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></code> class) will now automatically remove all obsolete members when you build the project.</li>
 </ul>
 
 	</section>

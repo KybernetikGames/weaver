@@ -57,8 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -162,8 +161,6 @@
                     <ul class="treeview-menu">
                         
                 <li class="selected"><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
-                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
-                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
 
                     </ul>
                 </li>
@@ -171,7 +168,7 @@
                     <a href="/weaver/docs/changes">Change Log</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/weaver/docs/changes/hotfix">Hotfix</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v6-0">Weaver v6.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-1">Weaver v5.1</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-0">Weaver v5.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v4-1">Weaver v4.1</a></li>
@@ -201,16 +198,16 @@
 			<h1>Object Pooling</h1>
 		</section>
 	<section class="content">
-		<p>The <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> class allows you to easily and efficiently reuse objects instead of creating and destroying them all the time, which can improve performance. It is fully generic so it can be used with any type of object such as <code>Component</code>s in the scene, <code>ScriptableObject</code> assets, or any other class. Note that <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> is in the <code>Kybernetik</code> namespace so its source code is included in both Weaver Lite and Pro.</p>
+		<p>The <code><a href="/weaver/api/Weaver/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> class allows you to easily and efficiently reuse objects instead of creating and destroying them all the time, which can improve performance. It is fully generic so it can be used with any type of object such as <code>Component</code>s in the scene, <code>ScriptableObject</code> assets, or any other class.</p>
 <p>Several of the Weaver examples make use of pools: <a href="../examples/floating-text">Floating Text</a>, <a href="../examples/missiles">Missiles</a>, and <a href="../examples/missile-command">Missile Command</a>.</p>
 <p>Basic usage of an object pool is quite simple:</p>
 <ol>
-<li>Construct a <code>new <a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> with a delegate that will be used to create new items as they are needed. You can optionally specify a number of items to <code>preAllocate</code> immediately.</li>
+<li>Construct a <code>new <a href="/weaver/api/Weaver/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> with a delegate that will be used to create new items as they are needed. You can optionally specify a number of items to <code>preAllocate</code> immediately.</li>
 <li>Call <code>Acquire</code> to get an object from the pool.</li>
 <li>Call <code>Release</code> when you are done with the object to give it back to the pool.</li>
 </ol>
 <h1 id="utilities-and-extensions">Utilities and Extensions</h1>
-<p>The non-generic <code><a href="/weaver/api/Kybernetik/ObjectPool">ObjectPool</a></code> class contains various utilities and extension methods for creating and interacting with pools:</p>
+<p>The non-generic <code><a href="/weaver/api/Weaver/ObjectPool">ObjectPool</a></code> class contains various utilities and extension methods for creating and interacting with pools:</p>
 <ul>
 <li><code>CreateDefaultPool</code> returns a pool that creates new items using a the default constructor of T.</li>
 <li><code>CreateComponentPool</code> takes a prefab of any <code>Component</code> type and returns a pool that creates new items by instantiating that prefab.</li>
@@ -220,7 +217,7 @@
 <li><code>TryReleaseOrDestroy</code> is similar, but calls <code>Object.Destroy</code> on the item if the pool is null.</li>
 <li><code>TryReleaseOrDestroyGameObject</code> is similar, but if the object is released it's <code>GameObject</code> is automatically deactivated, or if the pool is null it calls <code>Object.Destroy</code> on the component's <code>GameObject</code> (rather than only destroying the component).</li>
 </ul>
-<p>By default, an <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> will use a <code>HashSet&lt;T&gt;</code> as its <code>ActiveObjects</code> collection for efficiently adding and removing items, but you can give it any type of collection in the constructor and if you want to use a <code>List&lt;T&gt;</code> in particular, you can use the <code><a href="/weaver/api/Kybernetik/PooledList_1">PooledList&lt;T&gt;</a></code> class instead of <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code>. The non-generic <code><a href="/weaver/api/Kybernetik/PooledList">PooledList</a></code> class also has similar utilities and extension methods.</p>
+<p>By default, an <code><a href="/weaver/api/Weaver/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> will use a <code>HashSet&lt;T&gt;</code> as its <code>ActiveObjects</code> collection for efficiently adding and removing items, but you can give it any type of collection in the constructor and if you want to use a <code>List&lt;T&gt;</code> in particular, you can use the <code><a href="/weaver/api/Weaver/PooledList_1">PooledList&lt;T&gt;</a></code> class instead of <code><a href="/weaver/api/Weaver/ObjectPool_1">ObjectPool&lt;T&gt;</a></code>. The non-generic <code><a href="/weaver/api/Weaver/PooledList">PooledList</a></code> class also has similar utilities and extension methods.</p>
 <h1 id="destroy-or-release">Destroy or Release?</h1>
 <p>Other object pooling systems generally force you to choose whether something can be used on its own or will be pooled:</p>
 <ul>
@@ -228,10 +225,10 @@
 <li>If the object deactivates itself when it's done then using it without an object pool would leave it inactive without ever reusing it, which isn't necessarily a problem but would be wasting memory at the very least.</li>
 <li>If the object simply indicates that it is done and relies on something else to respond accordingly, it still depends on something else and can't be used on its own.</li>
 </ul>
-<p>The static <code><a href="/weaver/api/Kybernetik/ObjectPool_1/D0FBD753">ObjectPool&lt;T&gt;.Current</a></code> property allows you to avoid the problem. When a pool creates a new item, the pool is assigned to that property (and cleared immediately after) so that the new object can get a reference to the pool that created it in its constructor. This means the object can decide what to do when it's done based on whether it came from a pool or not.</p>
-<p><code><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour&lt;T&gt;</a></code> is a <code>Component</code> class which makes use of that feature in conjunction with the <code>ObjectPool.TryReleaseOrDestroyGameObject&lt;T&gt;</code> extension method. All of the examples mentioned above inherit from <code><a href="/weaver/api/Kybernetik/PoolableBehaviour_1">PoolableBehaviour&lt;T&gt;</a></code> so that while they are currently only used in object pools, you could for example have a big boss fire a custom once-off <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> prefab without using a pool and it would still work properly.</p>
+<p>The static <code><a href="/weaver/api/Weaver/ObjectPool_1/81A328E8">ObjectPool&lt;T&gt;.Current</a></code> property allows you to avoid the problem. When a pool creates a new item, the pool is assigned to that property (and cleared immediately after) so that the new object can get a reference to the pool that created it in its constructor. This means the object can decide what to do when it's done based on whether it came from a pool or not.</p>
+<p><code><a href="/weaver/api/Weaver/PoolableBehaviour_1">PoolableBehaviour&lt;T&gt;</a></code> is a <code>Component</code> class which makes use of that feature in conjunction with the <code>ObjectPool.TryReleaseOrDestroyGameObject&lt;T&gt;</code> extension method. All of the examples mentioned above inherit from <code><a href="/weaver/api/Weaver/PoolableBehaviour_1">PoolableBehaviour&lt;T&gt;</a></code> so that while they are currently only used in object pools, you could for example have a big boss fire a custom once-off <code><a href="/weaver/api/Weaver.Examples/Missile">Missile</a></code> prefab without using a pool and it would still work properly.</p>
 <h1 id="asset-injection">Asset Injection</h1>
-<p>The <code>[AssetPool]</code> attribute allows <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> fields to have their value set by the <a href="../asset-injection">Asset Injection</a> system. The <code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> class contains an example of this: each of its text types is an injected prefab the user can assign in the <a href="../introduction/weaver-window">Weaver Window</a>, then on startup Weaver automatically creates an <code><a href="/weaver/api/Kybernetik/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> for each of them which will instantiate their prefab to create its items.</p>
+<p>The <code>[AssetPool]</code> attribute allows <code><a href="/weaver/api/Weaver/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> fields to have their value set by the <a href="../asset-injection">Asset Injection</a> system. The <code><a href="/weaver/api/Weaver.Examples/TextManager">TextManager</a></code> class contains an example of this: each of its text types is an injected prefab the user can assign in the <a href="../introduction/weaver-window">Weaver Window</a>, then on startup Weaver automatically creates an <code><a href="/weaver/api/Weaver/ObjectPool_1">ObjectPool&lt;T&gt;</a></code> for each of them which will instantiate their prefab to create its items.</p>
 
 	</section>
                 

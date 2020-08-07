@@ -57,8 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -158,8 +157,6 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
-                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
-                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
 
                     </ul>
                 </li>
@@ -167,7 +164,7 @@
                     <a href="/weaver/docs/changes">Change Log</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/weaver/docs/changes/hotfix">Hotfix</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v6-0">Weaver v6.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-1">Weaver v5.1</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-0">Weaver v5.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v4-1">Weaver v4.1</a></li>
@@ -210,9 +207,9 @@
 <li>The <code>GenerateProceduralOfficeBuilding</code> method is used to generate the prefab.
 <ul>
 <li>All it needs to do is create, configure, and return the desired object, then Weaver will take care of saving it. In this case, it creates a <code>new GameObject</code> and adds various components but you can make practically any type of asset procedurally, including textures, meshes, animator controllers, and scriptable objects.</li>
-<li>The building uses a <a href="../procedural-assets/procedural-meshes">Procedural Mesh</a> created using the <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> class. That mesh could have been saved as a separate asset by making another field with its own <code>[AssetReference]</code> and <code>[ProceduralAsset]</code> attributes, but in this case the mesh is only going to be used by this one prefab, so it might as well be saved inside that prefab.</li>
+<li>The building uses a <a href="../procedural-assets/procedural-meshes">Procedural Mesh</a> created using the <code><a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></code> class. That mesh could have been saved as a separate asset by making another field with its own <code>[AssetReference]</code> and <code>[ProceduralAsset]</code> attributes, but in this case the mesh is only going to be used by this one prefab, so it might as well be saved inside that prefab.</li>
 <li>The same is true for the two <code>Material</code>s which are assigned to the <code>MeshRenderer</code>. Weaver automatically detects that they aren't saved anywhere else so it will save them inside the prefab asset itself.</li>
-<li>Also note how the mesh uses two sub-meshes. The <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> constructor takes a <code>vertexCapacity</code> followed by two <code>indexCapacities</code> which causes it to allocate index lists for two sub-meshes - [0] for the base of the building and [1] for the windows. This allows the <code>MeshRenderer</code> to render each sub-mesh with its own <code>Material</code> to give them each a different color.</li>
+<li>Also note how the mesh uses two sub-meshes. The <code><a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></code> constructor takes a <code>vertexCapacity</code> followed by two <code>indexCapacities</code> which causes it to allocate index lists for two sub-meshes - [0] for the base of the building and [1] for the windows. This allows the <code>MeshRenderer</code> to render each sub-mesh with its own <code>Material</code> to give them each a different color.</li>
 </ul>
 </li>
 <li>The name of the prefab follows one of the <a href="../asset-injection/asset-naming">Asset Naming</a> rules to automatically match up with the script name when you first import Weaver.

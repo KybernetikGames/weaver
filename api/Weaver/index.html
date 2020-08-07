@@ -57,8 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -78,9 +77,6 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#ClassTypes">Class Types</a></p>
-<p><a href="#InterfaceTypes">Interface Types</a></p>
-<p><a href="#EnumTypes">Enum Types</a></p>
 <p><a href="#Namespaces">Namespaces</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -142,17 +138,15 @@
                         
 	<li class="header">Namespaces</li>   
 
-				<li class="treeview">
-				<a href="/weaver/api/Kybernetik">Kybernetik</a> <a href="#" class="expand"></a>
-				<ul class="treeview-menu">
-						<li><a href="/weaver/api/Kybernetik.ProceduralScripting">Kybernetik<wbr>.ProceduralScripting</a></li>
-</ul></li>
 				<li class="treeview active selected">
 				<a href="/weaver/api/Weaver">Weaver</a> <a href="#" class="expand"></a>
 				<ul class="treeview-menu">
-						<li><a href="/weaver/api/Weaver.Examples">Weaver<wbr>.Examples</a></li>
-			<li><a href="/weaver/api/Weaver.Procedural">Weaver<wbr>.Procedural</a></li>
-</ul></li>      
+			
+				<li class="treeview">
+				<a href="/weaver/api/Weaver.Editor">Weaver<wbr>.Editor</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/weaver/api/Weaver.Editor.Procedural">Weaver<wbr>.Editor<wbr>.Procedural</a></li>
+</ul></li></ul></li>      
 
                     </ul>
                             
@@ -174,228 +168,9 @@
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
     The core of the Weaver plugin.
-    <p></p>
-    <em>Source code is Pro-Only.</em>
     </div>
 
 
-
-			<h1 id="ClassTypes">Class Types</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Class</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/weaver/api/Weaver/AnimationReferenceAttribute">Animation<wbr>Reference<wbr>Attribute</a></td>
-									<td>
-    Marks a <code class="cs"><a href="/weaver">string</a></code> or <code class="cs"><a href="/weaver">int</a></code> field to show a popup menu in the inspector which lets you
-    select an animation value name or hash respectively. Values include both states and parameters.
-    <p></p>
-    WARNING: selecting a value using this attribute does not connect the field to that state or parameter. Renaming
-    the state or parameter will NOT automatically update the value of the attributed field.
-    <p></p>
-    If you're interested in an animation system which avoids the need for these weak unsafe references entirely,
-    you should check out <a href="https://kybernetik.com.au/animancer">Animancer</a>.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/Asset_1">Asset</a><wbr>&lt;<a href="/weaver/api/Weaver/Asset_1#typeparam-T">T</a>&gt;<wbr></td>
-									<td>
-     A wrapper which simplifies the process of lazy loading and caching resources and other assets, i.e. only
-     loading them when they are first needed instead of on startup.
-     </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute">Asset<wbr>Injection<wbr>Attribute</a></td>
-									<td>
-    <code class="cs">Weaver.InjectionAttribute</code> sub-class for attributes that inject an asset reference.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetInstanceAttribute">Asset<wbr>Instance<wbr>Attribute</a></td>
-									<td>
-    An <code class="cs">Weaver.AssetInjectionAttribute</code> which instantiates a copy of the target asset and assigns the copy to
-    the attributed member.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetList">AssetList</a></td>
-									<td>
-    A <code class="cs">UnityEngine.ScriptableObject</code> containing a list automatically populated with all assets of a given type in a
-    specific folder. Gathering takes place in the Unity Editor so the list can be loaded efficiently at runtime.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetList_1">AssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/AssetList_1#typeparam-T">T</a>&gt;<wbr></td>
-									<td>
-    An <code class="cs">Weaver.AssetList</code> that serializes direct references to the target assets.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetListBase">AssetListBase</a></td>
-									<td>
-    A <code class="cs">UnityEngine.ScriptableObject</code> containing a list which is automatically populated with all assets of a given
-    type in a specific folder. Gathering takes place in the Unity Editor so the list can be loaded efficiently at
-    runtime and the target assets do not need to be in a Resources folder.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetListEditor">AssetListEditor</a></td>
-									<td>[Internal, Editor-Only]
-    A <code class="cs">UnityEditor.CustomEditor</code> for <code class="cs">Weaver.AssetListBase</code>.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetPoolAttribute">AssetPoolAttribute</a></td>
-									<td>
-    An <code class="cs">Weaver.AssetInjectionAttribute</code> which assigns an <code class="cs">Kybernetik.ObjectPool`1</code> to the attributed member
-    that creates new items by instantiating copies of the target asset.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/AssetReferenceAttribute">Asset<wbr>Reference<wbr>Attribute</a></td>
-									<td>
-    An <code class="cs">Weaver.AssetInjectionAttribute</code> which assigns the target asset directly to the attributed member.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/EditorPrefAttribute">EditorPrefAttribute</a></td>
-									<td>
-    An <code class="cs">Weaver.InjectionAttribute</code> which saves and loads the value of the attributed member in
-    <code class="cs">UnityEditor.EditorPrefs</code>.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/InjectionAttribute">InjectionAttribute</a></td>
-									<td>
-    Base class for attributes which define behaviours for automatically injecting values into static properties.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ItemList">ItemList</a></td>
-									<td>
-    A <code class="cs">Weaver.MetaAssetList`2</code> of <code class="cs">Weaver.Examples.Item</code> prefabs and their
-    <code class="cs">Weaver.Examples.ItemMetaData</code>.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/LazyAssetList_1">LazyAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/LazyAssetList_1#typeparam-T">T</a>&gt;<wbr></td>
-									<td>
-    An <code class="cs">Weaver.AssetList</code> that serializes resource paths so that assets don't need to be loaded until they are
-    first accessed.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/MetaAssetList_2">MetaAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/MetaAssetList_2#typeparam-TAsset">TAsset</a>, <wbr><a href="/weaver/api/Weaver/MetaAssetList_2#typeparam-TMeta">TMeta</a>&gt;<wbr></td>
-									<td>
-    A <code class="cs">Weaver.LazyAssetList`1</code> that serializes a specific type of meta-data about the listed assets so that
-    the data can be accessed and evaluated without actually loading the assets.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/MetaDataUtils">MetaDataUtils</a></td>
-									<td>[Editor-Only]
-    Various utilities for managing meta-data.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/MissileList">MissileList</a></td>
-									<td>An <code class="cs">Weaver.AssetList`1</code> of <code class="cs">Weaver.Examples.Missile</code> prefabs.</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ObjectList">ObjectList</a></td>
-									<td>
-    An <code class="cs">Weaver.AssetList</code> that serializes direct references to the target assets.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/OnInjectionCompleteAttribute">On<wbr>Injection<wbr>Complete<wbr>Attribute</a></td>
-									<td>
-    An <code class="cs">System.Attribute</code> for static parameterless methods to have Weaver invoke them once the static
-    dependency injection is complete.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/PathMatcher">PathMatcher</a></td>
-									<td>[Editor-Only]
-    A utility for finding file paths that match certain targets as closely as possible.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/PrefAttribute">PrefAttribute</a></td>
-									<td>
-    An <code class="cs">Weaver.InjectionAttribute</code> which saves and loads the value of the attributed member in
-    <code class="cs">UnityEngine.PlayerPrefs</code>.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ProceduralAssetAttribute">Procedural<wbr>Asset<wbr>Attribute</a></td>
-									<td>
-    When placed alongside any kind of <code class="cs">Weaver.AssetInjectionAttribute</code>, this attribute allows the injected
-    asset to be procedurally generated.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/WeaverUtils">WeaverUtils</a></td>
-									<td>A variety of miscellaneous utility methods.</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
-
-			<h1 id="InterfaceTypes">Interface Types</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Interface</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/weaver/api/Weaver/IAssetList_1">IAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/IAssetList_1#typeparam-T">T</a>&gt;<wbr></td>
-									<td>A strongly typed asset list.</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/IMetaDataProvider_1">IMetaDataProvider</a><wbr>&lt;<a href="/weaver/api/Weaver/IMetaDataProvider_1#typeparam-T">T</a>&gt;<wbr></td>
-									<td>An object that can specify its own meta-data.</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/IReferenceIndex">IReferenceIndex</a></td>
-									<td>
-    An object that references a particular index in another list.
-    </td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
-
-			<h1 id="EnumTypes">Enum Types</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Enum</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/weaver/api/Weaver/OptionalBool">OptionalBool</a></td>
-									<td>A trinary logic value: true, false, or unspecified.</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 			<h1 id="Namespaces">Namespaces</h1>
 			<div class="box">
@@ -408,27 +183,9 @@
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/weaver/api/Weaver.Examples">Weaver<wbr>.Examples</a></td>
+								<td><a href="/weaver/api/Weaver.Editor">Weaver<wbr>.Editor</a></td>
 									<td>
-    Examples of how to use Weaver.
-    <p></p>
-    <em>Source code is included.</em>
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver.Procedural">Weaver<wbr>.Procedural</a></td>
-									<td>
-    Procedural asset generation systems.
-    <p></p>
-    <em>Source code is Pro-Only.</em>
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver.Procedural">Weaver<wbr>.Procedural</a></td>
-									<td>
-    Procedural asset generation systems.
-    <p></p>
-    <em>Source code is Pro-Only.</em>
+    Editor-Only scripts.
     </td>
 							</tr>
 					</tbody></table>

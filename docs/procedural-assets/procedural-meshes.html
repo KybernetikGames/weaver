@@ -57,8 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li><a href="/weaver/faq"><img src="/weaver/images/faq.png" height="20" style="position:relative; left:-4px; top:-1px;"> FAQ</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v5.1</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -158,8 +157,6 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/weaver/docs/misc/object-pooling">Object Pooling</a></li>
-                <li><a href="/weaver/docs/misc/source-code">Source Code</a></li>
-                <li><a href="/weaver/docs/misc/utilities">Utilities</a></li>
 
                     </ul>
                 </li>
@@ -167,7 +164,7 @@
                     <a href="/weaver/docs/changes">Change Log</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/weaver/docs/changes/hotfix">Hotfix</a></li>
+                <li><a href="/weaver/docs/changes/weaver-v6-0">Weaver v6.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-1">Weaver v5.1</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-0">Weaver v5.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v4-1">Weaver v4.1</a></li>
@@ -200,13 +197,13 @@
 		<p>One of the most common reasons you may want to create a procedural asset is to generate a <code>Mesh</code> using code. Weaver allows you to easily and efficiently create procedural meshes using the <code>Kybernetik.MeshBuilder</code> class, both to efficiently generate and regenerate a dynamic mesh at runtime as well as to generate a procedural asset in the Unity Editor:</p>
 <ul>
 <li>The <a href="../examples/building">Building Example</a> demonstrates how to generate a simple procedural mesh.</li>
-<li>Construct a <code>new <a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> by specifying the initial vertex and index capacity. These values are simply the starting size for the internal lists which will expand as needed.</li>
-<li>By default, a <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> will contain UVs and Normals. If you want any other channels such as UVs2 or Colors, you must specify the <code>MeshChannels</code> in the constructor.</li>
+<li>Construct a <code>new <a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></code> by specifying the initial vertex and index capacity. These values are simply the starting size for the internal lists which will expand as needed.</li>
+<li>By default, a <code><a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></code> will contain UVs and Normals. If you want any other channels such as UVs2 or Colors, you must specify the <code>MeshChannels</code> in the constructor.</li>
 <li>If you wish to use a <code>MeshTopology</code> other than <code>Triangles</code> you can specify it in the constructor or set the <code>topology</code> field at any time.</li>
 <li>To build your mesh, you simply call <code>builder.Vertices.Add(...)</code> (remembering to always add the same number of values to all mesh channels) followed by either adding values to the <code>builder.Indices0</code> list or calling any of the <code>builder.Index...</code> methods.</li>
-<li>Once you are finished building, you can either implicitly cast your <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> to a <code>Mesh</code> or use any of the <code>Compile</code> method overloads.</li>
-<li>If you wish to reuse your <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> you can simply call <code>Clear</code> between each use.</li>
-<li>Note that the source code of the <code><a href="/weaver/api/Kybernetik/MeshBuilder">MeshBuilder</a></code> class is included in Weaver Lite.</li>
+<li>Once you are finished building, you can either implicitly cast your <code><a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></code> to a <code>Mesh</code> or use any of the <code>Compile</code> method overloads.</li>
+<li>If you wish to reuse your <code><a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></code> you can simply call <code>Clear</code> between each use.</li>
+<li>Note that the source code of the <code><a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></code> class is included in Weaver Lite.</li>
 </ul>
 
 	</section>
