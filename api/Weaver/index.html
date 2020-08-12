@@ -77,6 +77,9 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#InterfaceTypes">Interface Types</a></p>
+<p><a href="#EnumTypes">Enum Types</a></p>
 <p><a href="#Namespaces">Namespaces</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -145,8 +148,14 @@
 				<li class="treeview">
 				<a href="/weaver/api/Weaver.Editor">Weaver<wbr>.Editor</a> <a href="#" class="expand"></a>
 				<ul class="treeview-menu">
-						<li><a href="/weaver/api/Weaver.Editor.Procedural">Weaver<wbr>.Editor<wbr>.Procedural</a></li>
-</ul></li></ul></li>      
+			
+				<li class="treeview">
+				<a href="/weaver/api/Weaver.Editor.Procedural">Weaver<wbr>.Editor<wbr>.Procedural</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting">Weaver<wbr>.Editor<wbr>.Procedural<wbr>.Scripting</a></li>
+</ul></li>			<li><a href="/weaver/api/Weaver.Editor.Window">Weaver<wbr>.Editor<wbr>.Window</a></li>
+</ul></li>			<li><a href="/weaver/api/Weaver.Examples">Weaver<wbr>.Examples</a></li>
+</ul></li>      
 
                     </ul>
                             
@@ -172,6 +181,308 @@
 
 
 
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Weaver/AnimationReferenceAttribute">Animation<wbr>Reference<wbr>Attribute</a></td>
+									<td>
+    Marks a <code class="cs"><a href="/weaver">string</a></code> or <code class="cs"><a href="/weaver">int</a></code> field to show a popup menu in the inspector which lets you
+    select an animation value name or hash respectively. Values include both states and parameters.
+    <p></p>
+    WARNING: selecting a value using this attribute does not link the field to that state or parameter. Renaming
+    the state or parameter will NOT automatically update the value of the attributed field.
+    <p></p>
+    If you're interested in an animation system which avoids the need for these weak unsafe references entirely,
+    you should check out <a href="https://kybernetik.com.au/animancer">Animancer</a>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/Asset_1">Asset</a><wbr>&lt;<a href="/weaver/api/Weaver/Asset_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+     A wrapper which simplifies the process of lazy loading and caching resources and other assets, i.e. only
+     loading them when they are first needed instead of on startup.
+     </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute">Asset<wbr>Injection<wbr>Attribute</a></td>
+									<td>
+    <code class="cs">Weaver.InjectionAttribute</code> sub-class for attributes that inject an asset reference.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/AssetInstanceAttribute">Asset<wbr>Instance<wbr>Attribute</a></td>
+									<td>
+    An <code class="cs">Weaver.AssetInjectionAttribute</code> which instantiates a copy of the target asset and assigns the copy to
+    the attributed member.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/AssetList">AssetList</a></td>
+									<td>
+    A <code class="cs">UnityEngine.ScriptableObject</code> containing a list automatically populated with all assets of a given type in a
+    specific folder. Gathering takes place in the Unity Editor so the list can be loaded efficiently at runtime.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/AssetList_1">AssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/AssetList_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    An <code class="cs">Weaver.AssetList</code> that serializes direct references to the target assets.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/AssetListBase">AssetListBase</a></td>
+									<td>
+    A <code class="cs">UnityEngine.ScriptableObject</code> containing a list which is automatically populated with all assets of a given
+    type in a specific folder. Gathering takes place in the Unity Editor so the list can be loaded efficiently at
+    runtime and the target assets do not need to be in a Resources folder.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/AssetPoolAttribute">AssetPoolAttribute</a></td>
+									<td>
+    An <code class="cs">Weaver.AssetInjectionAttribute</code> which assigns an <code class="cs">Weaver.ObjectPool`1</code> to the attributed member
+    that creates new items by instantiating copies of the target asset.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/AssetReferenceAttribute">Asset<wbr>Reference<wbr>Attribute</a></td>
+									<td>
+    An <code class="cs">Weaver.AssetInjectionAttribute</code> which assigns the target asset directly to the attributed member.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/CSharp">CSharp</a></td>
+									<td>A variety of methods relating to C# code.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/EditorPrefAttribute">EditorPrefAttribute</a></td>
+									<td>
+    An <code class="cs">Weaver.InjectionAttribute</code> which saves and loads the value of the attributed member in
+    <code class="cs">UnityEditor.EditorPrefs</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/InjectionAttribute">InjectionAttribute</a></td>
+									<td>
+    Base class for attributes which define behaviours for automatically injecting values into static properties.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/ItemList">ItemList</a></td>
+									<td>
+    A <code class="cs">Weaver.MetaAssetList`2</code> of <code class="cs">Weaver.Examples.Item</code> prefabs and their
+    <code class="cs">Weaver.Examples.ItemMetaData</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/LazyAssetList_1">LazyAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/LazyAssetList_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    An <code class="cs">Weaver.AssetList</code> that serializes resource paths so that assets don't need to be loaded until they are
+    first accessed.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/MeshBuilder">MeshBuilder</a></td>
+									<td>
+    Encapsulates lists of vertices, normals, etc. to simplify the procedural generation of meshes.
+    <p></p>
+    To use: simply add elements to the lists (<code class="cs">Weaver.MeshBuilder.Vertices</code>, <code class="cs">Weaver.MeshBuilder.Indices</code>, <code class="cs">Weaver.MeshBuilder.UVs</code>,
+    etc.) then call any of the Compile() overloads. You can also implicitly cast a <code class="cs">Weaver.MeshBuilder</code> to a
+    <code class="cs">UnityEngine.Mesh</code>.
+    <p></p>
+    You can efficiently reuse a <code class="cs">Weaver.MeshBuilder</code> by calling <code class="cs">Weaver.MeshBuilder.Clear</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/MeshUtilities">MeshUtilities</a></td>
+									<td>Various utility methods for using the <code class="cs">Weaver.MeshBuilder</code> class.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/MetaAssetList_2">MetaAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/MetaAssetList_2#typeparam-TAsset">TAsset</a>, <wbr><a href="/weaver/api/Weaver/MetaAssetList_2#typeparam-TMeta">TMeta</a>&gt;<wbr></td>
+									<td>
+    A <code class="cs">Weaver.LazyAssetList`1</code> that serializes a specific type of meta-data about the listed assets so that
+    the data can be accessed and evaluated without actually loading the assets.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/MissileList">MissileList</a></td>
+									<td>An <code class="cs">Weaver.AssetList`1</code> of <code class="cs">Weaver.Examples.Missile</code> prefabs.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/ObjectList">ObjectList</a></td>
+									<td>An <code class="cs">Weaver.AssetList</code> for any <code class="cs">UnityEngine.Object</code>.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/ObjectPool">ObjectPool</a></td>
+									<td>
+    Various utilities and extension methods for <code class="cs">Weaver.ObjectPool`1</code>.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetik.com.au/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/ObjectPool_1">ObjectPool</a><wbr>&lt;<a href="/weaver/api/Weaver/ObjectPool_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A collection of objects that can create new items as necessary.
+    Get an object from the pool with <code class="cs">Weaver.ObjectPool`1.Acquire</code>.
+    Return it to the pool with <code class="cs">Weaver.ObjectPool`1.Release(`0)</code>.
+    <p></p>
+    The non-generic <code class="cs">Weaver.ObjectPool</code> class contains some useful methods of creating commonly used pools.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetik.com.au/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/OnInjectionCompleteAttribute">On<wbr>Injection<wbr>Complete<wbr>Attribute</a></td>
+									<td>
+    An <code class="cs">System.Attribute</code> for static parameterless methods to have Weaver invoke them once the static
+    dependency injection is complete.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/PoolableBehaviour_1">PoolableBehaviour</a><wbr>&lt;<a href="/weaver/api/Weaver/PoolableBehaviour_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A <code class="cs">UnityEngine.MonoBehaviour</code> component which automatically detects the <code class="cs">Weaver.ObjectPool`1</code> that
+    created it so it can be released back to that pool (or simply destroyed if it wasn't created by a pool) using
+    the <code class="cs">Weaver.ObjectPool.TryReleaseOrDestroyGameObject``1(``0)</code> extension method.
+    <p></p>
+    When inheriting from this class, <span name="T" class="typeparamref">T</span> should always be the child class itself, I.E.
+    <code class="cs">class ChildClass : PoolableBehaviour&lt;ChildClass&gt;</code>
+    <p></p>
+    <a href="https://kybernetik.com.au/weaver/docs/misc/object-pooling">More detailed instructons on how to use
+    this class and those related to it can be found in the documentation</a>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/PooledList">PooledList</a></td>
+									<td>
+    Various utilities and extension methods for <code class="cs">Weaver.PooledList`1</code>.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetik.com.au/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/PooledList_1">PooledList</a><wbr>&lt;<a href="/weaver/api/Weaver/PooledList_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    A <code class="cs">System.Collections.Generic.List`1</code> of active objects backed by an <code class="cs">Weaver.ObjectPool`1</code> of inactive objects ready to
+    be reused.
+    <p></p>
+    More detailed instructons on how to use this class and those related to it can be found at
+    https://kybernetik.com.au/weaver/docs/misc/object-pooling.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/PrefAttribute">PrefAttribute</a></td>
+									<td>
+    An <code class="cs">Weaver.InjectionAttribute</code> which saves and loads the value of the attributed member in
+    <code class="cs">UnityEngine.PlayerPrefs</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/ProceduralAssetAttribute">Procedural<wbr>Asset<wbr>Attribute</a></td>
+									<td>
+    When placed alongside any kind of <code class="cs">Weaver.AssetInjectionAttribute</code>, this attribute allows the injected
+    asset to be procedurally generated.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/ReflectionUtilities">ReflectionUtilities</a></td>
+									<td>A variety of utility methods relating to reflection.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/Substring">Substring</a></td>
+									<td>
+    Encapsulates a string to treat it as a variable substring without the memory allocation and garbage collection
+    costs of <code class="cs">System.String.Substring(System.Int32,System.Int32)</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/WeaverUtilities">WeaverUtilities</a></td>
+									<td>A variety of miscellaneous utility methods.</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="InterfaceTypes">Interface Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Interface</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Weaver/IAssetList_1">IAssetList</a><wbr>&lt;<a href="/weaver/api/Weaver/IAssetList_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>A strongly typed asset list.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/IDependant_1">IDependant</a><wbr>&lt;<a href="/weaver/api/Weaver/IDependant_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    Indicates that a type can depend on other objects.
+    Used for topological sorting.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/IMetaDataProvider_1">IMetaDataProvider</a><wbr>&lt;<a href="/weaver/api/Weaver/IMetaDataProvider_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>An object that can specify its own meta-data.</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/IOnCreate">IOnCreate</a></td>
+									<td>
+    Exposes a method to be called when a new instance is created by <code class="cs">Weaver.WeaverUtilities.EnsureExists``1(``0@)</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/IPoolable">IPoolable</a></td>
+									<td>
+    An object with a callback method for when it is released to an <code class="cs">Weaver.ObjectPool`1</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/IReferenceIndex">IReferenceIndex</a></td>
+									<td>
+    An object that references a particular index in another list.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="EnumTypes">Enum Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Enum</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/weaver/api/Weaver/OptionalBool">OptionalBool</a></td>
+									<td>A trinary logic value: true, false, or unspecified.</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
 			<h1 id="Namespaces">Namespaces</h1>
 			<div class="box">
 				<div class="box-body no-padding table-responsive">
@@ -186,6 +497,12 @@
 								<td><a href="/weaver/api/Weaver.Editor">Weaver<wbr>.Editor</a></td>
 									<td>
     Editor-Only scripts.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver.Examples">Weaver<wbr>.Examples</a></td>
+									<td>
+    Examples of how to use Weaver.
     </td>
 							</tr>
 					</tbody></table>

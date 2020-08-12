@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/weaver/assets/img/favicon.ico" type="image/x-icon">
+        <title>Weaver - API - WeaverUtilities.DontExpandWidth Property</title>
+        <link href="/weaver/assets/css/highlight.css" rel="stylesheet">
+        <link href="/weaver/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/weaver/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/weaver/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/weaver/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/weaver/assets/css/override.css" rel="stylesheet">
+        <script src="/weaver/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/weaver/assets/js/bootstrap.min.js"></script>        
+        <script src="/weaver/assets/js/app.min.js"></script>         
+        <script src="/weaver/assets/js/highlight.pack.js"></script>   
+        <script src="/weaver/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/weaver/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/weaver/assets/js/mermaid.min.js"></script>
+        <script src="/weaver/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/weaver/assets/js/html5shiv.min.js"></script>
+        <script src="/weaver/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/weaver/" class="logo">
+                            <span>Weaver</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
+        <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
+        <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
+        <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
+        <li><a href="/weaver/pro"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Buy</a></li>
+        <li><a href="https://kybernetik.com.au/kailas-dierk/unity-assets"><img src="/weaver/images/kybernetik.png" height="20" style="position:relative; left:-2px; top:-1px;"> Other Assets</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/weaver/assets/js/lunr.min.js"></script>
+    <script src="/weaver/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/weaver/api/Weaver.dll">Weaver<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/weaver/api/Weaver">Weaver</a></li>
+		<li class="header">Type</li>
+		<li><a href="/weaver/api/Weaver/WeaverUtilities">WeaverUtilities</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Method Members</li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/C60930C8">AddIfNew<wbr>&lt;T&gt;<wbr><wbr>(ICollection<wbr>&lt;T&gt;<wbr>, <wbr>T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/C6F34D0E">AddLinkToURL<wbr>(GenericMenu, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/556EBCC8">AppendColorTag<wbr>(StringBuilder, <wbr>Color32, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/86256F2E">AppendColorToHex<wbr>(StringBuilder, <wbr>Color32)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/0308DFB3">AppendDeepToString<wbr>(StringBuilder, <wbr>IEnumerator, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/DD4308EA">Append<wbr>Friendly<wbr>Full<wbr>Name<wbr>&lt;T&gt;<wbr><wbr>(StringBuilder, <wbr>T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/7598AB0C">AppendLineConst<wbr>(StringBuilder)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/14CF2FA1">AppendLineConst<wbr>(StringBuilder, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/1269AFA7">AppendLineConst<wbr>(StringBuilder, <wbr>Object)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/E24DCD3D">AppendXmlString<wbr>(StringBuilder, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/56FB8AEF">Apply<wbr>Bold<wbr>Tags<wbr>To<wbr>Last<wbr>Section<wbr>(StringBuilder, <wbr>int, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/5BBEB5DE">AssetToResourcePath<wbr>(string, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/6E5309F9">ClearAssetPathCache<wbr>()<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/A4B428A0">ColorToHex<wbr>(Color32)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/3F25441D">Compare<wbr>With<wbr>Files<wbr>Before<wbr>Folders<wbr>(string, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/93D20CD9">Convert<wbr>Camel<wbr>Case<wbr>To<wbr>Friendly<wbr>(string, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/27F7C72F">Convert<wbr>Camel<wbr>Case<wbr>To<wbr>Friendly<wbr>(StringBuilder, <wbr>string, <wbr>int, <wbr>int, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/AE319084">Convert<wbr>Field<wbr>Name<wbr>To<wbr>Friendly<wbr>(string, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/84E0D12F">CreateNewAsset<wbr>(Type, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/CDD62F82">DeepToString<wbr>(IEnumerable, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/46317515">DeepToString<wbr>(IEnumerable)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/3FABB4EA">DeepToString<wbr>(IEnumerator, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/CA03C267">DeepToString<wbr>(IEnumerator)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/A04AC177">DoLayoutListFixed<wbr>(ReorderableList, <wbr>GUILayoutOption[])<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/F13756C2">DoToggle<wbr>(bool, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/D26B5D89">Editor<wbr>Set<wbr>Default<wbr>Parent<wbr>(Transform, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/C8C23036">EditorSetName<wbr>(Object, <wbr>string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/7F1A356D">EnsureExists<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/8F9EE33C">FriendlyFullName<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/114CC665">Get<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>, <wbr>TKey, <wbr>TValue)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/8B76240A">GetAssetPaths<wbr>(Type)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/4386C313">Get<wbr>Attribute<wbr>Display<wbr>String<wbr>(Type)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/13C1F145">Get<wbr>Default<wbr>File<wbr>Extension<wbr>(Type)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/98053DF3">GetDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>()<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/16A51B9D">GetDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/18696296">Get<wbr>File<wbr>Extension<wbr>Index<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/69C53B56">Get<wbr>Full<wbr>Name<wbr>Without<wbr>Namespace<wbr>(Type)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/CF5D8050">GetGameObject<wbr>(Object, <wbr>Component)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/56E4C6E8">GetGameObject<wbr>(Object)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/3FFD08DB">GetHashSet<wbr>&lt;T&gt;<wbr><wbr>()<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/E7689C2B">GetHashSet<wbr>&lt;T&gt;<wbr><wbr>(HashSet<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/672339F8">GetList<wbr>&lt;T&gt;<wbr><wbr>()<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/7EA2490C">GetList<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/2D203A41">GetOrAddComponent<wbr>&lt;T&gt;<wbr><wbr>(GameObject)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/F94687DB">Get<wbr>Path<wbr>Without<wbr>Extension<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/5F77DAE9">GetRandomElement<wbr>&lt;T&gt;<wbr><wbr>(IAssetList<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/25BEF485">GetReferenceTo<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/75215D4E">GetStringBuilder<wbr>()<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/2D57B503">Indent<wbr>(StringBuilder, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/D40D1EF5">IndexOfLastSlash<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/8590C9A1">InsertAt<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int, <wbr>T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/9C33BDAF">InsertAt<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/725CEA9F">InsertSorted<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>T, <wbr>IComparer<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/4160E214">IsDependantOn<wbr>&lt;T&gt;<wbr><wbr>(IDependant<wbr>&lt;T&gt;<wbr>, <wbr>T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/FD8CBBCF">IsEditorOnly<wbr>(Type)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/BB1BE8DD">IsPrefabType<wbr>(Type)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/3EB11D5E">IsResource<wbr>(string, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/3DD7F205">LinearRescale<wbr>(float, <wbr>float, <wbr>float, <wbr>float, <wbr>float)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/98413118">LinearRescaleClamped<wbr>(float, <wbr>float, <wbr>float, <wbr>float, <wbr>float)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/AAE8BC78">LinearRescaleTo01<wbr>(float, <wbr>float, <wbr>float)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/A697E40E">LogIfRestricted<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/3D703E9E">Nullify<wbr>&lt;T&gt;<wbr><wbr>(T)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/7FCDF8B3">OnReferenceRemoved<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/C28903B0">OpenRelativeURL<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/8193BEA0">Pop<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/39751749">PopLastOrCreate<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/5E16124F">Release<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/EAC913A8">Release<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/7EA5A1CB">Release<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/915AF993">Release<wbr>&lt;TKey, <wbr>TValue&gt;<wbr><wbr>(Dictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/18318688">Release<wbr>&lt;T&gt;<wbr><wbr>(HashSet<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/68B96B37">Release<wbr>&lt;T&gt;<wbr><wbr>(HashSet<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/72EE6EC9">Release<wbr>(StringBuilder)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/947DAA2B">ReleaseToString<wbr>(StringBuilder)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/B88C3E8C">RemoveAt<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/BFADB0B3">Remove<wbr>Trailing<wbr>Slashes<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/061C2B8F">ReplaceSlashesBack<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/1C04EE35">Replace<wbr>Slashes<wbr>Forward<wbr>(string)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/E1DBACCE">RequireCapacity<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/9FF34812">SetCount<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/D540F54F">SetSize<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/FB0AA34E">SetSize<wbr>&lt;T&gt;<wbr><wbr>(T[], <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/4CA399C8">SkipWhiteSpace<wbr>(string, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/1657FEC2">Skip<wbr>White<wbr>Space<wbr>Backwards<wbr>(string, <wbr>int)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/97A1E25E">StableInsertionSort<wbr>&lt;T&gt;<wbr><wbr>(IList<wbr>&lt;T&gt;<wbr>, <wbr>Comparison<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/2115ED17">StableInsertionSort<wbr>&lt;T&gt;<wbr><wbr>(IList<wbr>&lt;T&gt;<wbr>)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/FDBD698A">TempTypeContent<wbr>(Type)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/B5A2F32E">ToBool<wbr>(OptionalBool, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/74CDE6B9">ToOptionalBool<wbr>(bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/F4449955">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(IEnumerable<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/7569F7CF">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(IEnumerable<wbr>&lt;T&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;IDependant<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/BD0A45C3">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(IEnumerable<wbr>&lt;T&gt;<wbr>, <wbr>Func<wbr>&lt;T, <wbr>IEnumerable<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/F8E7FDB5">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int, <wbr>Func<wbr>&lt;T, <wbr>IEnumerable<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/EB9811A3">TopologicalSort<wbr>&lt;T&gt;<wbr><wbr>(List<wbr>&lt;T&gt;<wbr>, <wbr>int, <wbr>Func<wbr>&lt;T, <wbr>IEnumerable<wbr>&lt;T&gt;<wbr>&gt;<wbr>, <wbr>IEqualityComparer<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></li>
+			<li class="header">NamedType Members</li>
+				<li><a href="/weaver/api/Weaver/CollectionPool_2">WeaverUtilities<wbr>.CollectionPool<wbr>&lt;TCollection, <wbr>TElement&gt;<wbr></a></li>
+			<li class="header">Field Members</li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/5A9316EF">DeveloperEmail</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/14404F3B">DocumentationURL</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/B906BE63">ErrorColor</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/5A8E6FD6">IsWeaverPro</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/EA795C22">NewLine</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/39217890">Tab</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/8648B839">UnityEditor</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/0D240C98">Version</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/F4A25E37">WarningColor</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/78A0DF73">WeaverWindowPath</a></li>
+			<li class="header">Property Members</li>
+				<li class="selected"><a href="/weaver/api/Weaver/WeaverUtilities/1D42AB64">DontExpandWidth</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/86F91384">ForceGenerate</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/7C863B24">IsBuilding</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/19C02CC3">IsPreprocessingBuild</a></li>
+				<li><a href="/weaver/api/Weaver/WeaverUtilities/414A5FBE">Weaver<wbr>Plugins<wbr>Directory</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/weaver/api/Weaver/WeaverUtilities">WeaverUtilities</a>.</h3>
+	<h1>DontExpandWidth <small>Property</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">[Editor-Only]
+    The cached result of <code class="cs">UnityEngine.GUILayout.ExpandWidth(System.Boolean)</code> with a false parameter.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/weaver/api/Weaver.dll">Weaver<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/weaver/api/Weaver">Weaver</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/weaver/api/Weaver/WeaverUtilities">WeaverUtilities</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static GUILayoutOption[] DontExpandWidth { get; }</code></pre>
+
+
+
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>GUILayoutOption[]</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
