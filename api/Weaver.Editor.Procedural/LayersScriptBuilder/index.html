@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -369,6 +369,17 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder/E0DFBC4C">DisableAllWarnings</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    If true, <code class="cs">#pragma warning disable</code> will be put at the top of the script to disable all warnings.
+    Default true.
+    </div>
+											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural/LayersScriptBuilder/98325DCB">Enabled</a></td>
 								<td>bool</td>
 								<td>
@@ -431,7 +442,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder/11D5E040">LogBuildErrors</a></td>
 								<td>bool</td>
 								<td>
-									<div>If true, errors encountered while building the script will be logged.</div>
+									<div>If true, errors encountered while building the script will be logged. Default true.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></em></small></div>
 								</td>
 							</tr>
@@ -662,9 +673,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/B2D4317D">AppendHeader<wbr>(StringBuilder, <wbr>int)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Appends a C# XML comment using the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.CommentBuilder</code>.
-    </div>
+									<div>Appends a C# XML comment using the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.CommentBuilder</code>.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder">ElementBuilder</a></em></small></div>
 								</td>
 							</tr>
@@ -921,29 +930,23 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/NamespaceBuilder/3C4C3A3F">ReleaseToPool<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Reset this <code class="cs">Weaver.Editor.Procedural.Scripting.NamespaceBuilder</code> and add it to its object pool to be reused later.
-    </div>
+									<div>Resets this element and adds it to its object pool to be reused later.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/NamespaceBuilder">NamespaceBuilder</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/EF491AA7">Reset<wbr>()<wbr></a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/NamespaceBuilder/418F73D3">Reset<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Reset all of the fields and properties of this element to their default values.
-    </div>
-											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder">ElementBuilder</a></em></small></div>
+									<div>Resets all of the fields and properties of this element to their default values.</div>
+											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/NamespaceBuilder">NamespaceBuilder</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/083A3088">SetName<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Sets the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.Name</code> and <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.NameSource</code>.
-    </div>
+									<div>Sets the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.Name</code> and <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.NameSource</code>.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder">ElementBuilder</a></em></small></div>
 								</td>
 							</tr>

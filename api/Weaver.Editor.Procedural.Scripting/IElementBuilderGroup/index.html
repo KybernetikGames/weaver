@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -146,6 +146,7 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Enum Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers">AccessModifiers</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterModifier">ParameterModifier</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/CachedTypeInfo">CachedTypeInfo</a></li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ConstructorBuilder">ConstructorBuilder</a></li>
@@ -161,6 +162,9 @@
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder">TypeBuilder</a></li>
 			<li class="header">Interface Types</li>
 				<li class="selected"><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/IElementBuilderGroup">IElementBuilderGroup</a></li>
+			<li class="header">Struct Types</li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterBuilder">ParameterBuilder</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeName">TypeName</a></li>
 			<li class="header">Delegate Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AppendFunction">AppendFunction</a></li>
 
@@ -202,16 +206,16 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/weaver/api/Weaver.Editor.Procedural/InjectorScriptBuilder">Injector<wbr>Script<wbr>Builder</a></li>								
-											<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ScriptBuilder">ScriptBuilder</a></li>								
-											<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder">TypeBuilder</a></li>								
-											<li><a href="/weaver/api/Weaver.Editor.Procedural/ShadersScriptBuilder">ShadersScriptBuilder</a></li>								
-											<li><a href="/weaver/api/Weaver.Editor.Procedural/AnimationsScriptBuilder">Animations<wbr>Script<wbr>Builder</a></li>								
-											<li><a href="/weaver/api/Weaver.Editor.Procedural/NavigationAreasScriptBuilder">Navigation<wbr>Areas<wbr>Script<wbr>Builder</a></li>								
-											<li><a href="/weaver/api/Weaver.Editor.Procedural/ScenesScriptBuilder">ScenesScriptBuilder</a></li>								
 											<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/NamespaceBuilder">NamespaceBuilder</a></li>								
-											<li><a href="/weaver/api/Weaver.Editor.Procedural/LayersScriptBuilder">LayersScriptBuilder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ScriptBuilder">ScriptBuilder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural/NavigationAreasScriptBuilder">Navigation<wbr>Areas<wbr>Script<wbr>Builder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural/ShadersScriptBuilder">ShadersScriptBuilder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural/InjectorScriptBuilder">Injector<wbr>Script<wbr>Builder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural/AnimationsScriptBuilder">Animations<wbr>Script<wbr>Builder</a></li>								
 											<li><a href="/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder">SimpleScriptBuilder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder">TypeBuilder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural/ScenesScriptBuilder">ScenesScriptBuilder</a></li>								
+											<li><a href="/weaver/api/Weaver.Editor.Procedural/LayersScriptBuilder">LayersScriptBuilder</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -221,26 +225,26 @@
 							graph BT
 	Type["IElementBuilderGroup"]
 class Type type-node
-	Implementing0["InjectorScriptBuilder"]-.-&gt;Type
-	click Implementing0 "/weaver/api/Weaver.Editor.Procedural/InjectorScriptBuilder"
+	Implementing0["NamespaceBuilder"]-.-&gt;Type
+	click Implementing0 "/weaver/api/Weaver.Editor.Procedural.Scripting/NamespaceBuilder"
 	Implementing1["ScriptBuilder"]-.-&gt;Type
 	click Implementing1 "/weaver/api/Weaver.Editor.Procedural.Scripting/ScriptBuilder"
-	Implementing2["TypeBuilder"]-.-&gt;Type
-	click Implementing2 "/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder"
+	Implementing2["NavigationAreasScriptBuilder"]-.-&gt;Type
+	click Implementing2 "/weaver/api/Weaver.Editor.Procedural/NavigationAreasScriptBuilder"
 	Implementing3["ShadersScriptBuilder"]-.-&gt;Type
 	click Implementing3 "/weaver/api/Weaver.Editor.Procedural/ShadersScriptBuilder"
-	Implementing4["AnimationsScriptBuilder"]-.-&gt;Type
-	click Implementing4 "/weaver/api/Weaver.Editor.Procedural/AnimationsScriptBuilder"
-	Implementing5["NavigationAreasScriptBuilder"]-.-&gt;Type
-	click Implementing5 "/weaver/api/Weaver.Editor.Procedural/NavigationAreasScriptBuilder"
-	Implementing6["ScenesScriptBuilder"]-.-&gt;Type
-	click Implementing6 "/weaver/api/Weaver.Editor.Procedural/ScenesScriptBuilder"
-	Implementing7["NamespaceBuilder"]-.-&gt;Type
-	click Implementing7 "/weaver/api/Weaver.Editor.Procedural.Scripting/NamespaceBuilder"
-	Implementing8["LayersScriptBuilder"]-.-&gt;Type
-	click Implementing8 "/weaver/api/Weaver.Editor.Procedural/LayersScriptBuilder"
-	Implementing9["SimpleScriptBuilder"]-.-&gt;Type
-	click Implementing9 "/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder"
+	Implementing4["InjectorScriptBuilder"]-.-&gt;Type
+	click Implementing4 "/weaver/api/Weaver.Editor.Procedural/InjectorScriptBuilder"
+	Implementing5["AnimationsScriptBuilder"]-.-&gt;Type
+	click Implementing5 "/weaver/api/Weaver.Editor.Procedural/AnimationsScriptBuilder"
+	Implementing6["SimpleScriptBuilder"]-.-&gt;Type
+	click Implementing6 "/weaver/api/Weaver.Editor.Procedural/SimpleScriptBuilder"
+	Implementing7["TypeBuilder"]-.-&gt;Type
+	click Implementing7 "/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder"
+	Implementing8["ScenesScriptBuilder"]-.-&gt;Type
+	click Implementing8 "/weaver/api/Weaver.Editor.Procedural/ScenesScriptBuilder"
+	Implementing9["LayersScriptBuilder"]-.-&gt;Type
+	click Implementing9 "/weaver/api/Weaver.Editor.Procedural/LayersScriptBuilder"
 
 						</div>
 					</div>
@@ -301,6 +305,13 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>The name of this member.</div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/IElementBuilderGroup/41C19762">Namespace</a></td>
+								<td>string</td>
+								<td>
+									<div>The full name of the <code class="cs">Weaver.Editor.Procedural.Scripting.NamespaceBuilder</code> containing this object (or null if there isn't one).</div>
 								</td>
 							</tr>
 							<tr>

@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -146,6 +146,7 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Enum Types</li>
 				<li class="selected"><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers">AccessModifiers</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterModifier">ParameterModifier</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/CachedTypeInfo">CachedTypeInfo</a></li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ConstructorBuilder">ConstructorBuilder</a></li>
@@ -161,6 +162,9 @@
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder">TypeBuilder</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/IElementBuilderGroup">IElementBuilderGroup</a></li>
+			<li class="header">Struct Types</li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterBuilder">ParameterBuilder</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeName">TypeName</a></li>
 			<li class="header">Delegate Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AppendFunction">AppendFunction</a></li>
 
@@ -289,6 +293,14 @@ public enum AccessModifiers</code></pre>
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers/65128099">New</a></td>
+								<td>2048</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers/51430C44">None</a></td>
 								<td>0</td>
 								<td>
@@ -297,8 +309,16 @@ public enum AccessModifiers</code></pre>
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers/D98FBFC1">Override</a></td>
+								<td>1024</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers/9C86677F">Partial</a></td>
-								<td>512</td>
+								<td>4096</td>
 								<td>
 									<div></div>
 											<div><small><em>static</em></small></div>
@@ -347,6 +367,14 @@ public enum AccessModifiers</code></pre>
 							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers/07A4D780">Static</a></td>
 								<td>32</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers/DF6BD8E5">Virtual</a></td>
+								<td>512</td>
 								<td>
 									<div></div>
 											<div><small><em>static</em></small></div>

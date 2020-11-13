@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -146,6 +146,7 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Enum Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers">AccessModifiers</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterModifier">ParameterModifier</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/CachedTypeInfo">CachedTypeInfo</a></li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ConstructorBuilder">ConstructorBuilder</a></li>
@@ -161,6 +162,9 @@
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder">TypeBuilder</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/IElementBuilderGroup">IElementBuilderGroup</a></li>
+			<li class="header">Struct Types</li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterBuilder">ParameterBuilder</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeName">TypeName</a></li>
 			<li class="header">Delegate Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AppendFunction">AppendFunction</a></li>
 
@@ -370,15 +374,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/9B60D954">IsExtensionMethod</a></td>
-								<td>bool</td>
-								<td>
-									<div>
-    If set to true, the first parameter will be given the "this" modifier, making this an extension method.
-    </div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/4CF272AF">IsFallbackName</a></td>
 								<td>bool</td>
 								<td>
@@ -388,15 +383,6 @@ class Type type-node
     another, and the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.Name</code> was re-derived using <code class="cs">Weaver.Editor.Procedural.Scripting.ScriptBuilder.GetFallbackMemberName(System.String,System.String)</code>.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder">ElementBuilder</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/B4C0988A">IsSingleLine</a></td>
-								<td>bool</td>
-								<td>
-									<div>
-    If true, this method will be built on a single line, I.E. "{ ...Method Body... }".
-    </div>
 								</td>
 							</tr>
 							<tr>
@@ -434,23 +420,18 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/5C4504DF">ParameterNames</a></td>
-								<td>string[]</td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/850CC08A">Namespace</a></td>
+								<td>string</td>
 								<td>
-									<div>
-    The types of each of this method's parameters. Corresponds to the <code class="cs">System.Reflection.ParameterInfo.Name</code>
-    of each parameter returned by <code class="cs">System.Reflection.MethodBase.GetParameters</code>.
-    </div>
+									<div>The name of the <code class="cs">Weaver.Editor.Procedural.Scripting.NamespaceBuilder</code> containing this type (or null if there isn't one).</div>
+											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder">ElementBuilder</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/2C850774">ParameterTypes</a></td>
-								<td>Type[]</td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/D836A284">Parameters</a></td>
+								<td>ParameterBuilder[]</td>
 								<td>
-									<div>
-    The types of each of this method's parameters. Corresponds to the <code class="cs">System.Reflection.ParameterInfo.ParameterType</code>
-    of each parameter returned by <code class="cs">System.Reflection.MethodBase.GetParameters</code>.
-    </div>
+									<div>This method's parameters. Corresponds to the <code class="cs">System.Reflection.MethodBase.GetParameters</code>.</div>
 								</td>
 							</tr>
 							<tr>
@@ -473,11 +454,9 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/15A5F97E">ReturnType</a></td>
-								<td>Type</td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeName">TypeName</a></td>
 								<td>
-									<div>
-    The type of object this method returns. Corresponds to <code class="cs">System.Reflection.MethodInfo.ReturnType</code>.
-    </div>
+									<div>The type of object this method returns. Corresponds to <code class="cs">System.Reflection.MethodInfo.ReturnType</code>.</div>
 								</td>
 							</tr>
 							<tr>
@@ -507,6 +486,14 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/DACB3E42">AppendBody<wbr>(StringBuilder, <wbr>int, <wbr>AppendFunction)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Appends a method body.</div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/1BA6003F">AppendDescription<wbr>(StringBuilder, <wbr>int)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -532,7 +519,8 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-    Appends a C# XML comment using the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.CommentBuilder</code> followed by any <code class="cs">Weaver.Editor.Procedural.Scripting.MemberBuilder.Attributes</code>.
+    Appends a C# XML comment using the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.CommentBuilder</code> followed by any
+    <code class="cs">Weaver.Editor.Procedural.Scripting.MemberBuilder.Attributes</code>.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MemberBuilder">MemberBuilder</a></em></small></div>
 								</td>
@@ -567,7 +555,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/36160186">Get<wbr>(TypeBuilder, <wbr>string, <wbr>Type, <wbr>AppendFunction)<wbr></a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/EF7F8D0C">Get<wbr>(TypeBuilder, <wbr>string, <wbr>TypeName, <wbr>AppendFunction)<wbr></a></td>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder">MethodBuilder</a></td>
 								<td>
 									<div>
@@ -577,7 +565,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/52E12103">Get<wbr>(TypeBuilder, <wbr>string, <wbr>Type, <wbr>Type[], <wbr>string[], <wbr>AppendFunction)<wbr></a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/00A7D4B5">Get<wbr>(TypeBuilder, <wbr>string, <wbr>TypeName, <wbr>ParameterBuilder[], <wbr>AppendFunction)<wbr></a></td>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder">MethodBuilder</a></td>
 								<td>
 									<div>
@@ -632,19 +620,16 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/323ECE24">ReleaseToPool<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Reset this <code class="cs">Weaver.Editor.Procedural.Scripting.MethodBuilder</code> and add it to its object pool to be reused later.
-    </div>
+									<div>Resets this element and adds it to its object pool to be reused later.</div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MemberBuilder/7141E8B3">Reset<wbr>()<wbr></a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MethodBuilder/31ECC3C8">Reset<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
     Reset all of the fields and properties of this member to their default values.
     </div>
-											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/MemberBuilder">MemberBuilder</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -667,9 +652,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/083A3088">SetName<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Sets the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.Name</code> and <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.NameSource</code>.
-    </div>
+									<div>Sets the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.Name</code> and <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.NameSource</code>.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder">ElementBuilder</a></em></small></div>
 								</td>
 							</tr>

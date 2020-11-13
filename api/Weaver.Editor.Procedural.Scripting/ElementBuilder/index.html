@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.0</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -147,6 +147,7 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Enum Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AccessModifiers">AccessModifiers</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterModifier">ParameterModifier</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/CachedTypeInfo">CachedTypeInfo</a></li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ConstructorBuilder">ConstructorBuilder</a></li>
@@ -162,6 +163,9 @@
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeBuilder">TypeBuilder</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/IElementBuilderGroup">IElementBuilderGroup</a></li>
+			<li class="header">Struct Types</li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ParameterBuilder">ParameterBuilder</a></li>
+				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/TypeName">TypeName</a></li>
 			<li class="header">Delegate Types</li>
 				<li><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AppendFunction">AppendFunction</a></li>
 
@@ -254,7 +258,7 @@ class Type type-node
 							<tbody><tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/76840050">ElementBuilder<wbr>()<wbr></a></td>
 									<td>
-    Constructs a new <code class="cs">Weaver.Editor.Procedural.Scripting.MemberBuilder</code> with the default values.
+    Creates a new <code class="cs">Weaver.Editor.Procedural.Scripting.MemberBuilder</code> with the default values.
     <p></p>
     Consider using one of the overloads of Get instead, in order to utilise object pooling to minimise memory
     allocation and garbage collection.
@@ -378,6 +382,13 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/850CC08A">Namespace</a></td>
+								<td>string</td>
+								<td>
+									<div>The name of the <code class="cs">Weaver.Editor.Procedural.Scripting.NamespaceBuilder</code> containing this type (or null if there isn't one).</div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/0E88F6F3">Parent</a></td>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/IElementBuilderGroup">IElementBuilderGroup</a></td>
 								<td>
@@ -441,18 +452,14 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/B2D4317D">AppendHeader<wbr>(StringBuilder, <wbr>int)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Appends a C# XML comment using the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.CommentBuilder</code>.
-    </div>
+									<div>Appends a C# XML comment using the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.CommentBuilder</code>.</div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/F53ADF79">AppendScript<wbr>(StringBuilder, <wbr>int)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Appends the declaration of this element in C# code to the specified `text`.
-    </div>
+									<div>Appends the declaration of this element in C# code to the specified `text`.</div>
 								</td>
 							</tr>
 							<tr>
@@ -495,36 +502,28 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/820B594A">IsExistingMember<wbr>(MemberInfo, <wbr>bool)<wbr></a></td>
 								<td>bool</td>
 								<td>
-									<div>
-    Checks if the `existingMember` corresponds to this element.
-    </div>
+									<div>Checks if the `existingMember` corresponds to this element.</div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/AE0B990C">ReleaseToPool<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Resets this element and adds it to its object pool to be reused later.
-    </div>
+									<div>Resets this element and adds it to its object pool to be reused later.</div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/EF491AA7">Reset<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Reset all of the fields and properties of this element to their default values.
-    </div>
+									<div>Resets all of the fields and properties of this element to their default values.</div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/083A3088">SetName<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div>
-    Sets the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.Name</code> and <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.NameSource</code>.
-    </div>
+									<div>Sets the <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.Name</code> and <code class="cs">Weaver.Editor.Procedural.Scripting.ElementBuilder.NameSource</code>.</div>
 								</td>
 							</tr>
 							<tr>
