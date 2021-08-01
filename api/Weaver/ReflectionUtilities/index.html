@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.2</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -338,16 +338,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/D82E043F">Compare<wbr>Namespace<wbr>Then<wbr>Name<wbr>(Type, <wbr>Type)<wbr></a></td>
-								<td>int</td>
-								<td>
-									<div>
-    Compares types by namespace, and if they are in the same namespace then compares them by name.
-    </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/weaver/api/Weaver/ReflectionUtilities/6FC9E109">DeepToString<wbr>(Object)<wbr></a></td>
 								<td>string</td>
 								<td>
@@ -356,7 +346,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/CEEDEBD4">For<wbr>Each<wbr>Custom<wbr>Attribute<wbr>&lt;T&gt;<wbr><wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>Action<wbr>&lt;T&gt;<wbr>, <wbr>bool)<wbr></a></td>
+								<td><a href="/weaver/api/Weaver/ReflectionUtilities/CEEDEBD4">For<wbr>Each<wbr>Custom<wbr>Attribute<wbr>&lt;TAttribute&gt;<wbr><wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>Action<wbr>&lt;TAttribute&gt;<wbr>, <wbr>bool)<wbr></a></td>
 								<td>bool</td>
 								<td>
 									<div>
@@ -376,6 +366,16 @@ class Type type-node
     For example: when searching for every type with a certain attribute, you only need to look in assemblies
     that reference the assembly containing the attribute so you should instead use
     <code class="cs">Weaver.ReflectionUtilities</code>.<code class="cs">Weaver.ReflectionUtilities.Assemblies.ForEachTypeInDependantAssemblies(System.Reflection.Assembly,System.Action{System.Type})</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/weaver/api/Weaver/ReflectionUtilities/FAFB32FA">GetAttribute<wbr>&lt;TAttribute&gt;<wbr><wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>bool)<wbr></a></td>
+								<td>TAttribute</td>
+								<td>
+									<div>
+    Gets a single custom attribute of type T and casts it.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -417,34 +417,6 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>Gets all types with the specified attribute all currently loaded assemblies.</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/D16551F9">GetCallingMethod<wbr>(int)<wbr></a></td>
-								<td>MethodBase</td>
-								<td>
-									<div>
-    Returns the <code class="cs">System.Reflection.MethodBase</code> for the calling method.
-    </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/831D3071">GetCallingTypePrefix<wbr>(int)<wbr></a></td>
-								<td>string</td>
-								<td>
-									<div>Returns "Namespace.CallingType.".</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/E86AC9BD">GetCustomAttribute<wbr>&lt;T&gt;<wbr><wbr>(<wbr>I<wbr>Custom<wbr>Attribute<wbr>Provider, <wbr>bool)<wbr></a></td>
-								<td>T</td>
-								<td>
-									<div>
-    Gets a single custom attribute of type T and casts it.
-    </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -501,17 +473,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/B490B44E">GetImplementingTypes<wbr>(Type)<wbr></a></td>
-								<td>List<wbr>&lt;Type&gt;<wbr></td>
-								<td>
-									<div>
-    Gets all non-abstract types in the currently loaded assemblies which have a parameterless constructor and
-    implement the specified interface.
-    </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/weaver/api/Weaver/ReflectionUtilities/E885A69F">Get<wbr>Inheritance<wbr>Modifier<wbr>(Type, <wbr>string, <wbr>Type[])<wbr></a></td>
 								<td>string</td>
 								<td>
@@ -536,28 +497,10 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/DF398A12">GetMethod<wbr>(Type, <wbr>string, <wbr>BindingFlags, <wbr>Type[], <wbr>Type, <wbr>bool)<wbr></a></td>
-								<td>MethodInfo</td>
-								<td>
-									<div>
-    Gets a <code class="cs">System.Reflection.MethodInfo</code> for a method called `name` in `type` with the correct parameter types and return type.
-    </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/weaver/api/Weaver/ReflectionUtilities/A6662EEA">GetQualifiedName<wbr>(Type)<wbr></a></td>
 								<td>string</td>
 								<td>
 									<div>Returns "<code class="cs">System.Type.FullName</code>, <code class="cs">System.Reflection.AssemblyName.Name</code>".</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/EA7D0E23">Has<wbr>Default<wbr>Constructor<wbr>(Type)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div>Checks if `type` has a public parameterless constructor.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -570,44 +513,12 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/F0B488ED">HasGetAndSet<wbr>(PropertyInfo, <wbr>bool)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div>Checks if `property` has both a getter and setter.</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/weaver/api/Weaver/ReflectionUtilities/B19BC3CC">HasImplicitCast<wbr>(Type, <wbr>Type)<wbr></a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Returns true if `from` can be implicitly cast to `to`.
     </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/4867BB7B">Has<wbr>Parameterless<wbr>Constructor<wbr>(Type, <wbr>BindingFlags)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div>Checks if `type` has a parameterless constructor.</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/FE13E8B4">Is<wbr>(Type, <wbr>Type)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div>Checks if `type` is descended from `baseType` (or implements it if it's an interface).</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/391CE94E">IsNestedIn<wbr>(Type, <wbr>Type)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div>Checks if `type` is nested inside `outerType`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -666,16 +577,6 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>Returns a description of the access modifier associated with `bindings`</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/weaver/api/Weaver/ReflectionUtilities/E8086FF6">TryGetPropertyGetter<wbr>&lt;T&gt;<wbr><wbr>(Type, <wbr>string, <wbr>Func<wbr>&lt;T&gt;<wbr>)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div>
-    Tries to get the getter method of a property and create a delegate from it.
-    </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>

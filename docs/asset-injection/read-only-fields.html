@@ -59,7 +59,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"/> Docs</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"/> API v6.1</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"/> API v6.2</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"/> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"/> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"/> Try</a></li>
@@ -137,6 +137,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/tags">Tags</a></li>
                 <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
@@ -166,6 +167,7 @@
                     <a href="/weaver/docs/changes">Change Log</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
+                <li><a href="/weaver/docs/changes/weaver-v6-2">Weaver v6.2</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v6-1">Weaver v6.1</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v6-0">Weaver v6.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-1">Weaver v5.1</a></li>
@@ -198,11 +200,11 @@
 		</section>
 	<section class="content">
 		<blockquote class="blockquote">
-<p><strong>TL;DR</strong>: don't try to access injected <code>readonly</code> fields in static constructors or field initialisers.</p>
+<p><strong>TL;DR</strong>: don't try to access injected <code>readonly</code> fields in static constructors or field initializers.</p>
 </blockquote>
 <p>Injection attributes can be placed on <code>readonly</code> fields and getter-only auto properties to ensure that your other code can access the injected value without being able to change it. This can be very useful for preventing accidental reassignment, however it also creates the possibility for injection to fail if you attempt to access the member before its value is injected.</p>
 <p>Mono - the framework Unity runs on - uses a Just In Time (JIT) compiler at runtime right before each piece of code is run the first time to see if there are any optimisations it can perform. This process greatly improves performance and generally doesn't interfere with anything, however in this case it can cause a problem since Weaver is exploiting unintended behaviour by using reflection to set <code>readonly</code> values which would normally give a compile error if you tried to set them outside a constructor.</p>
-<p>If you access a <code>static readonly</code> field before its value has been injected (I.E. when the reference is still null) such as in a static constructor or field initialiser, the JIT can see that you are accessing a field which is null, and since it &quot;knows&quot; the value of the field isn't allowed to change it can optimise your method to directly use null instead of getting the current value of the field every time it executes. This means that not only will the field be null the first time the method executes, but even after the field value is injected, that method will continue using null instead of the actual injected value until the application is closed.</p>
+<p>If you access a <code>static readonly</code> field before its value has been injected (I.E. when the reference is still null) such as in a static constructor or field initializer, the JIT can see that you are accessing a field which is null, and since it &quot;knows&quot; the value of the field isn't allowed to change it can optimise your method to directly use null instead of getting the current value of the field every time it executes. This means that not only will the field be null the first time the method executes, but even after the field value is injected, that method will continue using null instead of the actual injected value until the application is closed.</p>
 <p>Usually it's fairly easy to avoid accessing injected fields before they might be ready, but if you might need to do so you can simply use a property with a private setter or even simply a regular field.</p>
 
 	</section>

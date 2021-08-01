@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.2</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -344,9 +344,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute/BA927105">DisableAutoFind</a></td>
 								<td>bool</td>
 								<td>
-									<div>
-    If true, this attribute will not search for a target asset by name when it is firse applied.
-    </div>
+									<div>If true, this attribute will not search for a target asset by name when it is first applied.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver/AssetInjectionAttribute">Asset<wbr>Injection<wbr>Attribute</a></em></small></div>
 								</td>
 							</tr>
@@ -375,9 +373,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute/D0AB37D4">FileName</a></td>
 								<td>string</td>
 								<td>
-									<div>
-    If set, this value will be used as the ideal file name when searching for the target asset.
-    </div>
+									<div>If set, this value will be used as the ideal file name when searching for the target asset.</div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver/AssetInjectionAttribute">Asset<wbr>Injection<wbr>Attribute</a></em></small></div>
 								</td>
 							</tr>
@@ -395,7 +391,7 @@ class Type type-node
 								<td>bool</td>
 								<td>
 									<div>
-    If set to true, this attribute will not give any errors when it is unable to initialise with an appropriate value.
+    If set to true, this attribute will not give any errors when it is unable to initialize with an appropriate value.
     </div>
 											<div><small><em>Inherited from <a href="/weaver/api/Weaver/InjectionAttribute">InjectionAttribute</a></em></small></div>
 								</td>
@@ -662,11 +658,11 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute/316E4FCF">TryInitialise<wbr>()<wbr></a></td>
+								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute/78D58D1E">TryInitialize<wbr>()<wbr></a></td>
 								<td>bool</td>
 								<td>
 									<div>[Editor-Only]
-    Attempts to initialise this attribute and returns true if successful.
+    Attempts to initialize this attribute and returns true if successful.
     <p></p>
     Specifically, this method ensures that the <code class="cs">Weaver.InjectionAttribute.MemberType</code> inherits from
     <code class="cs">UnityEngine.Object</code>.
@@ -675,11 +671,11 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute/14AB9BD5">TryInitialise<wbr>(Type)<wbr></a></td>
+								<td><a href="/weaver/api/Weaver/AssetInjectionAttribute/7BBCE9A3">TryInitialize<wbr>(Type)<wbr></a></td>
 								<td>bool</td>
 								<td>
 									<div>[Editor-Only]
-    Attempts to initialise this attribute and returns true if successful.
+    Attempts to initialize this attribute and returns true if successful.
     <p></p>
     Specifically, this method ensures that the <code class="cs">Weaver.InjectionAttribute.MemberType</code> inherits from
     <code class="cs">UnityEngine.Object</code>.

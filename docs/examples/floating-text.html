@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
+        <li><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.2</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -139,6 +139,7 @@
                 <li><a href="/weaver/docs/project-constants/navigation-areas">Navigation Areas</a></li>
                 <li><a href="/weaver/docs/project-constants/scenes">Scenes</a></li>
                 <li><a href="/weaver/docs/project-constants/shaders">Shaders</a></li>
+                <li><a href="/weaver/docs/project-constants/tags">Tags</a></li>
                 <li><a href="/weaver/docs/project-constants/obsolete-members">Obsolete Members</a></li>
 
                     </ul>
@@ -168,6 +169,7 @@
                     <a href="/weaver/docs/changes">Change Log</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
+                <li><a href="/weaver/docs/changes/weaver-v6-2">Weaver v6.2</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v6-1">Weaver v6.1</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v6-0">Weaver v6.0</a></li>
                 <li><a href="/weaver/docs/changes/weaver-v5-1">Weaver v5.1</a></li>
@@ -260,28 +262,36 @@ namespace Weaver.Examples
         private TMPro.TextMeshPro _TextMesh;
 
         /// &lt;summary&gt;The component used to display the actual text.&lt;/summary&gt;
-        public TMPro.TextMeshPro TextMesh { get { return _TextMesh; } }
+        public TMPro.TextMeshPro TextMesh =&gt; _TextMesh;
+        
+        /************************************************************************************************************************/
 
         /// &lt;summary&gt;The text string currently being shown.&lt;/summary&gt;
         public override string Text
         {
-            get { return _TextMesh.text; }
-            set { _TextMesh.text = value; }
+            get =&gt; _TextMesh.text;
+            set =&gt; _TextMesh.text = value;
         }
+        
+        /************************************************************************************************************************/
 
         /// &lt;summary&gt;The height of the text in world-space.&lt;/summary&gt;
         public override float Size
         {
-            get { return _TextMesh.fontSize * 0.1f; }
-            set { _TextMesh.fontSize = value * 10; }
+            get =&gt; _TextMesh.fontSize * 0.1f;
+            set =&gt; _TextMesh.fontSize = value * 10;
         }
+        
+        /************************************************************************************************************************/
 
         /// &lt;summary&gt;The &lt;see cref="UnityEngine.Color"/&gt; of the text.&lt;/summary&gt;
         public override Color Color
         {
-            get { return _TextMesh.color; }
-            set { _TextMesh.color = value; }
+            get =&gt; _TextMesh.color;
+            set =&gt; _TextMesh.color = value;
         }
+        
+        /************************************************************************************************************************/
 
         /// &lt;summary&gt;
         /// Called by Unity when this component is first added (in Edit Mode) or the "Reset" function is used.

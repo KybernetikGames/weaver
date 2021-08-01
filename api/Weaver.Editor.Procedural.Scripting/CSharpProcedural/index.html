@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.2</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -334,8 +334,8 @@ class Type type-node
 									<div>
     Appends the C# declaration of a field with a signature matching the specified `field` and an [Obsolete] attribute.
     <p></p>
-    If the field is static and <code class="cs">Weaver.Editor.Procedural.Scripting.CSharpProcedural.GetInitialiser(System.Object)</code> is able to determine the initialiser for
-    its current value, that initialiser will also be included.
+    If the field is static and <code class="cs">Weaver.Editor.Procedural.Scripting.CSharpProcedural.GetInitializer(System.Object)</code> is able to determine the initializer for
+    its current value, that initializer will also be included.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -482,14 +482,14 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/CSharpProcedural/DAC6FE15">GetInitialiser<wbr>(Object)<wbr></a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/CSharpProcedural/37DEFDED">GetInitializer<wbr>(Object)<wbr></a></td>
 								<td>string</td>
 								<td>
 									<div>
-    Tries to return a string which could be used as a C# field initialiser to give the field the specified `value`.
-    Returns null if the 'value is null or if unable to determine the appropriate field initialiser.
+    Tries to return a string which could be used as a C# field initializer to give the field the specified `value`.
+    Returns null if the 'value is null or if unable to determine the appropriate field initializer.
     <p></p>
-    If the value is a custom type with a static string GetInitialiser(T value) method, that method will be called to determine the result.
+    If the value is a custom type with a static string GetInitializer(T value) method, that method will be called to determine the result.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>

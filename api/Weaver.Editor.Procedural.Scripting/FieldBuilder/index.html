@@ -57,7 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/weaver/docs"><img src="/weaver/images/docs.png" height="20" style="position:relative; left:-5px; top:-1px;"> Docs</a></li>
-        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.1</a></li>
+        <li class="active"><a href="/weaver/api"><img src="/weaver/images/api.png" height="20" style="position:relative; left:-3px; top:-1px;"> API v6.2</a></li>
         <li><a href="https://forum.unity.com/threads/592459"><img src="/weaver/images/forum.png" height="20" style="position:relative; left:-4px; top:-1px;"> Forum</a></li>
         <li><a href="mailto:mail@kybernetik.com.au?subject=Weaver"><img src="/weaver/images/contact.png" height="20" style="position:relative; left:-4px; top:-1px;"> Contact</a></li>
         <li><a href="/weaver/lite"><img src="/weaver/images/unity-logo.png" height="20" style="position:relative; left:-4px; top:-1px;"> Try</a></li>
@@ -277,12 +277,12 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/FieldBuilder/BAADC0B2">Default<wbr>Append<wbr>Initialiser</a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/FieldBuilder/359611BD">Default<wbr>Append<wbr>Initializer</a></td>
 								<td></td>
 								<td>
 									<div>
-    The default delegate assigned to <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder.AppendInitialiser</code>.
-    It simply calls <code class="cs">Weaver.Editor.Procedural.Scripting.CSharpProcedural.GetInitialiser(System.Object)</code> and appends the result if it isn't null.
+    The default delegate assigned to <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder.AppendInitializer</code>.
+    It simply calls <code class="cs">Weaver.Editor.Procedural.Scripting.CSharpProcedural.GetInitializer(System.Object)</code> and appends the result if it isn't null.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -323,14 +323,14 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/FieldBuilder/296BBA19">AppendInitialiser</a></td>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AppendInitialiserMethod">FieldBuilder<wbr>.<wbr>Append<wbr>Initialiser<wbr>Method</a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/FieldBuilder/A6506B16">AppendInitializer</a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/AppendInitializerMethod">FieldBuilder<wbr>.<wbr>Append<wbr>Initializer<wbr>Method</a></td>
 								<td>
 									<div>
-    A method which takes the following parameters and appends an appropriate field initialiser:
+    A method which takes the following parameters and appends an appropriate field initializer:
     (<code class="cs">System.Text.StringBuilder</code> text, <code class="cs"><a href="/weaver">int</a></code> indent, <code class="cs">System.Object</code> value).
     <p></p>
-    By default, <code class="cs">Weaver.Editor.Procedural.Scripting.CSharpProcedural.GetInitialiser(System.Object)</code> will be used.
+    By default, <code class="cs">Weaver.Editor.Procedural.Scripting.CSharpProcedural.GetInitializer(System.Object)</code> will be used.
     <p></p>
     Note that this delegate is called immediately after the field name and before the semicolon, so it must
     begin with " = " to assign a value and should not append a semicolon at the end.
@@ -601,7 +601,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/FieldBuilder">FieldBuilder</a></td>
 								<td>
 									<div>
-    Returns a <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder</code> from the object pool and initialise it with the specified parameters.
+    Returns a <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder</code> from the object pool and initialize it with the specified parameters.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -611,7 +611,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/FieldBuilder">FieldBuilder</a></td>
 								<td>
 									<div>
-    Returns a <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder</code> from the object pool and initialise it with the specified parameters.
+    Returns a <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder</code> from the object pool and initialize it with the specified parameters.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -621,7 +621,7 @@ class Type type-node
 								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/FieldBuilder">FieldBuilder</a></td>
 								<td>
 									<div>
-    Returns a <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder</code> from the object pool and initialise it with the specified parameters.
+    Returns a <code class="cs">Weaver.Editor.Procedural.Scripting.FieldBuilder</code> from the object pool and initialize it with the specified parameters.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -647,7 +647,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/53E7347D">Initialise<wbr>(<wbr>I<wbr>Element<wbr>Builder<wbr>Group, <wbr>string)<wbr></a></td>
+								<td><a href="/weaver/api/Weaver.Editor.Procedural.Scripting/ElementBuilder/29425E59">Initialize<wbr>(<wbr>I<wbr>Element<wbr>Builder<wbr>Group, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
