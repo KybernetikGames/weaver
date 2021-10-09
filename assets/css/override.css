@@ -3,7 +3,7 @@ body.layout-boxed {
   background-color: #f4ecff;
 }
 body.layout-boxed .top-banner {
-  background-color: #8070d0;
+  background-color: #65a;
   position: absolute;
   top: 0;
   left: 0;
@@ -65,10 +65,10 @@ h1 {
   }
 }
 .main-header {
-  background-color: #8070d0;
+  background-color: #65a;
 }
 .main-header .navbar {
-  background-color: #8070d0;
+  background-color: #65a;
 }
 .main-header .navbar .nav > li > a {
   color: #fff;
@@ -94,7 +94,7 @@ h1 {
   color: #fff;
 }
 .main-header .navbar .sidebar-toggle:hover {
-  background-color: #6f5dca;
+  background-color: #5c4d99;
 }
 .main-header .navbar .navbar-toggle {
   font-family: "fontAwesome";
@@ -110,16 +110,16 @@ h1 {
     color: #fff;
   }
   .main-header .navbar .dropdown-menu li a:hover {
-    background: #6f5dca;
+    background: #5c4d99;
   }
 }
 .main-header .logo {
-  background-color: #8070d0;
+  background-color: #65a;
   color: #fff;
   border-bottom: 0 solid transparent;
 }
 .main-header .logo:hover {
-  background-color: #7d6ccf;
+  background-color: #6453a7;
 }
 @media (max-width: 767px) {
   .main-header .logo {
@@ -137,7 +137,7 @@ h1 {
   }
 }
 .main-header li.user-header {
-  background-color: #8070d0;
+  background-color: #65a;
 }
 .wrapper,
 .layout-boxed .wrapper {
@@ -160,7 +160,7 @@ h1 {
   padding-right: 30px;
 }
 .content h1 {
-  color: #a296dd;
+  color: #8577bb;
   font-style: italic;
 }
 .wrapper,
@@ -195,7 +195,7 @@ h1 {
   background: #f4f4f5;
 }
 .sidebar-menu > li.active {
-  border-left-color: #8070d0;
+  border-left-color: #65a;
 }
 .sidebar-menu > li.active > a {
   font-weight: 600;
@@ -284,7 +284,7 @@ h1 {
   color: #333333;
 }
 .sidebar-menu li a:hover {
-  color: #8070d0;
+  color: #65a;
 }
 .sidebar-menu li.treeview.active > a,
 .sidebar-menu > li.treeview.active > a,
@@ -303,7 +303,7 @@ h1 {
   border-radius: 6px;
 }
 .sidebar-menu li.selected > a {
-  background-color: #8070d0 !important;
+  background-color: #65a !important;
   color: white;
   font-weight: 600;
 }
@@ -367,11 +367,11 @@ h1 {
   background-color: #f9fafc;
 }
 .table thead tr {
-  background-color: #8070d0;
+  background-color: #65a;
   color: #fff;
 }
 .box {
-  border-top-color: #5e4ac3;
+  border-top-color: #524488;
 }
 .main-header,
 .main-footer {
@@ -394,12 +394,12 @@ h1 {
   background-color: white;
 }
 .layout-top-nav .main-header > .logo {
-  background-color: #8070d0;
+  background-color: #65a;
   color: #fff;
   border-bottom: 0 solid transparent;
 }
 .layout-top-nav .main-header > .logo:hover {
-  background-color: #7d6ccf;
+  background-color: #6453a7;
 }
 hr {
   border-top-color: #B5BBC8;
@@ -407,7 +407,7 @@ hr {
 .lead {
   padding: 10px 20px;
   margin: 0 0 20px;
-  border-left: 5px solid #8070d0;
+  border-left: 5px solid #65a;
 }
 .three-cols th,
 .three-cols td {
@@ -579,7 +579,7 @@ code a {
 .type-node circle,
 .type-node ellipse,
 .type-node polygon {
-  fill: #e6e3f6 !important;
+  fill: #c2bbdd !important;
   stroke: #000 !important;
 }
 .cluster rect {
@@ -589,14 +589,14 @@ code a {
 /* Turbolinks */
 
 .turbolinks-progress-bar {
-  background-color: #8070d0 !important;
+  background-color: #65a !important;
 }
 body.layout-boxed {
-  background-image: -webkit-linear-gradient(top, #edf 0%, #cbf 100%);
-  background-image: -o-linear-gradient(top, #edf 0%, #cbf 100%);
-  background-image: linear-gradient(to bottom, #edf 0%, #cbf 100%);
+  background-image: -webkit-linear-gradient(top, #edf 0%, #dcf 100%);
+  background-image: -o-linear-gradient(top, #edf 0%, #dcf 100%);
+  background-image: linear-gradient(to bottom, #edf 0%, #dcf 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeddff', endColorstr='#ffccbbff', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeddff', endColorstr='#ffddccff', GradientType=0);
 }
 .content,
 .content-header,
@@ -607,7 +607,7 @@ body.layout-boxed {
   background: #f4ecff;
 }
 .content-header > h1 {
-  background: #ccf;
+  background: #ddf;
 }
 .main-footer {
   display: none;
@@ -629,7 +629,7 @@ a > code a:focus,
 a code:focus,
 a > code code:focus {
   border-bottom: 1px dashed #000000;
-  color: #513cb7;
+  color: #473c77;
 }
 .navbar-nav a {
   border-bottom: none;
@@ -646,7 +646,7 @@ a > code code:focus {
   background-color: #edf;
 }
 .table > tbody > tr:nth-of-type(even) {
-  background-color: #cbf;
+  background-color: #dcf;
 }
 .table .section {
   border-left: hidden;
