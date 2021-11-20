@@ -1,3 +1,1 @@
-# https://kybernetik.com.au/weaver
-
-Documentation for the Weaver Unity Plugin
+# [Documentation for the Weaver Unity Plugin](https://kybernetik.com.au/weaver)
